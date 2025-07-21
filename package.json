@@ -1,0 +1,26 @@
+{
+  "name": "planetofsoundrockschool.github.io",
+  "version": "1.0.0",
+  "description": "Planet of Sound Rock School website built with Eleventy",
+  "main": "index.js",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve",
+    "dev": "eleventy --serve --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/planetofsoundrockschool/planetofsoundrockschool.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/planetofsoundrockschool/planetofsoundrockschool.github.io/issues"
+  },
+  "homepage": "https://github.com/planetofsoundrockschool/planetofsoundrockschool.github.io#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  }
+}

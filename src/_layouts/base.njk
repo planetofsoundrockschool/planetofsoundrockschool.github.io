@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if title %}{{ title }} - {% endif %}Planet of Sound Rock School</title>
+    <meta name="description" content="{% if description %}{{ description }}{% else %}Learn to rock at Planet of Sound Rock School - Guitar, Bass, Drums, and more!{% endif %}">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="main-nav">
+            <div class="nav-container">
+                <a href="/" class="logo">
+                    <h1>Planet of Sound Rock School</h1>
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about/">About</a></li>
+                    <li><a href="/lessons/">Lessons</a></li>
+                    <li><a href="/contact/">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        {{ content | safe }}
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2025 Planet of Sound Rock School. All rights reserved.</p>
+            <p>Rock on! 🎸</p>
+        </div>
+    </footer>
+</body>
+</html>
