@@ -72,6 +72,21 @@ description: "Code of conduct, cancellation policy, and important policies for P
                             <div class="alert alert-info mt-3">
                                 <strong>Note:</strong> Full terms and conditions will be provided upon enrollment. All policies are subject to review and may be updated periodically.
                             </div>
+                            
+                            <div class="row mt-4">
+                                <div class="col-12">
+                                    <h5 class="text-danger">Download Policy Documents</h5>
+                                    <p class="mb-3">Complete policy documents will be available for download upon enrollment:</p>
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2">📄 <strong>Complete Terms of Service</strong> - Full legal terms and conditions</li>
+                                        <li class="mb-2">📄 <strong>Privacy Policy</strong> - How we protect your personal information</li>
+                                        <li class="mb-2">📄 <strong>Cancellation & Refund Policy</strong> - Detailed cancellation procedures</li>
+                                        <li class="mb-2">📄 <strong>Code of Conduct</strong> - Complete community guidelines</li>
+                                        <li class="mb-2">📄 <strong>Media Release Form</strong> - Optional photo/video consent</li>
+                                    </ul>
+                                    <p class="text-muted"><em>All documents are provided in accessible, student-friendly language.</em></p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

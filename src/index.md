@@ -8,7 +8,11 @@ description: "Planet Of Sound Rock School - Mentorship-based music school in Lon
     <div class="container">
         <h1 class="display-4 fw-bold mb-3">From your first chord to your first tour 🎸</h1>
         <p class="lead mb-4">All Ages • All Stages • Learn. Collaborate. Play Live.</p>
-        <a href="/contact/" class="btn btn-warning btn-lg fw-bold">Book Your Discovery Call</a>
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+            <a href="/contact/" class="btn btn-warning btn-lg fw-bold">Book a Lesson</a>
+            <a href="/programs/" class="btn btn-outline-light btn-lg fw-bold">Join a Program</a>
+            <a href="/contact/" class="btn btn-light btn-lg fw-bold text-danger">Contact Us</a>
+        </div>
     </div>
 </div>
 
@@ -108,6 +112,26 @@ description: "Planet Of Sound Rock School - Mentorship-based music school in Lon
                 <li class="mb-2">• One round of minor tweaks</li>
             </ul>
             <p class="text-muted"><em>Pricing starts at a 3-hour minimum. Contact us for package options.</em></p>
+        </div>
+    </div>
+</div>
+
+<div class="bg-warning py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="text-dark mb-3">Stay in the Loop</h2>
+                <p class="text-dark mb-4">Get updates on programs, student showcases, and London's music community events.</p>
+                <form class="row g-2 justify-content-center" action="#" method="POST">
+                    <div class="col-auto">
+                        <input type="email" class="form-control form-control-lg" placeholder="Enter your email" required>
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-danger btn-lg">Subscribe</button>
+                    </div>
+                </form>
+                <small class="text-dark mt-2 d-block">We respect your privacy. Unsubscribe at any time.</small>
+            </div>
         </div>
     </div>
 </div>
