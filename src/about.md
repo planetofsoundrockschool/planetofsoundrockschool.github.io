@@ -1,60 +1,56 @@
 ---
 layout: base.njk
 title: "About Us"
-description: "Learn about Planet of Sound Rock School's mission, instructors, and musical philosophy"
+description: "Learn about Planet Of Sound Rock School's mission to provide inclusive, mentorship-driven music education in London, Ontario"
 ---
 
 <div class="container py-5">
     <div class="row">
         <div class="col-lg-8 mx-auto">
-            <h1 class="display-5 text-center text-danger mb-5">About Planet of Sound Rock School</h1>
+            <h1 class="display-5 text-center text-danger mb-5">About Planet Of Sound Rock School</h1>
             
-            <h2 class="h3 text-dark mb-3">Our Story</h2>
-            <p class="lead mb-4">Founded by passionate musicians who believe in the power of rock music to inspire and transform lives, Planet of Sound Rock School has been nurturing musical talent in our community for years. We started with a simple vision: to create a welcoming space where students of all ages could learn to rock out while building solid musical foundations.</p>
-            
-            <h2 class="h3 text-dark mb-3">Our Philosophy</h2>
-            <p class="mb-3">We believe that learning music should be:</p>
-            
-            <ul class="list-unstyled">
-                <li class="mb-3"><strong class="text-danger">Fun and Engaging</strong> - Music is meant to be enjoyed, not endured</li>
-                <li class="mb-3"><strong class="text-danger">Personalized</strong> - Every student learns differently, and we adapt to your style</li>
-                <li class="mb-3"><strong class="text-danger">Practical</strong> - Learn songs you love while building technical skills</li>
-                <li class="mb-3"><strong class="text-danger">Supportive</strong> - We celebrate every milestone, no matter how small</li>
-                <li class="mb-3"><strong class="text-danger">Community-Focused</strong> - Music brings people together, and so do we</li>
-            </ul>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card h-100 border-0 bg-light">
+                        <div class="card-body p-4">
+                            <h2 class="h4 text-danger mb-3">Our Mission</h2>
+                            <p class="card-text">To provide an inclusive, mentorship-driven space where musicians of all backgrounds can grow, learn, and collaborate.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="card h-100 border-0 bg-light">
+                        <div class="card-body p-4">
+                            <h2 class="h4 text-danger mb-3">Our Story</h2>
+                            <p class="card-text">Founded by a lifelong musician inspired by both 80s/90s rock and a love for mentorship, Planet Of Sound Rock School exists to create the learning experience we wish we had growing up.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="card h-100 border-0 bg-light">
+                        <div class="card-body p-4">
+                            <h2 class="h4 text-danger mb-3">Community Impact</h2>
+                            <p class="card-text">We remove barriers to music education by offering sliding-scale pricing, gear access, and an inclusive space welcoming BIPOC, LGBTQIA2S+, and underrepresented communities.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="card h-100 border-0 bg-light">
+                        <div class="card-body p-4">
+                            <h2 class="h4 text-danger mb-3">Why Choose Us</h2>
+                            <ul class="list-unstyled mb-0">
+                                <li class="mb-2">• Mentorship-first approach</li>
+                                <li class="mb-2">• Structured tier progression</li>
+                                <li class="mb-2">• Hands-on gear literacy</li>
+                                <li class="mb-2">• Strong community connections</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-
-## Meet Our Instructors
-
-### Sarah "Shred" Johnson - Guitar & Bass
-With over 15 years of performance experience and a degree in Music Education, Sarah brings both technical expertise and infectious enthusiasm to every lesson. She's toured with several regional bands and specializes in rock, metal, and blues styles.
-
-### Mike "Beats" Rodriguez - Drums & Percussion
-A graduate of Berklee College of Music, Mike has been laying down solid grooves for over 20 years. He's played with jazz ensembles, rock bands, and everything in between. His patient teaching style helps students find their rhythm.
-
-### Lisa Chen - Piano, Keyboard & Vocals
-Classically trained but rock-hearted, Lisa brings a unique perspective to contemporary music education. She's performed at venues across the country and loves helping students discover their own musical voice.
-
-## Our Facility
-
-Our state-of-the-art facility includes:
-
-- Individual practice rooms with quality instruments
-- A full band rehearsal room for ensemble work
-- Recording capabilities for students to hear their progress
-- Comfortable waiting area for parents and friends
-- Instrument rental and purchase options
-
-## Community Involvement
-
-We're proud to be part of our local music community. We regularly:
-
-- Host student showcases and recitals
-- Participate in local music festivals
-- Support school music programs
-- Organize jam sessions and open mic nights
-- Partner with local venues for student performances
-
-Ready to join our musical family? [Contact us](/contact/) today!

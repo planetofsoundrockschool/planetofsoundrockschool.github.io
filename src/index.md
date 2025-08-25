@@ -1,80 +1,25 @@
 ---
 layout: base.njk
 title: "Home"
-description: "Welcome to Planet of Sound Rock School - Learn guitar, bass, drums and more with professional instructors"
+description: "Planet Of Sound Rock School - Mentorship-based music school in London, Ontario. From your first chord to your first tour."
 ---
 
 <div class="bg-danger text-white text-center py-5">
     <div class="container">
-        <h1 class="display-4 fw-bold mb-3">Welcome to Planet of Sound Rock School! 🎸</h1>
-        <p class="lead mb-4">Unleash your inner rockstar with professional music instruction</p>
-        <a href="/lessons/" class="btn btn-warning btn-lg fw-bold">Start Your Journey</a>
+        <h1 class="display-4 fw-bold mb-3">From your first chord to your first tour 🎸</h1>
+        <p class="lead mb-4">All Ages • All Stages • Learn. Collaborate. Play Live.</p>
+        <a href="/contact/" class="btn btn-warning btn-lg fw-bold">Book Your Discovery Call</a>
     </div>
 </div>
 
 <div class="container my-5">
-    <div class="row">
-        <div class="col-12">
-            <h2 class="text-center text-dark border-bottom border-danger border-3 pb-3 mb-5">Why Choose Planet of Sound?</h2>
-        </div>
-    </div>
-    <div class="row g-4">
-        <div class="col-lg-4 col-md-6">
-            <div class="card h-100 shadow-sm border-0 bg-light">
-                <div class="card-body text-center p-4">
-                    <h3 class="card-title h5 text-danger mb-3">🎸 Guitar Lessons</h3>
-                    <p class="card-text">From beginner chords to advanced solos, master the guitar with our expert instructors. Learn rock, blues, metal, and acoustic styles.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-            <div class="card h-100 shadow-sm border-0 bg-light">
-                <div class="card-body text-center p-4">
-                    <h3 class="card-title h5 text-danger mb-3">🥁 Drum Lessons</h3>
-                    <p class="card-text">Feel the rhythm and power behind the kit. Learn fundamental beats, fills, and develop your own unique drumming style.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-            <div class="card h-100 shadow-sm border-0 bg-light">
-                <div class="card-body text-center p-4">
-                    <h3 class="card-title h5 text-danger mb-3">🎵 Bass Lessons</h3>
-                    <p class="card-text">Lay down the foundation with bass guitar. Master the low end and learn how to groove with any band or musical style.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-            <div class="card h-100 shadow-sm border-0 bg-light">
-                <div class="card-body text-center p-4">
-                    <h3 class="card-title h5 text-danger mb-3">🎤 Vocal Training</h3>
-                    <p class="card-text">Find your voice and learn proper technique. Develop range, power, and stage presence for rock and contemporary styles.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-            <div class="card h-100 shadow-sm border-0 bg-light">
-                <div class="card-body text-center p-4">
-                    <h3 class="card-title h5 text-danger mb-3">🎹 Keyboard/Piano</h3>
-                    <p class="card-text">From classical piano to rock organ and synth, explore the versatile world of keyboard instruments.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-            <div class="card h-100 shadow-sm border-0 bg-light">
-                <div class="card-body text-center p-4">
-                    <h3 class="card-title h5 text-danger mb-3">🎵 Band Coaching</h3>
-                    <p class="card-text">Learn to play with others! Join our band programs and experience the thrill of making music together.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="container my-5">
-    <div class="row">
-        <div class="col-lg-8 mx-auto">
-            <h2 class="text-dark mb-4">Our Mission</h2>
-            <p class="lead">At Planet of Sound Rock School, we believe music is a universal language that brings people together. Our experienced instructors are passionate about helping students of all ages and skill levels discover their musical potential. Whether you're picking up an instrument for the first time or looking to take your skills to the next level, we're here to guide you on your musical journey.</p>
+    <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+            <p class="lead mb-4">Planet Of Sound Rock School is a mentorship-based music school in near downtown London, Ontario.</p>
+            
+            <p class="mb-4">We offer a four-tier program — <strong class="text-danger">Learn To Play</strong>, <strong class="text-danger">Bandstarter</strong>, <strong class="text-danger">Show Ready</strong>, and <strong class="text-danger">Tour</strong> — designed for musicians of all ages, from beginners to bands preparing to tour.</p>
+            
+            <p class="h5 text-dark">Join us for Fall 2025 and build confidence, gain practical skills, and become part of London's live music community.</p>
         </div>
     </div>
 </div>
@@ -82,16 +27,87 @@ description: "Welcome to Planet of Sound Rock School - Learn guitar, bass, drums
 <div class="bg-light py-5">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 mx-auto">
-                <h2 class="text-dark mb-4">What Makes Us Different</h2>
-                <ul class="list-unstyled">
-                    <li class="mb-3"><strong class="text-danger">Experienced Instructors:</strong> Learn from professional musicians with years of teaching and performance experience</li>
-                    <li class="mb-3"><strong class="text-danger">Flexible Scheduling:</strong> We work around your busy schedule with flexible lesson times</li>
-                    <li class="mb-3"><strong class="text-danger">All Skill Levels:</strong> From complete beginners to advanced players looking to refine their technique</li>
-                    <li class="mb-3"><strong class="text-danger">Modern Approach:</strong> Learn songs you love while building solid fundamental skills</li>
-                    <li class="mb-3"><strong class="text-danger">Performance Opportunities:</strong> Regular recitals and jam sessions to showcase your progress</li>
-                </ul>
+            <div class="col-12">
+                <h2 class="text-center text-dark border-bottom border-danger border-3 pb-3 mb-5">Our Four-Tier Program</h2>
             </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+                <div class="card h-100 shadow-sm border-0 bg-white">
+                    <div class="card-body text-center p-4">
+                        <h3 class="card-title h5 text-danger mb-3">Learn To Play</h3>
+                        <p class="card-text">Beginners learn chords, scales, rhythm, and song structure in a supportive, 1-on-1 or small group setting.</p>
+                        <div class="mt-auto">
+                            <p class="fw-bold text-dark">$400 (8 weeks)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="card h-100 shadow-sm border-0 bg-white">
+                    <div class="card-body text-center p-4">
+                        <h3 class="card-title h5 text-danger mb-3">Bandstarter</h3>
+                        <p class="card-text">Songwriting, rehearsal flow, gear literacy, and band dynamics in small group lessons.</p>
+                        <div class="mt-auto">
+                            <p class="fw-bold text-dark">$500 per student</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="card h-100 shadow-sm border-0 bg-white">
+                    <div class="card-body text-center p-4">
+                        <h3 class="card-title h5 text-danger mb-3">Show Ready</h3>
+                        <p class="card-text">Live performance setup, stage communication, setlist building, and stage presence.</p>
+                        <div class="mt-auto">
+                            <p class="fw-bold text-dark">$600 per student</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="card h-100 shadow-sm border-0 bg-white">
+                    <div class="card-body text-center p-4">
+                        <h3 class="card-title h5 text-danger mb-3">Tour</h3>
+                        <p class="card-text">Tour planning, stage plots, tech riders, and professional touring readiness.</p>
+                        <div class="mt-auto">
+                            <p class="fw-bold text-dark">Starts at $300/event</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-12 text-center">
+                <p class="text-muted"><em>Sliding scale and payment plans available.</em></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-6">
+            <h2 class="text-dark mb-4">Individual Lessons</h2>
+            <ul class="list-unstyled">
+                <li class="mb-3"><strong class="text-danger">Private Lesson</strong> (1-on-1, 60 mins): $50</li>
+                <li class="mb-3"><strong class="text-danger">Semi-Private</strong> (2 students, 60 mins): $35 each</li>
+                <li class="mb-3"><strong class="text-danger">Gear Orientation</strong> / Pedalboard Setup: $60/hr</li>
+                <li class="mb-3"><strong class="text-danger">Band Coaching</strong> / Mentorship: $75/hr</li>
+                <li class="mb-3"><strong class="text-danger">Tour Consultation</strong>: $80/hr</li>
+            </ul>
+        </div>
+        <div class="col-lg-6">
+            <h2 class="text-dark mb-4">Live Off the Floor Recording</h2>
+            <p class="mb-3">A demo-quality recording service for bands to capture their sound and book shows.</p>
+            <ul class="list-unstyled">
+                <li class="mb-2">• Setup, soundcheck, and headphone mixes</li>
+                <li class="mb-2">• Live tracking of the band</li>
+                <li class="mb-2">• Basic balance and light limiting</li>
+                <li class="mb-2">• WAV & MP3 delivery</li>
+                <li class="mb-2">• One round of minor tweaks</li>
+            </ul>
+            <p class="text-muted"><em>Pricing starts at a 3-hour minimum. Contact us for package options.</em></p>
         </div>
     </div>
 </div>
