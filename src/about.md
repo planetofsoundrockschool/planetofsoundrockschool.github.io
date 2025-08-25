@@ -4,21 +4,27 @@ title: "About Us"
 description: "Learn about Planet of Sound Rock School's mission, instructors, and musical philosophy"
 ---
 
-# About Planet of Sound Rock School
-
-## Our Story
-
-Founded by passionate musicians who believe in the power of rock music to inspire and transform lives, Planet of Sound Rock School has been nurturing musical talent in our community for years. We started with a simple vision: to create a welcoming space where students of all ages could learn to rock out while building solid musical foundations.
-
-## Our Philosophy
-
-We believe that learning music should be:
-
-- **Fun and Engaging** - Music is meant to be enjoyed, not endured
-- **Personalized** - Every student learns differently, and we adapt to your style
-- **Practical** - Learn songs you love while building technical skills
-- **Supportive** - We celebrate every milestone, no matter how small
-- **Community-Focused** - Music brings people together, and so do we
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <h1 class="display-5 text-center text-danger mb-5">About Planet of Sound Rock School</h1>
+            
+            <h2 class="h3 text-dark mb-3">Our Story</h2>
+            <p class="lead mb-4">Founded by passionate musicians who believe in the power of rock music to inspire and transform lives, Planet of Sound Rock School has been nurturing musical talent in our community for years. We started with a simple vision: to create a welcoming space where students of all ages could learn to rock out while building solid musical foundations.</p>
+            
+            <h2 class="h3 text-dark mb-3">Our Philosophy</h2>
+            <p class="mb-3">We believe that learning music should be:</p>
+            
+            <ul class="list-unstyled">
+                <li class="mb-3"><strong class="text-danger">Fun and Engaging</strong> - Music is meant to be enjoyed, not endured</li>
+                <li class="mb-3"><strong class="text-danger">Personalized</strong> - Every student learns differently, and we adapt to your style</li>
+                <li class="mb-3"><strong class="text-danger">Practical</strong> - Learn songs you love while building technical skills</li>
+                <li class="mb-3"><strong class="text-danger">Supportive</strong> - We celebrate every milestone, no matter how small</li>
+                <li class="mb-3"><strong class="text-danger">Community-Focused</strong> - Music brings people together, and so do we</li>
+            </ul>
+        </div>
+    </div>
+</div>
 
 ## Meet Our Instructors
 
