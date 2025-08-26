@@ -20,12 +20,11 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
-                        <li class="nav-item"><a href="/about/" class="nav-link">About</a></li>
-                        <li class="nav-item"><a href="/programs/" class="nav-link">Programs</a></li>
-                        <li class="nav-item"><a href="/pricing/" class="nav-link">Pricing</a></li>
-                        <li class="nav-item"><a href="/faq/" class="nav-link">FAQ</a></li>
-                        <li class="nav-item"><a href="/contact/" class="nav-link">Contact</a></li>
+                        {%- for entry in collections.all | eleventyNavigation %}
+                        <li class="nav-item">
+                            <a href="{{ entry.url }}" class="nav-link{% if entry.url == page.url %} active{% endif %}">{{ entry.title }}</a>
+                        </li>
+                        {%- endfor %}
                     </ul>
                 </div>
             </div>
@@ -53,10 +52,11 @@
                         <div class="col-md-6">
                             <h6 class="text-danger mb-3">Quick Links</h6>
                             <ul class="list-unstyled">
-                                <li><a href="/programs/" class="text-light text-decoration-none">Programs</a></li>
-                                <li><a href="/pricing/" class="text-light text-decoration-none">Pricing</a></li>
+                                {%- for entry in collections.all | eleventyNavigation %}
+                                <li><a href="{{ entry.url }}" class="text-light text-decoration-none">{{ entry.title }}</a></li>
+                                {%- endfor %}
                                 <li><a href="/policies/" class="text-light text-decoration-none">Policies</a></li>
-                                <li><a href="/contact/" class="text-light text-decoration-none">Contact</a></li>
+                                <li><a href="/referrals/" class="text-light text-decoration-none">Referrals</a></li>
                             </ul>
                         </div>
                         <div class="col-md-6">

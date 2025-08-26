@@ -2,6 +2,9 @@
 layout: base.njk
 title: "Contact Us"
 description: "Get in touch with Planet Of Sound Rock School in London, Ontario. Book your free discovery call today."
+eleventyNavigation:
+  key: Contact
+  order: 6
 ---
 
 <div class="container py-5">

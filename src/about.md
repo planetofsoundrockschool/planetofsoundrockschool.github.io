@@ -2,6 +2,9 @@
 layout: base.njk
 title: "About Us"
 description: "Learn about Planet Of Sound Rock School's mission to provide inclusive, mentorship-driven music education in London, Ontario"
+eleventyNavigation:
+  key: About
+  order: 2
 ---
 
 <div class="container py-5">

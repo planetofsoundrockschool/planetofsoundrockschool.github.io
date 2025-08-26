@@ -2,6 +2,9 @@
 layout: base.njk
 title: "Programs"
 description: "Four-tier music education program at Planet Of Sound Rock School - Learn To Play, Bandstarter, Show Ready, and Tour"
+eleventyNavigation:
+  key: Programs
+  order: 3
 ---
 
 <div class="container py-5">

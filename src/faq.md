@@ -2,6 +2,9 @@
 layout: base.njk
 title: "FAQ"
 description: "Frequently asked questions about Planet Of Sound Rock School programs, pricing, and policies"
+eleventyNavigation:
+  key: FAQ
+  order: 5
 ---
 
 <div class="container py-5">

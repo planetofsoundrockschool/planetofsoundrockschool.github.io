@@ -2,6 +2,9 @@
 layout: base.njk
 title: "Pricing"
 description: "Transparent pricing for Planet Of Sound Rock School programs and individual lessons"
+eleventyNavigation:
+  key: Pricing
+  order: 4
 ---
 
 <div class="container py-5">

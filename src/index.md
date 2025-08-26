@@ -2,6 +2,9 @@
 layout: base.njk
 title: "Home"
 description: "Planet Of Sound Rock School - Mentorship-based music school in London, Ontario. From your first chord to your first tour."
+eleventyNavigation:
+  key: Home
+  order: 1
 ---
 
 <div class="bg-danger text-white text-center py-5">
