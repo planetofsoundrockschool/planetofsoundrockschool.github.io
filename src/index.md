@@ -7,17 +7,41 @@ eleventyNavigation:
   order: 1
 ---
 
-<div class="bg-danger text-white text-center py-5">
-    <div class="container">
-        <h1 class="display-4 fw-bold mb-3">From your first chord to your first tour 🎸</h1>
-        <p class="lead mb-4">All Ages • All Stages • Learn. Collaborate. Play Live.</p>
-        <div class="d-flex flex-wrap justify-content-center gap-3">
-            <a href="/contact/" class="btn btn-warning btn-lg fw-bold">Book a Lesson</a>
-            <a href="/programs/" class="btn btn-outline-light btn-lg fw-bold">Join a Program</a>
-            <a href="/contact/" class="btn btn-light btn-lg fw-bold text-danger">Contact Us</a>
+<!-- Main Hero Section -->
+<section class="hero-section bg-gradient text-white py-5">
+    <div class="container py-5">
+        <div class="row align-items-center min-vh-75">
+            <div class="col-lg-8 mx-auto text-center">
+                <h1 class="display-3 fw-bold mb-4">From Your First Chord<br>To Your First Tour</h1>
+                <p class="lead mb-5 fs-4">Mentorship-based music education in London, Ontario<br>
+                <span class="text-warning fw-bold">All Ages • All Stages • Learn. Collaborate. Play Live.</span></p>
+                <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mb-4">
+                    <a href="/contact/" class="btn btn-warning btn-lg fw-bold px-5 py-3">
+                        <i class="fas fa-calendar-alt me-2"></i>Book Free Discovery Call
+                    </a>
+                    <a href="/programs/" class="btn btn-outline-light btn-lg fw-bold px-5 py-3">
+                        <i class="fas fa-users me-2"></i>Explore Programs
+                    </a>
+                </div>
+                <div class="hero-badges mt-4">
+                    <span class="badge bg-warning text-dark me-2 px-3 py-2 fs-6">Fall 2025 Enrollment Open</span>
+                    <span class="badge bg-light text-dark px-3 py-2 fs-6">4-Tier Program System</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Floating Music Icons -->
+        <div class="position-absolute top-50 start-0 translate-middle-y d-none d-lg-block" style="left: 5% !important;">
+            <i class="fas fa-guitar text-warning fa-3x opacity-50 hero-float-1"></i>
+        </div>
+        <div class="position-absolute top-25 end-0 d-none d-lg-block" style="right: 5% !important;">
+            <i class="fas fa-microphone text-warning fa-2x opacity-50 hero-float-2"></i>
+        </div>
+        <div class="position-absolute bottom-25 start-0 d-none d-lg-block" style="left: 10% !important;">
+            <i class="fas fa-drum text-warning fa-2x opacity-50 hero-float-3"></i>
         </div>
     </div>
-</div>
+</section>
 
 <div class="container my-5">
     <div class="row justify-content-center">

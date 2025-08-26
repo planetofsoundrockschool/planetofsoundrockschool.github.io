@@ -7,12 +7,28 @@ eleventyNavigation:
   order: 5
 ---
 
-<div class="container py-5">
-    <div class="row">
-        <div class="col-lg-8 mx-auto">
-            <h1 class="display-5 text-center text-danger mb-5">Frequently Asked Questions</h1>
-            
-            <div class="accordion" id="faqAccordion">
+<!-- FAQ Hero Section -->
+<section class="hero-section bg-gradient text-white py-5">
+    <div class="container py-5">
+        <div class="row align-items-center min-vh-50">
+            <div class="col-lg-8 mx-auto text-center">
+                <h1 class="display-4 fw-bold mb-4">Questions & Answers</h1>
+                <p class="lead mb-4">Everything you need to know about Planet Of Sound Rock School, our programs, and getting started on your musical journey.</p>
+                <div class="hero-badges">
+                    <span class="badge bg-warning text-dark me-2 px-3 py-2 fs-6">Get Your Answers</span>
+                    <span class="badge bg-light text-dark px-3 py-2 fs-6">Still Have Questions? Contact Us!</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Content Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="accordion" id="faqAccordion">
                 <div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">

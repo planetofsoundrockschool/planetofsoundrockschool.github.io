@@ -5,12 +5,86 @@
     --rock-red: #e74c3c;
     --rock-dark: #2c3e50;
     --rock-orange: #f39c12;
+    --primary-red: #e74c3c;
+    --dark-gray: #2c3e50;
+    --warning-orange: #f39c12;
+    --light-gray: #ecf0f1;
 }
 
 /* Body and base styles */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f8f9fa;
+    padding-top: 76px;
+}
+
+.main-content {
+    min-height: calc(100vh - 76px);
+}
+
+/* Hero Section Styles */
+.hero-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section h1,
+.hero-section p,
+.hero-section .lead {
+    color: white !important;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.bg-gradient {
+    background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-gray) 100%) !important;
+}
+
+.hero-section.bg-gradient {
+    background: linear-gradient(135deg, #e74c3c 0%, #2c3e50 100%) !important;
+    color: white !important;
+}
+
+.bg-gradient-subtle {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.min-vh-50 {
+    min-height: 50vh;
+}
+
+.min-vh-75 {
+    min-height: 75vh;
+}
+
+.hero-icon-container {
+    animation: float 3s ease-in-out infinite;
+}
+
+.hero-float-1 {
+    animation: float 4s ease-in-out infinite;
+}
+
+.hero-float-2 {
+    animation: float 3.5s ease-in-out infinite 0.5s;
+}
+
+.hero-float-3 {
+    animation: float 4.5s ease-in-out infinite 1s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Card hover effects */
+.hover-lift {
+    transition: all 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175) !important;
 }
 
 /* Custom navbar enhancements */
@@ -23,36 +97,59 @@ body {
     transition: color 0.3s ease;
 }
 
-/* Hero section custom styles */
-.bg-danger {
-    background: linear-gradient(135deg, var(--rock-red), #c0392b) !important;
+/* Custom button styles */
+.btn {
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
-/* Card hover effects */
-.card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
-}
-
-/* Button enhancements */
 .btn-warning {
-    background-color: var(--rock-orange);
-    border-color: var(--rock-orange);
+    background: linear-gradient(45deg, var(--warning-orange), #e67e22);
+    border: none;
     color: white;
     font-weight: bold;
     transition: all 0.3s ease;
 }
 
 .btn-warning:hover {
-    background-color: #e67e22;
-    border-color: #e67e22;
-    color: white;
+    background: linear-gradient(45deg, #e67e22, var(--warning-orange));
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 15px rgba(243, 156, 18, 0.4);
+    color: white;
+}
+
+.btn-danger {
+    background: linear-gradient(45deg, var(--primary-red), #c0392b);
+    border: none;
+}
+
+.btn-danger:hover {
+    background: linear-gradient(45deg, #c0392b, var(--primary-red));
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+}
+
+.btn-outline-danger:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.2);
+}
+
+.btn-outline-light:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Badge styles */
+.badge {
+    font-size: 0.75em;
+    padding: 0.5em 0.8em;
+    border-radius: 20px;
+}
+
+/* Icon enhancement */
+.fa-2x, .fa-3x {
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
 }
 
 /* Custom text colors */
@@ -76,8 +173,33 @@ body {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+    .min-vh-50 {
+        min-height: 40vh;
+    }
+    
+    .min-vh-75 {
+        min-height: 50vh;
+    }
+    
+    .hero-icon-container i {
+        font-size: 4rem !important;
+    }
+    
+    .display-3 {
+        font-size: 2.5rem;
+    }
+    
     .display-4 {
+        font-size: 2.5rem;
+    }
+    
+    .display-6 {
         font-size: 2rem;
+    }
+    
+    .hero-badges .badge {
+        font-size: 0.8rem !important;
+        margin-bottom: 0.5rem;
     }
     
     .card-body {

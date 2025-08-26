@@ -7,13 +7,29 @@ eleventyNavigation:
   order: 3
 ---
 
-<div class="container py-5">
-    <div class="row">
-        <div class="col-lg-10 mx-auto">
-            <h1 class="display-5 text-center text-danger mb-5">Our Programs</h1>
-            <p class="lead text-center mb-5">Four structured tiers designed to take you from beginner to touring professional</p>
-            
-            <div class="row g-4">
+<!-- Programs Hero Section -->
+<section class="hero-section bg-gradient text-white py-5">
+    <div class="container py-5">
+        <div class="row align-items-center min-vh-50">
+            <div class="col-lg-8 mx-auto text-center">
+                <h1 class="display-4 fw-bold mb-4">Master Your Musical Journey</h1>
+                <p class="lead mb-4">Four structured tiers designed to take you from beginner to touring professional. Choose your path and let's make music together.</p>
+                <div class="hero-badges">
+                    <span class="badge bg-warning text-dark me-2 px-3 py-2 fs-6">4-Tier System</span>
+                    <span class="badge bg-light text-dark me-2 px-3 py-2 fs-6">All Instruments</span>
+                    <span class="badge bg-warning text-dark px-3 py-2 fs-6">Mentorship Driven</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Programs Overview Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="row g-4">
                 <div class="col-lg-6">
                     <div class="card h-100 border-danger">
                         <div class="card-header bg-danger text-white">
