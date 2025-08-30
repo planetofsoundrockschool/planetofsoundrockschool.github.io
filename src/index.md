@@ -7,6 +7,13 @@ eleventyNavigation:
   order: 1
 ---
 
+<!-- Preview Test Banner - Only shows on Netlify preview deployments -->
+{% if env.isPreview %}
+<div class="alert alert-info text-center mb-0 rounded-0" style="background: linear-gradient(45deg, #17a2b8, #007bff); color: white; font-weight: bold;">
+    <i class="fas fa-eye me-2"></i>🚀 NETLIFY PREVIEW - This is a preview deployment ({{ env.context }}) 🚀
+</div>
+{% endif %}
+
 <!-- Main Hero Section -->
 <section class="hero-section bg-gradient text-white py-5">
     <div class="container py-5">
