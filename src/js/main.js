@@ -42,7 +42,7 @@
     /**
      * Navbar links active state on scroll
      */
-    let navbarlinks = select('#navbar .nav-link', true);
+    let navbarlinks = select('.navbar-nav .nav-link', true);
     const navbarlinksActive = () => {
         let position = window.scrollY + 200;
         navbarlinks.forEach(navbarlink => {
@@ -109,35 +109,7 @@
         onscroll(document, toggleBacktotop);
     }
 
-    /**
-     * Mobile nav toggle
-     */
-    on('click', '.mobile-nav-toggle', function(e) {
-        e.preventDefault();
-        const navbar = select('#navbar');
-        const icon = this.querySelector('i');
-        
-        navbar.classList.toggle('navbar-mobile');
-        
-        // Toggle icon between bars and times
-        if (icon.classList.contains('fa-bars')) {
-            icon.classList.remove('fa-bars');
-            icon.classList.add('fa-times');
-        } else {
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-        }
-    });
 
-    /**
-     * Mobile nav dropdowns activate
-     */
-    on('click', '.navbar .dropdown > a', function(e) {
-        if (select('#navbar').classList.contains('navbar-mobile')) {
-            e.preventDefault();
-            this.nextElementSibling.classList.toggle('dropdown-active');
-        }
-    }, true);
 
     /**
      * Scroll with offset on page load with hash links in the url
@@ -150,40 +122,7 @@
         }
     });
 
-    /**
-     * Close mobile nav when clicking on navbar links
-     */
-    on('click', '.navbar a', function(e) {
-        const navbar = select('#navbar');
-        if (navbar.classList.contains('navbar-mobile')) {
-            navbar.classList.remove('navbar-mobile');
-            const toggleIcon = select('.mobile-nav-toggle i');
-            if (toggleIcon) {
-                toggleIcon.classList.remove('fa-times');
-                toggleIcon.classList.add('fa-bars');
-            }
-        }
-    }, true);
 
-    /**
-     * Close mobile nav when clicking outside
-     */
-    document.addEventListener('click', function(e) {
-        const navbar = select('#navbar');
-        const mobileToggle = select('.mobile-nav-toggle');
-        
-        if (navbar && navbar.classList.contains('navbar-mobile')) {
-            // Check if click is outside navbar and toggle button
-            if (!navbar.contains(e.target) && !mobileToggle.contains(e.target)) {
-                navbar.classList.remove('navbar-mobile');
-                const toggleIcon = select('.mobile-nav-toggle i');
-                if (toggleIcon) {
-                    toggleIcon.classList.remove('fa-times');
-                    toggleIcon.classList.add('fa-bars');
-                }
-            }
-        }
-    });
 
     /**
      * Smooth scroll for anchor links
@@ -195,16 +134,7 @@
                 e.preventDefault();
                 scrollto(this.hash);
 
-                // Close mobile nav if open
-                const navbar = select('#navbar');
-                if (navbar.classList.contains('navbar-mobile')) {
-                    navbar.classList.remove('navbar-mobile');
-                    const toggleIcon = select('.mobile-nav-toggle i');
-                    if (toggleIcon) {
-                        toggleIcon.classList.remove('fa-times');
-                        toggleIcon.classList.add('fa-bars');
-                    }
-                }
+                // Close mobile nav if open (Bootstrap will handle this automatically)
             }
         }
     }, true);

@@ -125,123 +125,88 @@ html {
 }
 
 /* Navigation Styles */
-.navbar ul {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    list-style: none;
-    align-items: center;
-}
-
-.navbar li {
-    position: relative;
-}
-
-.navbar a {
-    display: flex;
-    align-items: center;
-    padding: 0.5rem 1rem;
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--text-dark);
-    text-decoration: none;
-    transition: var(--transition-base);
-    border-radius: 0.5rem;
-    margin: 0 0.25rem;
-}
-
-.navbar a:hover,
-.navbar .active {
-    color: var(--primary-color);
-    background: rgba(59, 130, 246, 0.08);
-}
-
-.navbar a:before {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 2px;
-    background: var(--primary-color);
-    transition: var(--transition-base);
-}
-
-.navbar a:hover:before,
-.navbar .active:before {
-    width: 80%;
-}
-
-/* Mobile Navigation */
-.mobile-nav-toggle {
-    color: var(--text-dark);
+.navbar-brand.logo h1 {
     font-size: 1.5rem;
-    cursor: pointer;
-    display: none;
-    line-height: 0;
-    transition: var(--transition-fast);
+    font-weight: 700;
+    color: var(--text-dark);
 }
 
-.mobile-nav-toggle:hover {
-    color: var(--primary-color);
+.navbar-brand.logo .badge {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    font-size: 0.65rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 1rem;
 }
 
-@media (max-width: 1199px) {
-    .mobile-nav-toggle {
-        display: block;
-    }
-    
-    .navbar ul {
-        display: none;
-    }
-    
-    .navbar-mobile {
-        position: fixed;
-        overflow: hidden;
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
+/* Desktop navigation links */
+@media (min-width: 1200px) {
+    .navbar-nav .nav-link {
+        padding: 0.5rem 1rem;
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: var(--text-dark);
+        text-decoration: none;
         transition: var(--transition-base);
-        z-index: 1050;
+        border-radius: 0.5rem;
+        margin: 0 0.25rem;
+        position: relative;
     }
     
-    .navbar-mobile ul {
-        display: block;
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+        color: var(--primary-color);
+        background: rgba(59, 130, 246, 0.08);
+    }
+    
+    .navbar-nav .nav-link:before {
+        content: '';
         position: absolute;
-        top: 80px;
-        right: 15px;
-        bottom: 15px;
-        left: 15px;
-        padding: 2rem 0;
-        border-radius: 1rem;
-        background-color: #fff;
-        overflow-y: auto;
-        box-shadow: var(--shadow-xl);
-        border: 1px solid rgba(59, 130, 246, 0.1);
+        bottom: -2px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background: var(--primary-color);
+        transition: var(--transition-base);
     }
     
-    .navbar-mobile a {
+    .navbar-nav .nav-link:hover:before,
+    .navbar-nav .nav-link.active:before {
+        width: 80%;
+    }
+}
+
+/* Mobile navigation styles */
+@media (max-width: 1199px) {
+    .navbar-collapse {
+        background: white;
+        border-radius: 1rem;
+        margin-top: 1rem;
+        box-shadow: var(--shadow-xl);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    
+    .navbar-nav {
+        padding: 1rem;
+    }
+    
+    .navbar-nav .nav-link {
         padding: 1rem 1.5rem;
         font-size: 1.1rem;
         font-weight: 600;
         border-radius: 0.75rem;
-        margin: 0.5rem 1rem;
+        margin: 0.25rem 0;
         color: var(--text-dark);
         border-bottom: 1px solid rgba(59, 130, 246, 0.1);
     }
     
-    .navbar-mobile a:hover,
-    .navbar-mobile a.active {
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
         background: var(--primary-color);
         color: white;
-        transform: translateX(5px);
     }
     
-    .navbar-mobile li:last-child a {
+    .navbar-nav .nav-item:last-child .nav-link {
         border-bottom: none;
     }
 }

@@ -22,28 +22,32 @@
 <body>
     <!-- Header -->
     <header id="header" class="header fixed-top">
-        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-            <!-- Logo -->
-            <a href="/" class="logo d-flex align-items-center">
-                <i class="fas fa-guitar me-2 text-primary"></i>
-                <h1 class="mb-0">Planet of Sound</h1>
-                <span class="badge bg-primary ms-2">Rock School</span>
-            </a>
-            
-            <!-- Navigation -->
-            <nav id="navbar" class="navbar">
-                <ul>
-                    {%- for entry in collections.all | eleventyNavigation %}
-                    <li><a class="nav-link{% if entry.url == page.url %} active{% endif %}" href="{{ entry.url }}">{{ entry.title }}</a></li>
-                    {%- endfor %}
-                </ul>
-            </nav>
-            
-            <!-- Mobile menu toggle -->
-            <div class="mobile-nav-toggle d-xl-none">
-                <i class="fas fa-bars"></i>
+        <nav class="navbar navbar-expand-xl navbar-light">
+            <div class="container-fluid container-xl">
+                <!-- Logo -->
+                <a href="/" class="navbar-brand logo d-flex align-items-center">
+                    <i class="fas fa-guitar me-2 text-primary"></i>
+                    <h1 class="mb-0">Planet of Sound</h1>
+                    <span class="badge bg-primary ms-2">Rock School</span>
+                </a>
+                
+                <!-- Mobile menu toggle -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <!-- Navigation -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        {%- for entry in collections.all | eleventyNavigation %}
+                        <li class="nav-item">
+                            <a class="nav-link{% if entry.url == page.url %} active{% endif %}" href="{{ entry.url }}">{{ entry.title }}</a>
+                        </li>
+                        {%- endfor %}
+                    </ul>
+                </div>
             </div>
-        </div>
+        </nav>
     </header>
 
     <main class="container-fluid px-0">
