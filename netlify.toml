@@ -4,6 +4,7 @@
 
 [build.environment]
   NODE_VERSION = "18"
+  SECRETS_SCAN_OMIT_PATHS = "CMS_ACCESS_CONTROL_GUIDE.md,CMS_USER_GUIDE.md"
 
 # Redirect rules for clean URLs
 [[redirects]]
