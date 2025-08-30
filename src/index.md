@@ -16,18 +16,18 @@ eleventyNavigation:
 
 <!-- Hero Section -->
 <section id="hero" class="hero d-flex align-items-center">
-    <div class="container" data-aos="fade-up">
+    <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto text-center">
-                <h1 data-aos="fade-up" data-aos-delay="100">
+                <h1>
                     From Your First Chord<br>
                     <span class="text-gradient">To Your First Tour</span>
                 </h1>
-                <p data-aos="fade-up" data-aos-delay="200">
+                <p>
                     Mentorship-based music education in London, Ontario.<br>
                     <strong>All Ages • All Stages • Learn. Collaborate. Play Live.</strong>
                 </p>
-                <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mt-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mt-4">
                     <a href="#contact" class="btn btn-primary btn-lg">
                         <i class="fas fa-calendar-alt me-2"></i>Book Free Discovery Call
                     </a>
@@ -35,7 +35,7 @@ eleventyNavigation:
                         <i class="fas fa-users me-2"></i>Explore Programs
                     </a>
                 </div>
-                <div class="mt-4" data-aos="fade-up" data-aos-delay="400">
+                <div class="mt-4">
                     <span class="badge bg-light text-dark me-2 px-3 py-2">Fall 2025 Enrollment Open</span>
                     <span class="badge bg-light text-dark px-3 py-2">4-Tier Program System</span>
                 </div>
@@ -57,14 +57,14 @@ eleventyNavigation:
 
 <!-- About Section -->
 <section id="about" class="section section-bg">
-    <div class="container" data-aos="fade-up">
+    <div class="container">
         <div class="section-header">
             <h2>About Planet of Sound Rock School</h2>
             <p>Mentorship-based music education in London, Ontario, designed to take you from your first chord to your first tour</p>
         </div>
         
         <div class="row align-items-center">
-            <div class="col-lg-6" data-aos="fade-right">
+            <div class="col-lg-6">
                 <h3 class="mb-4">Our Mission</h3>
                 <p class="lead mb-4">We believe music education should be practical, collaborative, and fun. Our four-tier program system grows with you, from absolute beginner to touring professional.</p>
                 
@@ -86,7 +86,7 @@ eleventyNavigation:
                 </div>
             </div>
             
-            <div class="col-lg-6" data-aos="fade-left">
+            <div class="col-lg-6">
                 <div class="stats row text-center">
                     <div class="col-4">
                         <div class="stats-item">
@@ -117,14 +117,14 @@ eleventyNavigation:
 
 <!-- Programs Section -->
 <section id="programs" class="section section-alt">
-    <div class="container" data-aos="fade-up">
+    <div class="container">
         <div class="section-header">
             <h2>Our Four-Tier Program System</h2>
             <p>Progressive music education that grows with your skills and ambitions</p>
         </div>
         
-        <div class="row g-4" style="display: flex; flex-wrap: wrap;">
-            <div class="col-lg-3 col-md-6 col-sm-6 d-flex" data-aos="fade-up" data-aos-delay="100" style="margin-bottom: 2rem;">
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6 d-flex">
                 <div class="card h-100 hover-lift w-100">
                     <div class="card-body text-center d-flex flex-column">
                         <div class="mb-3">
@@ -139,8 +139,7 @@ eleventyNavigation:
                     </div>
                 </div>
             </div>
-            
-            <div class="col-lg-3 col-md-6 col-sm-6 d-flex" data-aos="fade-up" data-aos-delay="200" style="margin-bottom: 2rem;">
+            <div class="col-lg-3 col-md-6 d-flex">
                 <div class="card h-100 hover-lift w-100">
                     <div class="card-body text-center d-flex flex-column">
                         <div class="mb-3">
@@ -155,8 +154,7 @@ eleventyNavigation:
                     </div>
                 </div>
             </div>
-            
-            <div class="col-lg-3 col-md-6 col-sm-6 d-flex" data-aos="fade-up" data-aos-delay="300" style="margin-bottom: 2rem;">
+            <div class="col-lg-3 col-md-6 d-flex">
                 <div class="card h-100 hover-lift w-100">
                     <div class="card-body text-center d-flex flex-column">
                         <div class="mb-3">
@@ -171,8 +169,7 @@ eleventyNavigation:
                     </div>
                 </div>
             </div>
-            
-            <div class="col-lg-3 col-md-6 col-sm-6 d-flex" data-aos="fade-up" data-aos-delay="400" style="margin-bottom: 2rem;">
+            <div class="col-lg-3 col-md-6 d-flex">
                 <div class="card h-100 hover-lift w-100">
                     <div class="card-body text-center d-flex flex-column">
                         <div class="mb-3">
@@ -190,7 +187,7 @@ eleventyNavigation:
         </div>
         
         <div class="row mt-5">
-            <div class="col-12 text-center" data-aos="fade-up" data-aos-delay="500">
+            <div class="col-12 text-center">
                 <p class="text-muted mb-4"><em>Sliding scale and payment plans available for all programs</em></p>
                 <a href="/programs/" class="btn btn-primary btn-lg">
                     <i class="fas fa-arrow-right me-2"></i>View Detailed Programs
@@ -202,14 +199,14 @@ eleventyNavigation:
 
 <!-- Why Choose Us Section -->
 <section id="why-choose-us" class="section section-bg">
-    <div class="container" data-aos="fade-up">
+    <div class="container">
         <div class="section-header">
             <h2>Why Choose Planet of Sound?</h2>
             <p>More than just lessons – we're building London's next generation of musicians</p>
         </div>
         
         <div class="row g-4">
-            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-4">
                 <div class="text-center">
                     <div class="mb-4">
                         <i class="fas fa-handshake fa-4x text-primary"></i>
@@ -218,8 +215,7 @@ eleventyNavigation:
                     <p class="text-muted">Personal guidance from experienced musicians who've been where you want to go. We don't just teach – we mentor.</p>
                 </div>
             </div>
-            
-            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-4">
                 <div class="text-center">
                     <div class="mb-4">
                         <i class="fas fa-route fa-4x text-primary"></i>
@@ -228,8 +224,7 @@ eleventyNavigation:
                     <p class="text-muted">Our four-tier system provides clear milestones and goals, taking you from beginner to professional touring artist.</p>
                 </div>
             </div>
-            
-            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="col-lg-4">
                 <div class="text-center">
                     <div class="mb-4">
                         <i class="fas fa-heart fa-4x text-primary"></i>
@@ -239,10 +234,9 @@ eleventyNavigation:
                 </div>
             </div>
         </div>
-        
         <div class="row mt-5">
             <div class="col-lg-8 mx-auto">
-                <div class="card border-0 shadow-lg" data-aos="fade-up" data-aos-delay="400">
+                <div class="card border-0 shadow-lg">
                     <div class="card-body p-4 text-center">
                         <h4 class="text-primary mb-3">Individual Lessons & Recording Services</h4>
                         <div class="row">
@@ -273,14 +267,14 @@ eleventyNavigation:
 
 <!-- Contact Section -->
 <section id="contact" class="section contact">
-    <div class="container" data-aos="fade-up">
+    <div class="container">
         <div class="section-header">
             <h2>Get Started Today</h2>
             <p>Ready to begin your musical journey? Let's talk about your goals and find the perfect program for you.</p>
         </div>
         
         <div class="row g-4">
-            <div class="col-lg-6" data-aos="fade-right">
+            <div class="col-lg-6">
                 <div class="contact-info">
                     <h3 class="mb-4">Let's Connect</h3>
                     
@@ -316,7 +310,7 @@ eleventyNavigation:
                 </div>
             </div>
             
-            <div class="col-lg-6" data-aos="fade-left">
+            <div class="col-lg-6">
                 <div class="contact-form">
                     <h3 class="mb-4">Quick Inquiry</h3>
                     <form name="homepage-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
@@ -366,7 +360,7 @@ eleventyNavigation:
 
 <!-- Newsletter Section -->
 <section class="section bg-gradient-primary text-white">
-    <div class="container" data-aos="fade-up">
+    <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8 text-center">
                 <h2 class="mb-3">Stay in the Loop</h2>
