@@ -92,7 +92,7 @@ html {
     box-shadow: var(--shadow-sm);
     transition: var(--transition-base);
     height: var(--header-height);
-    z-index: 1000;
+    z-index: 100;
 }
 
 .header.header-scrolled {
@@ -203,16 +203,16 @@ html {
         right: 0;
         left: 0;
         bottom: 0;
-        background: rgba(255, 255, 255, 0.98);
+        background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(10px);
         transition: var(--transition-base);
-        z-index: 999;
+        z-index: 1050;
     }
     
     .navbar-mobile ul {
         display: block;
         position: absolute;
-        top: 55px;
+        top: 80px;
         right: 15px;
         bottom: 15px;
         left: 15px;
@@ -220,14 +220,29 @@ html {
         border-radius: 1rem;
         background-color: #fff;
         overflow-y: auto;
-        box-shadow: var(--shadow-lg);
+        box-shadow: var(--shadow-xl);
+        border: 1px solid rgba(59, 130, 246, 0.1);
     }
     
     .navbar-mobile a {
-        padding: 0.75rem 1.5rem;
-        font-size: 1rem;
-        border-radius: 0.5rem;
-        margin: 0.25rem 1rem;
+        padding: 1rem 1.5rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        border-radius: 0.75rem;
+        margin: 0.5rem 1rem;
+        color: var(--text-dark);
+        border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+    }
+    
+    .navbar-mobile a:hover,
+    .navbar-mobile a.active {
+        background: var(--primary-color);
+        color: white;
+        transform: translateX(5px);
+    }
+    
+    .navbar-mobile li:last-child a {
+        border-bottom: none;
     }
 }
 
