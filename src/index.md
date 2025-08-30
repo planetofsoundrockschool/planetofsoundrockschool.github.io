@@ -7,6 +7,11 @@ eleventyNavigation:
   order: 1
 ---
 
+<!-- Preview Test Banner - TO BE REMOVED -->
+<div class="alert alert-info text-center mb-0 rounded-0" style="background: linear-gradient(45deg, #17a2b8, #007bff); color: white; font-weight: bold;">
+    <i class="fas fa-eye me-2"></i>🚀 NETLIFY PREVIEW TEST - This banner shows this is a preview deployment! 🚀
+</div>
+
 <!-- Main Hero Section -->
 <section class="hero-section bg-gradient text-white py-5">
     <div class="container py-5">
