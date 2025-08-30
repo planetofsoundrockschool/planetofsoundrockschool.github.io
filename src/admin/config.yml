@@ -1,0 +1,259 @@
+backend:
+  name: git-gateway
+  branch: main # Branch to update (optional; defaults to master)
+
+# Uncomment below to enable drafts
+# publish_mode: editorial_workflow
+
+media_folder: "src/assets/images" # Media files will be stored in the repo under src/assets/images
+public_folder: "/assets/images" # The src attribute for uploaded media will begin with /assets/images
+
+collections:
+  # Site Settings
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - label: "Site Configuration"
+        name: "site"
+        file: "src/_data/site.json"
+        fields:
+          - { label: "Site Title", name: "title", widget: "string", default: "Planet of Sound Rock School" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "URL", name: "url", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Phone", name: "phone", widget: "string", required: false }
+          - { label: "Instagram Handle", name: "instagram", widget: "string" }
+          - { label: "Location", name: "location", widget: "string" }
+
+  # Main Pages
+  - name: "pages"
+    label: "Main Pages"
+    files:
+      - label: "Home Page"
+        name: "home"
+        file: "src/index.md"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "base.njk" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - label: "Navigation"
+            name: "eleventyNavigation"
+            widget: "object"
+            fields:
+              - { label: "Key", name: "key", widget: "string" }
+              - { label: "Order", name: "order", widget: "number" }
+          - { label: "Content", name: "body", widget: "markdown" }
+
+      - label: "About Page"
+        name: "about"
+        file: "src/about.md"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "base.njk" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - label: "Navigation"
+            name: "eleventyNavigation"
+            widget: "object"
+            fields:
+              - { label: "Key", name: "key", widget: "string" }
+              - { label: "Order", name: "order", widget: "number" }
+          - { label: "Content", name: "body", widget: "markdown" }
+
+      - label: "Programs Page"
+        name: "programs"
+        file: "src/programs.md"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "base.njk" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - label: "Navigation"
+            name: "eleventyNavigation"
+            widget: "object"
+            fields:
+              - { label: "Key", name: "key", widget: "string" }
+              - { label: "Order", name: "order", widget: "number" }
+          - { label: "Content", name: "body", widget: "markdown" }
+
+      - label: "Pricing Page"
+        name: "pricing"
+        file: "src/pricing.md"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "base.njk" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - label: "Navigation"
+            name: "eleventyNavigation"
+            widget: "object"
+            fields:
+              - { label: "Key", name: "key", widget: "string" }
+              - { label: "Order", name: "order", widget: "number" }
+          - { label: "Content", name: "body", widget: "markdown" }
+
+      - label: "Recording Services"
+        name: "recording"
+        file: "src/recording.md"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "base.njk" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - label: "Navigation"
+            name: "eleventyNavigation"
+            widget: "object"
+            fields:
+              - { label: "Key", name: "key", widget: "string" }
+              - { label: "Order", name: "order", widget: "number" }
+          - { label: "Content", name: "body", widget: "markdown" }
+
+      - label: "Contact Page"
+        name: "contact"
+        file: "src/contact.md"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "base.njk" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - label: "Navigation"
+            name: "eleventyNavigation"
+            widget: "object"
+            fields:
+              - { label: "Key", name: "key", widget: "string" }
+              - { label: "Order", name: "order", widget: "number" }
+          - { label: "Content", name: "body", widget: "markdown" }
+
+      - label: "Referrals Page"
+        name: "referrals"
+        file: "src/referrals.md"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "base.njk" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - label: "Navigation"
+            name: "eleventyNavigation"
+            widget: "object"
+            fields:
+              - { label: "Key", name: "key", widget: "string" }
+              - { label: "Order", name: "order", widget: "number" }
+          - { label: "Content", name: "body", widget: "markdown" }
+
+      - label: "FAQ Page"
+        name: "faq"
+        file: "src/faq.md"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "base.njk" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Content", name: "body", widget: "markdown" }
+
+      - label: "Policies Page"
+        name: "policies"
+        file: "src/policies.md"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "base.njk" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Content", name: "body", widget: "markdown" }
+
+  # Program Data (for structured content)
+  - name: "programs_data"
+    label: "Program Information"
+    files:
+      - label: "Learn To Play Program"
+        name: "learn_to_play"
+        file: "src/_data/programs/learn_to_play.json"
+        fields:
+          - { label: "Program Name", name: "name", widget: "string" }
+          - { label: "Price", name: "price", widget: "string" }
+          - { label: "Duration", name: "duration", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - label: "What You'll Learn"
+            name: "curriculum"
+            widget: "list"
+            field: { label: "Item", name: "item", widget: "string" }
+
+      - label: "Bandstarter Program"
+        name: "bandstarter"
+        file: "src/_data/programs/bandstarter.json"
+        fields:
+          - { label: "Program Name", name: "name", widget: "string" }
+          - { label: "Price", name: "price", widget: "string" }
+          - { label: "Duration", name: "duration", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - label: "What You'll Learn"
+            name: "curriculum"
+            widget: "list"
+            field: { label: "Item", name: "item", widget: "string" }
+
+      - label: "Show Ready Program"
+        name: "show_ready"
+        file: "src/_data/programs/show_ready.json"
+        fields:
+          - { label: "Program Name", name: "name", widget: "string" }
+          - { label: "Price", name: "price", widget: "string" }
+          - { label: "Duration", name: "duration", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - label: "What You'll Learn"
+            name: "curriculum"
+            widget: "list"
+            field: { label: "Item", name: "item", widget: "string" }
+
+      - label: "Tour Program"
+        name: "tour"
+        file: "src/_data/programs/tour.json"
+        fields:
+          - { label: "Program Name", name: "name", widget: "string" }
+          - { label: "Price", name: "price", widget: "string" }
+          - { label: "Duration", name: "duration", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - label: "What You'll Learn"
+            name: "curriculum"
+            widget: "list"
+            field: { label: "Item", name: "item", widget: "string" }
+
+  # Pricing Data
+  - name: "pricing_data"
+    label: "Pricing Information"
+    files:
+      - label: "Individual Lessons"
+        name: "individual_lessons"
+        file: "src/_data/pricing/individual_lessons.json"
+        fields:
+          - label: "Lesson Types"
+            name: "lessons"
+            widget: "list"
+            fields:
+              - { label: "Service Name", name: "name", widget: "string" }
+              - { label: "Description", name: "description", widget: "string" }
+              - { label: "Price", name: "price", widget: "string" }
+              - { label: "Duration", name: "duration", widget: "string", required: false }
+
+      - label: "Recording Services Pricing"
+        name: "recording_pricing"
+        file: "src/_data/pricing/recording.json"
+        fields:
+          - { label: "Hourly Rate", name: "hourly_rate", widget: "string" }
+          - { label: "Minimum Hours", name: "minimum_hours", widget: "number" }
+          - { label: "Block Package Price", name: "block_price", widget: "string" }
+          - { label: "Block Package Hours", name: "block_hours", widget: "number" }
+          - label: "Add-Ons"
+            name: "addons"
+            widget: "list"
+            fields:
+              - { label: "Service", name: "service", widget: "string" }
+              - { label: "Price", name: "price", widget: "string" }
+
+  # Blog Posts (if needed in future)
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "src/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "base.njk" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Tags", name: "tags", widget: "list", default: ["blog"] }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+# Editor settings
+editor:
+  preview: true

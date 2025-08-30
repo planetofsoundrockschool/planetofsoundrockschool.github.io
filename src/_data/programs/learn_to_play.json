@@ -1,0 +1,13 @@
+{
+  "name": "Learn To Play",
+  "price": "$400 (8 weeks)",
+  "duration": "8 weeks of weekly 1-on-1 lessons",
+  "description": "Beginners learn chords, scales, rhythm, and song structure in a supportive, 1-on-1 or small group setting.",
+  "curriculum": [
+    "Basic chord progressions",
+    "Fundamental scales and techniques", 
+    "Rhythm and timing",
+    "Song structure understanding",
+    "Proper instrument handling"
+  ]
+}

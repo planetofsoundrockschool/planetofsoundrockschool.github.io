@@ -4,10 +4,13 @@ module.exports = function(eleventyConfig) {
   // Add navigation plugin
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   
-  // Copy static assets
+// Copy static assets
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
+  
+  // Copy admin files for Decap CMS
+  eleventyConfig.addPassthroughCopy("src/admin");
   
   // Watch for changes in CSS and JS files
   eleventyConfig.addWatchTarget("src/css/");
