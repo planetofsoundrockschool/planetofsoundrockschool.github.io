@@ -113,9 +113,20 @@
      * Mobile nav toggle
      */
     on('click', '.mobile-nav-toggle', function(e) {
-        select('#navbar').classList.toggle('navbar-mobile');
-        this.classList.toggle('fa-bars');
-        this.classList.toggle('fa-times');
+        e.preventDefault();
+        const navbar = select('#navbar');
+        const icon = this.querySelector('i');
+        
+        navbar.classList.toggle('navbar-mobile');
+        
+        // Toggle icon between bars and times
+        if (icon.classList.contains('fa-bars')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
     });
 
     /**
@@ -140,6 +151,41 @@
     });
 
     /**
+     * Close mobile nav when clicking on navbar links
+     */
+    on('click', '.navbar a', function(e) {
+        const navbar = select('#navbar');
+        if (navbar.classList.contains('navbar-mobile')) {
+            navbar.classList.remove('navbar-mobile');
+            const toggleIcon = select('.mobile-nav-toggle i');
+            if (toggleIcon) {
+                toggleIcon.classList.remove('fa-times');
+                toggleIcon.classList.add('fa-bars');
+            }
+        }
+    }, true);
+
+    /**
+     * Close mobile nav when clicking outside
+     */
+    document.addEventListener('click', function(e) {
+        const navbar = select('#navbar');
+        const mobileToggle = select('.mobile-nav-toggle');
+        
+        if (navbar && navbar.classList.contains('navbar-mobile')) {
+            // Check if click is outside navbar and toggle button
+            if (!navbar.contains(e.target) && !mobileToggle.contains(e.target)) {
+                navbar.classList.remove('navbar-mobile');
+                const toggleIcon = select('.mobile-nav-toggle i');
+                if (toggleIcon) {
+                    toggleIcon.classList.remove('fa-times');
+                    toggleIcon.classList.add('fa-bars');
+                }
+            }
+        }
+    });
+
+    /**
      * Smooth scroll for anchor links
      */
     on('click', 'a[href*="#"]:not([href="#"])', function(e) {
@@ -149,10 +195,15 @@
                 e.preventDefault();
                 scrollto(this.hash);
 
-                if (select('#navbar').classList.contains('navbar-mobile')) {
-                    select('#navbar').classList.remove('navbar-mobile');
-                    select('.mobile-nav-toggle').classList.toggle('fa-bars');
-                    select('.mobile-nav-toggle').classList.toggle('fa-times');
+                // Close mobile nav if open
+                const navbar = select('#navbar');
+                if (navbar.classList.contains('navbar-mobile')) {
+                    navbar.classList.remove('navbar-mobile');
+                    const toggleIcon = select('.mobile-nav-toggle i');
+                    if (toggleIcon) {
+                        toggleIcon.classList.remove('fa-times');
+                        toggleIcon.classList.add('fa-bars');
+                    }
                 }
             }
         }
