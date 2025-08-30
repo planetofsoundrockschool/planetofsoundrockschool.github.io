@@ -5,24 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% if title %}{{ title }} - {% endif %}Planet of Sound Rock School</title>
     <meta name="description" content="{% if description %}{{ description }}{% else %}Learn to rock at Planet of Sound Rock School - Guitar, Bass, Drums, and more!{% endif %}">
+    
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <header class="bg-dark shadow">
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container">
-                <a href="/" class="navbar-brand">
-                    <h1 class="h3 mb-0 text-danger fw-bold">Planet of Sound Rock School</h1>
+    <!-- Header -->
+    <header id="header" class="header fixed-top">
+        <nav class="navbar navbar-expand-xl navbar-light">
+            <div class="container-fluid container-xl">
+                <!-- Logo -->
+                <a href="/" class="navbar-brand logo d-flex align-items-center">
+                    <i class="fas fa-guitar me-2 text-primary"></i>
+                    <h1 class="mb-0">Planet of Sound</h1>
+                    <span class="badge bg-primary ms-2">Rock School</span>
                 </a>
+                
+                <!-- Mobile menu toggle -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                
+                <!-- Navigation -->
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         {%- for entry in collections.all | eleventyNavigation %}
                         <li class="nav-item">
-                            <a href="{{ entry.url }}" class="nav-link{% if entry.url == page.url %} active{% endif %}">{{ entry.title }}</a>
+                            <a class="nav-link{% if entry.url == page.url %} active{% endif %}" href="{{ entry.url }}">{{ entry.title }}</a>
                         </li>
                         {%- endfor %}
                     </ul>
@@ -86,6 +105,10 @@
             </div>
         </div>
     </footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <!-- Custom JS -->
+    <script src="/js/main.js"></script>
 </body>
 </html>

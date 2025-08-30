@@ -8,29 +8,37 @@ eleventyNavigation:
 ---
 
 <!-- Referrals Hero Section -->
-<section class="hero-section bg-gradient text-white py-5">
-    <div class="container py-5">
-        <div class="row align-items-center min-vh-50">
+<section class="hero">
+    <!-- Floating Music Icons -->
+    <div class="position-absolute" style="top: 15%; left: 8%; font-size: 2rem; opacity: 0.6; z-index: 3;">
+        <i class="fas fa-music hero-float-1"></i>
+    </div>
+    <div class="position-absolute" style="top: 25%; right: 12%; font-size: 1.5rem; opacity: 0.4; z-index: 3;">
+        <i class="fas fa-guitar hero-float-2"></i>
+    </div>
+    <div class="position-absolute" style="bottom: 30%; left: 15%; font-size: 1.8rem; opacity: 0.5; z-index: 3;">
+        <i class="fas fa-drum hero-float-3"></i>
+    </div>
+    
+    <div class="container">
+        <div class="row align-items-center min-vh-75">
             <div class="col-lg-8 mx-auto text-center">
-                <h1 class="display-4 fw-bold mb-4">Share the Music</h1>
-                <p class="lead mb-4">Love learning with us? Refer friends and family and earn rewards for spreading the joy of music.</p>
-                <div class="hero-badges">
-                    <span class="badge bg-warning text-dark me-2 px-3 py-2 fs-6">Earn Credits</span>
-                    <span class="badge bg-light text-dark me-2 px-3 py-2 fs-6">Help Friends</span>
-                    <span class="badge bg-warning text-dark px-3 py-2 fs-6">Build Community</span>
+                <h1 class="mb-4">Share the Music</h1>
+                <p class="mb-4">Refer Friends and Earn</p>
+                <div class="d-flex flex-wrap justify-content-center gap-3">
+                    <a href="#referral-form" class="btn btn-primary btn-lg">Refer Someone Now</a>
+                    <a href="#how-it-works" class="btn btn-outline-light btn-lg">How It Works</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="py-5 bg-light">
+<section id="how-it-works" class="section section-alt">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-8 mx-auto text-center mb-5">
-                <h2 class="display-6 text-dark mb-3">How It Works</h2>
-                <p class="lead text-muted">Three simple steps to start earning referral rewards</p>
-            </div>
+        <div class="section-header">
+            <h2>How It Works</h2>
+            <p>Three simple steps to start earning referral rewards</p>
         </div>
             
             <div class="row g-4">
@@ -67,11 +75,17 @@ eleventyNavigation:
                 </div>
             </div>
             
-            <div class="row mt-5">
-                <div class="col-lg-8 mx-auto">
-                    <div class="card border-0 bg-light">
-                        <div class="card-body p-4">
-                            <h3 class="text-danger mb-3">Submit a Referral</h3>
+        </div>
+    </div>
+</section>
+
+<section id="referral-form" class="section section-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card border-0 shadow-custom">
+                    <div class="card-body p-4">
+                        <h3 class="text-primary mb-3 text-center">Submit a Referral</h3>
                             <form name="referral" method="POST" data-netlify="true" netlify-honeypot="bot-field">
                                 <input type="hidden" name="form-name" value="referral" />
                                 <p class="hidden">
@@ -122,10 +136,9 @@ eleventyNavigation:
                 </div>
             </div>
             
-            <div class="text-center mt-4">
-                <p class="lead">Questions about our referral program?</p>
-                <a href="/contact/" class="btn btn-outline-danger btn-lg">Contact Us</a>
-            </div>
+        <div class="text-center mt-4">
+            <p class="lead">Questions about our referral program?</p>
+            <a href="/contact/" class="btn btn-outline-primary btn-lg">Contact Us</a>
         </div>
     </div>
-</div>
+</section>
