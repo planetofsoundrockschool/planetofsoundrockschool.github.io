@@ -2,9 +2,10 @@
 layout: base.njk
 title: "FAQ"
 description: "Frequently asked questions about Planet Of Sound Rock School programs, pricing, and policies"
-eleventyNavigation:
-  key: FAQ
-  order: 5
+# Removed from navigation - FAQs are now on homepage
+# eleventyNavigation:
+#   key: FAQ
+#   order: 5
 ---
 
 <!-- FAQ Hero Section -->
