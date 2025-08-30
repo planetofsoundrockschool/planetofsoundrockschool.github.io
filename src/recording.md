@@ -8,19 +8,44 @@ eleventyNavigation:
 ---
 
 <!-- Recording Hero Section -->
-<section class="hero-section bg-gradient text-white py-5">
-    <div class="container py-5">
-        <div class="row align-items-center min-vh-50">
+<section id="hero" class="hero d-flex align-items-center">
+    <div class="container">
+        <div class="row">
             <div class="col-lg-8 mx-auto text-center">
-                <h1 class="display-4 fw-bold mb-4">Live Off the Floor Recording</h1>
-                <p class="lead mb-4">Demo-quality recording service designed to help bands document their sound and book shows.</p>
-                <div class="hero-badges">
-                    <span class="badge bg-warning text-dark me-2 px-3 py-2 fs-6">3-Hour Minimum</span>
-                    <span class="badge bg-light text-dark me-2 px-3 py-2 fs-6">Same Day Delivery</span>
-                    <span class="badge bg-warning text-dark px-3 py-2 fs-6">WAV + MP3</span>
+                <h1>
+                    Live Off the Floor Recording<br>
+                    <span class="text-gradient">Capture • Create • Share</span>
+                </h1>
+                <p>
+                    Demo-quality recording service designed to help bands<br>
+                    <strong>document their sound and book shows.</strong>
+                </p>
+                <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mt-4">
+                    <a href="/contact/" class="btn btn-primary btn-lg">
+                        <i class="fas fa-microphone me-2"></i>Book Recording Session
+                    </a>
+                    <a href="#whats-included" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-info-circle me-2"></i>What's Included
+                    </a>
+                </div>
+                <div class="mt-4">
+                    <span class="badge bg-light text-dark me-2 px-3 py-2">3-Hour Minimum</span>
+                    <span class="badge bg-light text-dark me-2 px-3 py-2">Same Day Delivery</span>
+                    <span class="badge bg-light text-dark px-3 py-2">WAV + MP3</span>
                 </div>
             </div>
         </div>
+    </div>
+    
+    <!-- Floating Music Icons -->
+    <div class="position-absolute top-50 start-0 translate-middle-y d-none d-lg-block hero-float-1" style="left: 8% !important;">
+        <i class="fas fa-microphone fa-3x opacity-25"></i>
+    </div>
+    <div class="position-absolute top-25 end-0 d-none d-lg-block hero-float-2" style="right: 8% !important;">
+        <i class="fas fa-headphones fa-2x opacity-25"></i>
+    </div>
+    <div class="position-absolute bottom-25 start-0 d-none d-lg-block hero-float-3" style="left: 12% !important;">
+        <i class="fas fa-compact-disc fa-2x opacity-25"></i>
     </div>
 </section>
 

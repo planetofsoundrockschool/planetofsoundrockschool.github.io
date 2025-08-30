@@ -7,29 +7,44 @@ eleventyNavigation:
   order: 6
 ---
 
-<!-- Hero Section -->
-<section class="hero-section bg-gradient text-white py-5">
-    <div class="container py-5">
-        <div class="row align-items-center min-vh-50">
-            <div class="col-lg-6">
-                <h1 class="display-4 fw-bold mb-4">Let's Make Music Together</h1>
-                <p class="lead mb-4">Ready to start your musical journey? From your first chord to your first tour, we're here to guide you every step of the way.</p>
-                <div class="d-flex flex-column flex-sm-row gap-3">
-<a href="mailto:lessons@planetofsoundrockschool.com?subject=Discovery Call Request&body=Hi! I'd like to book a free discovery call to learn more about your programs.%0A%0AMy musical experience:%0AMy goals:%0APreferred contact method:%0ABest time to call:" 
-                   class="btn btn-warning btn-lg fw-bold px-4 py-3">
-                    <i class="fas fa-calendar-alt me-2"></i>Book Free Discovery Call
-                </a>
-                    <a href="#contact-info" class="btn btn-outline-light btn-lg px-4 py-3">
+<!-- Contact Hero Section -->
+<section id="hero" class="hero d-flex align-items-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h1>
+                    Let's Make Music Together<br>
+                    <span class="text-gradient">Connect • Discover • Begin</span>
+                </h1>
+                <p>
+                    Ready to start your musical journey? From your first chord to your first tour,<br>
+                    <strong>we're here to guide you every step of the way.</strong>
+                </p>
+                <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mt-4">
+                    <a href="mailto:lessons@planetofsoundrockschool.com?subject=Discovery Call Request&body=Hi! I'd like to book a free discovery call to learn more about your programs.%0A%0AMy musical experience:%0AMy goals:%0APreferred contact method:%0ABest time to call:" class="btn btn-primary btn-lg">
+                        <i class="fas fa-calendar-alt me-2"></i>Book Free Discovery Call
+                    </a>
+                    <a href="#contact-info" class="btn btn-outline-light btn-lg">
                         <i class="fas fa-info-circle me-2"></i>Get In Touch
                     </a>
                 </div>
-            </div>
-            <div class="col-lg-6 text-center">
-                <div class="hero-icon-container">
-                    <i class="fas fa-music text-warning" style="font-size: 8rem; opacity: 0.8;"></i>
+                <div class="mt-4">
+                    <span class="badge bg-light text-dark me-2 px-3 py-2">Free Discovery Call</span>
+                    <span class="badge bg-light text-dark px-3 py-2">London, Ontario</span>
                 </div>
             </div>
         </div>
+    </div>
+    
+    <!-- Floating Music Icons -->
+    <div class="position-absolute top-50 start-0 translate-middle-y d-none d-lg-block hero-float-1" style="left: 8% !important;">
+        <i class="fas fa-envelope fa-3x opacity-25"></i>
+    </div>
+    <div class="position-absolute top-25 end-0 d-none d-lg-block hero-float-2" style="right: 8% !important;">
+        <i class="fas fa-phone fa-2x opacity-25"></i>
+    </div>
+    <div class="position-absolute bottom-25 start-0 d-none d-lg-block hero-float-3" style="left: 12% !important;">
+        <i class="fas fa-map-marker-alt fa-2x opacity-25"></i>
     </div>
 </section>
 

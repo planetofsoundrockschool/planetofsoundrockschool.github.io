@@ -8,19 +8,44 @@ eleventyNavigation:
 ---
 
 <!-- Programs Hero Section -->
-<section class="hero-section bg-gradient text-white py-5">
-    <div class="container py-5">
-        <div class="row align-items-center min-vh-50">
+<section id="hero" class="hero d-flex align-items-center">
+    <div class="container">
+        <div class="row">
             <div class="col-lg-8 mx-auto text-center">
-                <h1 class="display-4 fw-bold mb-4">Master Your Musical Journey</h1>
-                <p class="lead mb-4">Four structured tiers designed to take you from beginner to touring professional. Choose your path and let's make music together.</p>
-                <div class="hero-badges">
-                    <span class="badge bg-warning text-dark me-2 px-3 py-2 fs-6">4-Tier System</span>
-                    <span class="badge bg-light text-dark me-2 px-3 py-2 fs-6">All Instruments</span>
-                    <span class="badge bg-warning text-dark px-3 py-2 fs-6">Mentorship Driven</span>
+                <h1>
+                    Master Your Musical Journey<br>
+                    <span class="text-gradient">Learn • Collaborate • Perform</span>
+                </h1>
+                <p>
+                    Four structured tiers designed to take you from beginner to touring professional.<br>
+                    <strong>Choose your path and let's make music together.</strong>
+                </p>
+                <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mt-4">
+                    <a href="#programs-overview" class="btn btn-primary btn-lg">
+                        <i class="fas fa-play-circle me-2"></i>Explore Programs
+                    </a>
+                    <a href="/contact/" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-calendar-alt me-2"></i>Book Discovery Call
+                    </a>
+                </div>
+                <div class="mt-4">
+                    <span class="badge bg-light text-dark me-2 px-3 py-2">4-Tier System</span>
+                    <span class="badge bg-light text-dark me-2 px-3 py-2">All Instruments</span>
+                    <span class="badge bg-light text-dark px-3 py-2">Mentorship Driven</span>
                 </div>
             </div>
         </div>
+    </div>
+    
+    <!-- Floating Music Icons -->
+    <div class="position-absolute top-50 start-0 translate-middle-y d-none d-lg-block hero-float-1" style="left: 8% !important;">
+        <i class="fas fa-play-circle fa-3x opacity-25"></i>
+    </div>
+    <div class="position-absolute top-25 end-0 d-none d-lg-block hero-float-2" style="right: 8% !important;">
+        <i class="fas fa-route fa-2x opacity-25"></i>
+    </div>
+    <div class="position-absolute bottom-25 start-0 d-none d-lg-block hero-float-3" style="left: 12% !important;">
+        <i class="fas fa-graduation-cap fa-2x opacity-25"></i>
     </div>
 </section>
 
