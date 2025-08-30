@@ -123,15 +123,15 @@ eleventyNavigation:
             <p>Progressive music education that grows with your skills and ambitions</p>
         </div>
         
-        <div class="row g-4">
-            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                <div class="card h-100 hover-lift">
-                    <div class="card-body text-center">
+        <div class="row g-4" style="display: flex; flex-wrap: wrap;">
+            <div class="col-lg-3 col-md-6 col-sm-6 d-flex" data-aos="fade-up" data-aos-delay="100" style="margin-bottom: 2rem;">
+                <div class="card h-100 hover-lift w-100">
+                    <div class="card-body text-center d-flex flex-column">
                         <div class="mb-3">
                             <i class="fas fa-play-circle fa-3x text-primary"></i>
                         </div>
                         <h3 class="card-title text-primary">Learn To Play</h3>
-                        <p class="card-text">Foundation skills for beginners. Learn chords, scales, rhythm, and song structure in supportive 1-on-1 or small group settings.</p>
+                        <p class="card-text flex-grow-1">Foundation skills for beginners. Learn chords, scales, rhythm, and song structure in supportive 1-on-1 or small group settings.</p>
                         <div class="mt-auto">
                             <p class="fw-bold fs-5 text-dark mb-3">$400 <small class="text-muted">(8 weeks)</small></p>
                             <a href="/programs/#learn-to-play" class="btn btn-outline-primary">Learn More</a>
@@ -140,14 +140,14 @@ eleventyNavigation:
                 </div>
             </div>
             
-            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                <div class="card h-100 hover-lift">
-                    <div class="card-body text-center">
+            <div class="col-lg-3 col-md-6 col-sm-6 d-flex" data-aos="fade-up" data-aos-delay="200" style="margin-bottom: 2rem;">
+                <div class="card h-100 hover-lift w-100">
+                    <div class="card-body text-center d-flex flex-column">
                         <div class="mb-3">
                             <i class="fas fa-users fa-3x text-primary"></i>
                         </div>
                         <h3 class="card-title text-primary">Bandstarter</h3>
-                        <p class="card-text">Collaborative music-making! Learn songwriting, rehearsal flow, gear literacy, and band dynamics in small groups.</p>
+                        <p class="card-text flex-grow-1">Collaborative music-making! Learn songwriting, rehearsal flow, gear literacy, and band dynamics in small groups.</p>
                         <div class="mt-auto">
                             <p class="fw-bold fs-5 text-dark mb-3">$500 <small class="text-muted">per student</small></p>
                             <a href="/programs/#bandstarter" class="btn btn-outline-primary">Learn More</a>
@@ -156,14 +156,14 @@ eleventyNavigation:
                 </div>
             </div>
             
-            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                <div class="card h-100 hover-lift">
-                    <div class="card-body text-center">
+            <div class="col-lg-3 col-md-6 col-sm-6 d-flex" data-aos="fade-up" data-aos-delay="300" style="margin-bottom: 2rem;">
+                <div class="card h-100 hover-lift w-100">
+                    <div class="card-body text-center d-flex flex-column">
                         <div class="mb-3">
                             <i class="fas fa-microphone fa-3x text-primary"></i>
                         </div>
                         <h3 class="card-title text-primary">Show Ready</h3>
-                        <p class="card-text">Performance preparation! Master live setup, stage communication, setlist building, and commanding stage presence.</p>
+                        <p class="card-text flex-grow-1">Performance preparation! Master live setup, stage communication, setlist building, and commanding stage presence.</p>
                         <div class="mt-auto">
                             <p class="fw-bold fs-5 text-dark mb-3">$600 <small class="text-muted">per student</small></p>
                             <a href="/programs/#show-ready" class="btn btn-outline-primary">Learn More</a>
@@ -172,14 +172,14 @@ eleventyNavigation:
                 </div>
             </div>
             
-            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                <div class="card h-100 hover-lift">
-                    <div class="card-body text-center">
+            <div class="col-lg-3 col-md-6 col-sm-6 d-flex" data-aos="fade-up" data-aos-delay="400" style="margin-bottom: 2rem;">
+                <div class="card h-100 hover-lift w-100">
+                    <div class="card-body text-center d-flex flex-column">
                         <div class="mb-3">
                             <i class="fas fa-route fa-3x text-primary"></i>
                         </div>
                         <h3 class="card-title text-primary">Tour</h3>
-                        <p class="card-text">Professional touring readiness. Learn tour planning, stage plots, tech riders, and industry navigation.</p>
+                        <p class="card-text flex-grow-1">Professional touring readiness. Learn tour planning, stage plots, tech riders, and industry navigation.</p>
                         <div class="mt-auto">
                             <p class="fw-bold fs-5 text-dark mb-3">$300+ <small class="text-muted">per event</small></p>
                             <a href="/programs/#tour" class="btn btn-outline-primary">Learn More</a>
