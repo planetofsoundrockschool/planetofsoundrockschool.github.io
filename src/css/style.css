@@ -213,6 +213,11 @@ body {
     padding-bottom: 4rem;
 }
 
+/* Hide netlify bot fields */
+.hidden {
+    display: none;
+}
+
 /* Custom list styling */
 .list-unstyled li {
     padding: 0.5rem 0;

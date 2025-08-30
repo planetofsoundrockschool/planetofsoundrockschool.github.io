@@ -149,9 +149,13 @@ eleventyNavigation:
             <div class="col-lg-8 text-center">
                 <h2 class="text-dark mb-3">Stay in the Loop</h2>
                 <p class="text-dark mb-4">Get updates on programs, student showcases, and London's music community events.</p>
-                <form class="row g-2 justify-content-center" action="#" method="POST">
+<form name="homepage-newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="row g-2 justify-content-center">
+                    <input type="hidden" name="form-name" value="homepage-newsletter" />
+                    <p class="hidden">
+                        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                    </p>
                     <div class="col-auto">
-                        <input type="email" class="form-control form-control-lg" placeholder="Enter your email" required>
+                        <input type="email" name="email" class="form-control form-control-lg" placeholder="Enter your email" required>
                     </div>
                     <div class="col-auto">
                         <button type="submit" class="btn btn-danger btn-lg">Subscribe</button>

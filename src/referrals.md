@@ -2,13 +2,36 @@
 layout: base.njk
 title: "Referral Program"
 description: "Refer friends to Planet Of Sound Rock School and earn rewards for building our music community"
+eleventyNavigation:
+  key: Referrals
+  order: 7
 ---
 
-<div class="container py-5">
-    <div class="row">
-        <div class="col-lg-8 mx-auto">
-            <h1 class="display-5 text-center text-danger mb-5">Referral Program</h1>
-            <p class="lead text-center mb-5">Help grow London's music community and earn rewards!</p>
+<!-- Referrals Hero Section -->
+<section class="hero-section bg-gradient text-white py-5">
+    <div class="container py-5">
+        <div class="row align-items-center min-vh-50">
+            <div class="col-lg-8 mx-auto text-center">
+                <h1 class="display-4 fw-bold mb-4">Share the Music</h1>
+                <p class="lead mb-4">Love learning with us? Refer friends and family and earn rewards for spreading the joy of music.</p>
+                <div class="hero-badges">
+                    <span class="badge bg-warning text-dark me-2 px-3 py-2 fs-6">Earn Credits</span>
+                    <span class="badge bg-light text-dark me-2 px-3 py-2 fs-6">Help Friends</span>
+                    <span class="badge bg-warning text-dark px-3 py-2 fs-6">Build Community</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center mb-5">
+                <h2 class="display-6 text-dark mb-3">How It Works</h2>
+                <p class="lead text-muted">Three simple steps to start earning referral rewards</p>
+            </div>
+        </div>
             
             <div class="row g-4">
                 <div class="col-md-6">
@@ -49,7 +72,11 @@ description: "Refer friends to Planet Of Sound Rock School and earn rewards for 
                     <div class="card border-0 bg-light">
                         <div class="card-body p-4">
                             <h3 class="text-danger mb-3">Submit a Referral</h3>
-                            <form action="#" method="POST">
+                            <form name="referral" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                                <input type="hidden" name="form-name" value="referral" />
+                                <p class="hidden">
+                                    <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                                </p>
                                 <div class="row g-3">
                                     <div class="col-md-6">
                                         <label for="yourName" class="form-label">Your Name</label>

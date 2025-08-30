@@ -15,10 +15,10 @@ eleventyNavigation:
                 <h1 class="display-4 fw-bold mb-4">Let's Make Music Together</h1>
                 <p class="lead mb-4">Ready to start your musical journey? From your first chord to your first tour, we're here to guide you every step of the way.</p>
                 <div class="d-flex flex-column flex-sm-row gap-3">
-                    <a href="mailto:lessons@planetofsoundrockschool.com?subject=Discovery Call Request" 
-                       class="btn btn-warning btn-lg fw-bold px-4 py-3">
-                        <i class="fas fa-calendar-alt me-2"></i>Book Free Discovery Call
-                    </a>
+<a href="mailto:lessons@planetofsoundrockschool.com?subject=Discovery Call Request&body=Hi! I'd like to book a free discovery call to learn more about your programs.%0A%0AMy musical experience:%0AMy goals:%0APreferred contact method:%0ABest time to call:" 
+                   class="btn btn-warning btn-lg fw-bold px-4 py-3">
+                    <i class="fas fa-calendar-alt me-2"></i>Book Free Discovery Call
+                </a>
                     <a href="#contact-info" class="btn btn-outline-light btn-lg px-4 py-3">
                         <i class="fas fa-info-circle me-2"></i>Get In Touch
                     </a>
@@ -159,6 +159,55 @@ eleventyNavigation:
                                     </a>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Booking Placeholder Section -->
+<section class="py-5 bg-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card border-warning">
+                    <div class="card-header bg-warning text-dark text-center">
+                        <h3 class="mb-2">Online Booking</h3>
+                        <p class="mb-0"><small>Coming Soon!</small></p>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-calendar-check text-warning fa-3x mb-3"></i>
+                            <h4 class="text-dark mb-3">Book Lessons Online</h4>
+                            <p class="text-muted">We're building an online booking system to make scheduling even easier. In the meantime, reach out directly and we'll find a time that works for you!</p>
+                        </div>
+                        
+                        <div class="row g-3">
+                            <div class="col-md-4 text-center">
+                                <i class="fas fa-clock text-warning fa-2x mb-2"></i>
+                                <h6>Real-time Availability</h6>
+                                <small class="text-muted">See open slots instantly</small>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <i class="fas fa-credit-card text-warning fa-2x mb-2"></i>
+                                <h6>Secure Payment</h6>
+                                <small class="text-muted">Pay online safely</small>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <i class="fas fa-bell text-warning fa-2x mb-2"></i>
+                                <h6>Auto Reminders</h6>
+                                <small class="text-muted">Never miss a lesson</small>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center mt-4">
+                            <p class="mb-3"><strong>For now, let's chat directly:</strong></p>
+                            <a href="mailto:lessons@planetofsoundrockschool.com?subject=Lesson Booking&body=Hi! I'd like to book a lesson.%0A%0AProgram interested in:%0APreferred dates/times:%0AContact info:%0AQuestions:" 
+                               class="btn btn-warning btn-lg fw-bold px-4 py-3">
+                                <i class="fas fa-envelope me-2"></i>Email to Book
+                            </a>
                         </div>
                     </div>
                 </div>

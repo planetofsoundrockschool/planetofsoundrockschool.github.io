@@ -41,8 +41,12 @@
                 <div class="col-lg-6">
                     <h5 class="text-danger mb-3">Stay Connected</h5>
                     <p class="mb-3">Get updates on programs, events, and London's music community.</p>
-                    <form class="d-flex mb-3" action="#" method="POST">
-                        <input type="email" class="form-control me-2" placeholder="Enter your email" required>
+<form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="d-flex mb-3">
+                        <input type="hidden" name="form-name" value="newsletter" />
+                        <p class="hidden">
+                            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                        </p>
+                        <input type="email" name="email" class="form-control me-2" placeholder="Enter your email" required>
                         <button class="btn btn-warning" type="submit">Subscribe</button>
                     </form>
                     <small class="text-muted">We respect your privacy. Unsubscribe at any time.</small>
