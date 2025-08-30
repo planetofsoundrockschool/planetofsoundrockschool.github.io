@@ -265,6 +265,106 @@ eleventyNavigation:
     </div>
 </section>
 
+<!-- FAQ Section -->
+<section id="faq" class="section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Frequently Asked Questions</h2>
+            <p>Everything you need to know about getting started with Planet of Sound Rock School</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                What makes Planet Of Sound different from other music schools?
+                            </button>
+                        </h2>
+                        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                We're a mentorship-based school that focuses on real-world music skills. Our four-tier system takes you from your first chord to being tour-ready. We emphasize community building, gear literacy, and practical experience that you can't get from traditional music lessons.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                Do I need to own an instrument to start?
+                            </button>
+                        </h2>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                No! We have instruments available for use during lessons and can help you find the right instrument when you're ready to purchase. We also offer gear orientation sessions to help you understand equipment basics.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                What age groups do you teach?
+                            </button>
+                        </h2>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                We welcome students of all ages! Our programs are designed to be inclusive and adaptable. Whether you're 8 or 80, we'll create a learning experience that works for you.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                How does the four-tier system work?
+                            </button>
+                        </h2>
+                        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <strong>Learn To Play:</strong> Foundation skills and basics<br>
+                                <strong>Bandstarter:</strong> Collaboration and songwriting<br>
+                                <strong>Show Ready:</strong> Performance and stage presence<br>
+                                <strong>Tour:</strong> Professional touring preparation<br><br>
+                                You don't have to go through every tier - we'll help you find the right starting point based on your experience and goals.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                What about sliding scale pricing?
+                            </button>
+                        </h2>
+                        <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                We believe music education should be accessible to everyone. We offer sliding scale pricing and payment plans based on individual circumstances. Contact us to discuss options that work for your budget.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                                Can I book a trial lesson?
+                            </button>
+                        </h2>
+                        <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Absolutely! We offer free discovery calls to help you find the right program. During this call, we'll discuss your goals, experience level, and which tier might be the best fit for you.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-5">
+                    <p class="mb-3">Have a question not covered here?</p>
+                    <a href="#contact" class="btn btn-primary btn-lg">
+                        <i class="fas fa-comments me-2"></i>Ask Us Directly
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Contact Section -->
 <section id="contact" class="section contact">
     <div class="container">
