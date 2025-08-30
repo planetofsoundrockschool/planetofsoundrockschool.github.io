@@ -2,9 +2,6 @@ backend:
   name: github
   repo: planetofsoundrockschool/planetofsoundrockschool.github.io
   branch: main
-  # Only allow users with write access to the repository
-  base_url: https://api.netlify.com
-  auth_endpoint: auth
 
 # Uncomment below to enable drafts
 # publish_mode: editorial_workflow
