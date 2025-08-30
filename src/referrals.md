@@ -86,37 +86,44 @@ eleventyNavigation:
                 <div class="card border-0 shadow-custom">
                     <div class="card-body p-4">
                         <h3 class="text-primary mb-3 text-center">Submit a Referral</h3>
-                            <form name="referral" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-                                <input type="hidden" name="form-name" value="referral" />
-                                <p class="hidden">
-                                    <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-                                </p>
-                                <div class="row g-3">
-                                    <div class="col-md-6">
-                                        <label for="yourName" class="form-label">Your Name</label>
-                                        <input type="text" class="form-control" id="yourName" required>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="yourEmail" class="form-label">Your Email</label>
-                                        <input type="email" class="form-control" id="yourEmail" required>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="friendName" class="form-label">Friend's Name</label>
-                                        <input type="text" class="form-control" id="friendName" required>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="friendEmail" class="form-label">Friend's Email</label>
-                                        <input type="email" class="form-control" id="friendEmail" required>
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="message" class="form-label">Message (Optional)</label>
-                                        <textarea class="form-control" id="message" rows="3" placeholder="Tell us why your friend would love Planet Of Sound..."></textarea>
-                                    </div>
-                                    <div class="col-12 text-center">
-                                        <button type="submit" class="btn btn-danger btn-lg">Submit Referral</button>
-                                    </div>
+                        <form name="referral" method="POST" data-netlify="true" netlify-honeypot="bot-field" aria-label="Referral submission form">
+                            <input type="hidden" name="form-name" value="referral" />
+                            <p class="visually-hidden">
+                                <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                            </p>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="yourName" class="form-label">Your Name</label>
+                                    <input type="text" class="form-control" id="yourName" name="yourName" required aria-describedby="your-name-help">
+                                    <div id="your-name-help" class="visually-hidden">Enter your full name for referral credit</div>
                                 </div>
-                            </form>
+                                <div class="col-md-6">
+                                    <label for="yourEmail" class="form-label">Your Email</label>
+                                    <input type="email" class="form-control" id="yourEmail" name="yourEmail" required aria-describedby="your-email-help">
+                                    <div id="your-email-help" class="visually-hidden">Enter your email address to receive referral credit notification</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="friendName" class="form-label">Friend's Name</label>
+                                    <input type="text" class="form-control" id="friendName" name="friendName" required aria-describedby="friend-name-help">
+                                    <div id="friend-name-help" class="visually-hidden">Enter your friend's full name</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="friendEmail" class="form-label">Friend's Email</label>
+                                    <input type="email" class="form-control" id="friendEmail" name="friendEmail" required aria-describedby="friend-email-help">
+                                    <div id="friend-email-help" class="visually-hidden">Enter your friend's email address so we can contact them</div>
+                                </div>
+                                <div class="col-12">
+                                    <label for="message" class="form-label">Message (Optional)</label>
+                                    <textarea class="form-control" id="message" name="message" rows="3" placeholder="Tell us why your friend would love Planet Of Sound..." aria-describedby="message-help"></textarea>
+                                    <div id="message-help" class="visually-hidden">Optional: Share why you think your friend would enjoy our programs</div>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <button type="submit" class="btn btn-danger btn-lg">
+                                        <i class="fas fa-paper-plane me-2" aria-hidden="true"></i>Submit Referral
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
                         </div>
                     </div>
                 </div>

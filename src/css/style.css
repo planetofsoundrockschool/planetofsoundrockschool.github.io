@@ -6,20 +6,20 @@
 /* ===== VARIABLES ===== */
 :root {
     /* Primary Brand Colors */
-    --primary-color: #3b82f6;      /* Modern blue */
-    --secondary-color: #ef4444;    /* Rock red accent */
-    --accent-color: #f59e0b;       /* Warning/highlight */
+    --primary-color: #2563eb;      /* Darker blue for better contrast */
+    --secondary-color: #dc2626;    /* Darker red for better contrast */
+    --accent-color: #d97706;       /* Darker warning/highlight for better contrast */
     
     /* Neutral Colors */
-    --text-dark: #1f2937;          /* Almost black */
-    --text-light: #6b7280;        /* Medium gray */
-    --text-muted: #9ca3af;        /* Light gray */
+    --text-dark: #111827;          /* Darker text for better contrast */
+    --text-light: #4b5563;        /* Darker medium gray for better contrast */
+    --text-muted: #6b7280;        /* Adjusted gray */
     --background-light: #f9fafb;   /* Off white */
     --background-section: #ffffff; /* Pure white */
     
     /* Interactive Colors */
-    --link-color: #3b82f6;
-    --link-hover: #2563eb;
+    --link-color: #2563eb;
+    --link-hover: #1d4ed8;
     
     /* Spacing & Layout */
     --section-padding: 5rem 0;
@@ -272,13 +272,15 @@ html {
 }
 
 .hero .btn-outline-light {
-    border: 2px solid rgba(255, 255, 255, 0.8);
+    border: 3px solid rgba(255, 255, 255, 0.9);
     color: white;
+    font-weight: 700;
 }
 
 .hero .btn-outline-light:hover {
     background: white;
     color: var(--text-dark);
+    border-color: white;
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
 }
@@ -768,32 +770,104 @@ footer a:hover {
 }
 
 /* ===== ACCESSIBILITY ===== */
+
+/* Skip Link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: var(--primary-color);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    z-index: 10000;
+    transition: var(--transition-fast);
+}
+
+.skip-link:focus {
+    top: 6px;
+    color: white;
+    text-decoration: none;
+}
+
+/* Enhanced Focus Indicators */
+.btn:focus-visible,
+.form-control:focus,
+.nav-link:focus-visible,
+a:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px white, 0 0 0 5px var(--primary-color);
+}
+
+.navbar-toggler:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px white, 0 0 0 5px var(--primary-color);
+}
+
+/* High contrast focus for better visibility */
+@media (prefers-contrast: high) {
+    .btn:focus-visible,
+    .form-control:focus,
+    .nav-link:focus-visible,
+    a:focus-visible {
+        outline: 4px solid #000;
+        outline-offset: 2px;
+        box-shadow: 0 0 0 2px white, 0 0 0 6px #000;
+    }
+}
+
+/* Motion preferences */
 @media (prefers-reduced-motion: reduce) {
-    * {
+    *,
+    *::before,
+    *::after {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
     
     html {
         scroll-behavior: auto;
     }
-}
-
-/* Focus indicators */
-.btn:focus,
-.form-control:focus,
-a:focus {
-    outline: 2px solid var(--primary-color);
-    outline-offset: 2px;
+    
+    .hero-float-1,
+    .hero-float-2,
+    .hero-float-3 {
+        animation: none;
+    }
 }
 
 /* High contrast mode support */
 @media (prefers-contrast: high) {
     :root {
+        --primary-color: #1d4ed8;
+        --secondary-color: #b91c1c;
+        --accent-color: #b45309;
+        --text-dark: #000000;
+        --text-light: #374151;
         --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.3);
         --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3);
         --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.3);
+    }
+    
+    .btn-outline-light {
+        border-color: white !important;
+        color: white !important;
+    }
+    
+    .btn-outline-light:hover {
+        background: white !important;
+        color: #000000 !important;
+    }
+    
+    .text-muted {
+        color: #374151 !important;
     }
 }
 

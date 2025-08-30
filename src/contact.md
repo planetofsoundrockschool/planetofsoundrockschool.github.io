@@ -8,11 +8,11 @@ eleventyNavigation:
 ---
 
 <!-- Contact Hero Section -->
-<section id="hero" class="hero d-flex align-items-center">
+<section id="hero" class="hero d-flex align-items-center" aria-labelledby="hero-heading">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto text-center">
-                <h1>
+                <h1 id="hero-heading">
                     Let's Make Music Together<br>
                     <span class="text-gradient">Connect • Discover • Begin</span>
                 </h1>
@@ -21,94 +21,97 @@ eleventyNavigation:
                     <strong>we're here to guide you every step of the way.</strong>
                 </p>
                 <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mt-4">
-                    <a href="mailto:lessons@planetofsoundrockschool.com?subject=Discovery Call Request&body=Hi! I'd like to book a free discovery call to learn more about your programs.%0A%0AMy musical experience:%0AMy goals:%0APreferred contact method:%0ABest time to call:" class="btn btn-primary btn-lg">
-                        <i class="fas fa-calendar-alt me-2"></i>Book Free Discovery Call
+                    <a href="mailto:lessons@planetofsoundrockschool.com?subject=Discovery Call Request&body=Hi! I'd like to book a free discovery call to learn more about your programs.%0A%0AMy musical experience:%0AMy goals:%0APreferred contact method:%0ABest time to call:" class="btn btn-primary btn-lg" aria-label="Book a free discovery call via email">
+                        <i class="fas fa-calendar-alt me-2" aria-hidden="true"></i>Book Free Discovery Call
                     </a>
                     <a href="#contact-info" class="btn btn-outline-light btn-lg">
-                        <i class="fas fa-info-circle me-2"></i>Get In Touch
+                        <i class="fas fa-info-circle me-2" aria-hidden="true"></i>Get In Touch
                     </a>
                 </div>
                 <div class="mt-4">
-                    <span class="badge bg-light text-dark me-2 px-3 py-2">Free Discovery Call</span>
-                    <span class="badge bg-light text-dark px-3 py-2">London, Ontario</span>
+                    <span class="badge bg-light text-dark me-2 px-3 py-2" role="status">Free Discovery Call</span>
+                    <span class="badge bg-light text-dark px-3 py-2" role="status">London, Ontario</span>
                 </div>
             </div>
         </div>
     </div>
     
-    <!-- Floating Music Icons -->
-    <div class="position-absolute top-50 start-0 translate-middle-y d-none d-lg-block hero-float-1" style="left: 8% !important;">
+    <!-- Floating Music Icons - Decorative -->
+    <div class="position-absolute top-50 start-0 translate-middle-y d-none d-lg-block hero-float-1" style="left: 8% !important;" aria-hidden="true">
         <i class="fas fa-envelope fa-3x opacity-25"></i>
     </div>
-    <div class="position-absolute top-25 end-0 d-none d-lg-block hero-float-2" style="right: 8% !important;">
+    <div class="position-absolute top-25 end-0 d-none d-lg-block hero-float-2" style="right: 8% !important;" aria-hidden="true">
         <i class="fas fa-phone fa-2x opacity-25"></i>
     </div>
-    <div class="position-absolute bottom-25 start-0 d-none d-lg-block hero-float-3" style="left: 12% !important;">
+    <div class="position-absolute bottom-25 start-0 d-none d-lg-block hero-float-3" style="left: 12% !important;" aria-hidden="true">
         <i class="fas fa-map-marker-alt fa-2x opacity-25"></i>
     </div>
 </section>
 
 <!-- Contact Information Section -->
-<section id="contact-info" class="py-5 bg-light">
+<section id="contact-info" class="py-5 bg-light" aria-labelledby="contact-methods-heading">
     <div class="container">
         <div class="row mb-5">
             <div class="col-lg-8 mx-auto text-center">
-                <h2 class="display-6 text-dark mb-3">Get In Touch</h2>
+                <h2 id="contact-methods-heading" class="display-6 text-dark mb-3">Get In Touch</h2>
                 <p class="lead text-muted">Choose the best way to connect with us</p>
             </div>
         </div>
         
         <div class="row g-4">
             <div class="col-lg-4">
-                <div class="card h-100 border-0 shadow-sm hover-lift">
+                <article class="card h-100 border-0 shadow-sm hover-lift" aria-labelledby="email-contact-title">
                     <div class="card-body text-center p-5">
                         <div class="bg-danger bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-4" 
                              style="width: 80px; height: 80px;">
-                            <i class="fas fa-envelope text-danger fa-2x"></i>
+                            <i class="fas fa-envelope text-danger fa-2x" aria-hidden="true"></i>
                         </div>
-                        <h3 class="h4 text-danger mb-3">Email Us</h3>
+                        <h3 id="email-contact-title" class="h4 text-danger mb-3">Email Us</h3>
                         <p class="text-muted mb-4">Send us a message and we'll get back to you within 24 hours</p>
                         <a href="mailto:lessons@planetofsoundrockschool.com" 
-                           class="btn btn-outline-danger fw-bold">
+                           class="btn btn-outline-danger fw-bold"
+                           aria-label="Send email to lessons@planetofsoundrockschool.com">
                             lessons@planetofsoundrockschool.com
                         </a>
                     </div>
-                </div>
+                </article>
             </div>
             
             <div class="col-lg-4">
-                <div class="card h-100 border-0 shadow-sm hover-lift">
+                <article class="card h-100 border-0 shadow-sm hover-lift" aria-labelledby="location-title">
                     <div class="card-body text-center p-5">
                         <div class="bg-danger bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-4" 
                              style="width: 80px; height: 80px;">
-                            <i class="fas fa-map-marker-alt text-danger fa-2x"></i>
+                            <i class="fas fa-map-marker-alt text-danger fa-2x" aria-hidden="true"></i>
                         </div>
-                        <h3 class="h4 text-danger mb-3">Visit Us</h3>
+                        <h3 id="location-title" class="h4 text-danger mb-3">Visit Us</h3>
                         <p class="text-muted mb-4">Located in the heart of London's music scene</p>
                         <div class="fw-bold text-dark">
                             Near Downtown<br>
                             London, Ontario
                         </div>
                     </div>
-                </div>
+                </article>
             </div>
             
             <div class="col-lg-4">
-                <div class="card h-100 border-0 shadow-sm hover-lift">
+                <article class="card h-100 border-0 shadow-sm hover-lift" aria-labelledby="social-title">
                     <div class="card-body text-center p-5">
                         <div class="bg-danger bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-4" 
                              style="width: 80px; height: 80px;">
-                            <i class="fab fa-instagram text-danger fa-2x"></i>
+                            <i class="fab fa-instagram text-danger fa-2x" aria-hidden="true"></i>
                         </div>
-                        <h3 class="h4 text-danger mb-3">Follow Us</h3>
+                        <h3 id="social-title" class="h4 text-danger mb-3">Follow Us</h3>
                         <p class="text-muted mb-4">Stay updated with student showcases and events</p>
                         <a href="https://instagram.com/planetofsoundrockschool" 
                            target="_blank" 
-                           class="btn btn-outline-danger fw-bold">
+                           rel="noopener noreferrer"
+                           class="btn btn-outline-danger fw-bold"
+                           aria-label="Follow us on Instagram (opens in new tab)">
                             @planetofsoundrockschool
                         </a>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
     </div>
