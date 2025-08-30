@@ -6,14 +6,15 @@ This guide explains how to update your website content without touching any code
 ## 🚀 Getting Started
 
 ### Access Your CMS
-1. Go to your website URL + `/admin` (e.g., `https://yoursite.netlify.app/admin`)
-2. Click "Login with Netlify Identity" 
-3. Use your email/password to log in
+1. Go to your website URL + `/admin` (e.g., `https://planetofsoundrockschool.netlify.app/admin`)
+2. Click "Login with GitHub" 
+3. Use your GitHub account to authenticate
+4. Authorize the Planet of Sound Rock School app
 
 ### First-Time Setup (Done by developer)
-- Netlify Identity needs to be enabled in your Netlify dashboard
-- You'll be invited as a CMS user via email
-- Git Gateway needs to be enabled for the CMS to work
+- GitHub OAuth app needs to be configured
+- You need to be added as a collaborator on the GitHub repository
+- Your GitHub account will be used for authentication
 
 ## 📝 What You Can Edit
 
@@ -153,11 +154,11 @@ Create new blog posts when you're ready to add content marketing.
 
 1. **Test locally**: Developer builds and tests
 2. **Deploy to Netlify**: Automatic when code is pushed
-3. **Enable Identity**: Netlify dashboard → Identity → Enable
-4. **Enable Git Gateway**: Netlify dashboard → Identity → Services → Git Gateway
-5. **Invite CMS user**: Netlify dashboard → Identity → Invite users
-6. **First login**: Check email for invitation, set password
-7. **Start editing**: Go to yoursite.com/admin and start updating content!
+3. **Create GitHub OAuth App**: Developer sets up GitHub authentication
+4. **Add Repository Collaborator**: You're added to the GitHub repo
+5. **Configure Netlify**: Connect GitHub OAuth app to Netlify
+6. **First login**: Go to planetofsoundrockschool.netlify.app/admin and login with GitHub
+7. **Start editing**: You can immediately start updating content!
 
 ---
 
