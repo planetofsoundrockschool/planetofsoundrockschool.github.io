@@ -5,9 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
     <title>Content Manager - Planet of Sound Rock School</title>
+    <!-- Auth0 SDK -->
+    <script src="https://cdn.auth0.com/js/auth0/9.23.0/auth0.min.js"></script>
   </head>
   <body>
+    <!-- Auth0 configuration -->
+    <script src="/admin/auth0-config.js"></script>
+    
     <!-- Include the script that builds the page and powers Decap CMS -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    
+    <!-- Initialize Auth0 authentication -->
+    <script>
+      CMS.registerPreviewStyle('/css/style.css');
+      
+      // Auth0 authentication initialization
+      if (window.CMS_AUTH0_CONFIG) {
+        const auth0Client = new auth0.WebAuth(window.CMS_AUTH0_CONFIG);
+        
+        CMS.registerEventListener({
+          name: 'login',
+          handler: () => {
+            auth0Client.authorize();
+          }
+        });
+        
+        // Handle Auth0 callback
+        if (window.location.hash && window.location.hash.includes('access_token')) {
+          auth0Client.parseHash((err, authResult) => {
+            if (authResult && authResult.accessToken) {
+              localStorage.setItem('cms_auth_token', authResult.accessToken);
+              localStorage.setItem('cms_user_profile', JSON.stringify(authResult.idTokenPayload));
+              window.location.hash = '';
+              window.location.reload();
+            } else if (err) {
+              console.error('Auth0 error:', err);
+            }
+          });
+        }
+        
+        // Check if user is authenticated
+        const token = localStorage.getItem('cms_auth_token');
+        if (token) {
+          CMS.registerEventListener({
+            name: 'preAuth',
+            handler: () => Promise.resolve({
+              login: true,
+              token: token
+            })
+          });
+        }
+      }
+    </script>
   </body>
 </html>

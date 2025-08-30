@@ -1,7 +1,11 @@
 backend:
-  name: github
-  repo: planetofsoundrockschool/planetofsoundrockschool.github.io
-  branch: main # Branch to update (optional; defaults to master)
+  name: git-gateway
+  branch: main
+  
+# Auth0 configuration
+auth0:
+  domain: dev-nmho0zk6sei064zj.auth0.com
+  client_id: 99l6LspfWBVRYVrV6o2JGBSPIgVwJbQl
 
 # Uncomment below to enable drafts
 # publish_mode: editorial_workflow
