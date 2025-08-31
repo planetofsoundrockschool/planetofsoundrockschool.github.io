@@ -159,6 +159,14 @@ The following tasks represent planned improvements and enhancements for the Plan
 - Regular security dependency updates
 - Monitor for common web vulnerabilities (XSS, CSRF)
 
+#### 10. Evaluate Cookie Banner/Privacy Compliance Requirements
+- Research current data collection practices (analytics, tracking pixels)
+- Determine GDPR/CCPA compliance requirements for the site
+- Implement cookie banner if required for current tracking
+- Consider privacy-first alternatives (server-side analytics, cookieless tracking)
+- Create privacy policy page if needed
+- Evaluate switching to privacy-focused analytics (Plausible, Fathom, etc.)
+
 #### 6. Implement Automated Performance Testing
 - Integrate Lighthouse CI for Core Web Vitals monitoring
 - Set performance budgets for:
