@@ -86,40 +86,96 @@ eleventyNavigation:
                 <div class="card border-0 shadow-custom">
                     <div class="card-body p-4">
                         <h3 class="text-primary mb-3 text-center">Submit a Referral</h3>
-                        <form name="referral" method="POST" data-netlify="true" netlify-honeypot="bot-field" aria-label="Referral submission form">
+                        <form name="referral" method="POST" data-netlify="true" netlify-honeypot="bot-field" aria-label="Referral submission form" novalidate>
                             <input type="hidden" name="form-name" value="referral" />
                             <p class="visually-hidden">
                                 <label>Don't fill this out if you're human: <input name="bot-field" /></label>
                             </p>
                             <div class="row g-3">
                                 <div class="col-md-6">
-                                    <label for="yourName" class="form-label">Your Name</label>
-                                    <input type="text" class="form-control" id="yourName" name="yourName" required aria-describedby="your-name-help">
-                                    <div id="your-name-help" class="visually-hidden">Enter your full name for referral credit</div>
+                                    <div class="form-group">
+                                        <label for="yourName" class="form-label">
+                                            Your Name (required)
+                                            <span class="help-icon" tabindex="0" role="button" aria-label="Help: Enter your name" title="Enter your full name for referral credit">?</span>
+                                        </label>
+                                        <input type="text" class="form-control" id="yourName" name="yourName" required 
+                                               aria-describedby="your-name-help your-name-error" 
+                                               aria-invalid="false"
+                                               autocomplete="name">
+                                        <div id="your-name-help" class="help-text">
+                                            Required field. Enter your full name for referral credit tracking.
+                                        </div>
+                                        <div id="your-name-error" class="invalid-feedback" role="alert" aria-live="polite"></div>
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="yourEmail" class="form-label">Your Email</label>
-                                    <input type="email" class="form-control" id="yourEmail" name="yourEmail" required aria-describedby="your-email-help">
-                                    <div id="your-email-help" class="visually-hidden">Enter your email address to receive referral credit notification</div>
+                                    <div class="form-group">
+                                        <label for="yourEmail" class="form-label">
+                                            Your Email (required)
+                                            <span class="help-icon" tabindex="0" role="button" aria-label="Help: Enter your email" title="We'll send referral credit notifications to this email">?</span>
+                                        </label>
+                                        <input type="email" class="form-control" id="yourEmail" name="yourEmail" required 
+                                               aria-describedby="your-email-help your-email-error"
+                                               aria-invalid="false"
+                                               autocomplete="email">
+                                        <div id="your-email-help" class="help-text">
+                                            Required field. We'll send referral credit notifications to this email address.
+                                        </div>
+                                        <div id="your-email-error" class="invalid-feedback" role="alert" aria-live="polite"></div>
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="friendName" class="form-label">Friend's Name</label>
-                                    <input type="text" class="form-control" id="friendName" name="friendName" required aria-describedby="friend-name-help">
-                                    <div id="friend-name-help" class="visually-hidden">Enter your friend's full name</div>
+                                    <div class="form-group">
+                                        <label for="friendName" class="form-label">
+                                            Your Friend's Name (required)
+                                            <span class="help-icon" tabindex="0" role="button" aria-label="Help: Enter friend's name" title="Enter your friend's full name">?</span>
+                                        </label>
+                                        <input type="text" class="form-control" id="friendName" name="friendName" required 
+                                               aria-describedby="friend-name-help friend-name-error"
+                                               aria-invalid="false"
+                                               autocomplete="name">
+                                        <div id="friend-name-help" class="help-text">
+                                            Required field. Enter your friend's full name so we can personalize our outreach.
+                                        </div>
+                                        <div id="friend-name-error" class="invalid-feedback" role="alert" aria-live="polite"></div>
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="friendEmail" class="form-label">Friend's Email</label>
-                                    <input type="email" class="form-control" id="friendEmail" name="friendEmail" required aria-describedby="friend-email-help">
-                                    <div id="friend-email-help" class="visually-hidden">Enter your friend's email address so we can contact them</div>
+                                    <div class="form-group">
+                                        <label for="friendEmail" class="form-label">
+                                            Your Friend's Email (Optional)
+                                            <span class="help-icon" tabindex="0" role="button" aria-label="Help: Enter friend's email" title="Optional: We can contact your friend directly">?</span>
+                                        </label>
+                                        <input type="email" class="form-control" id="friendEmail" name="friendEmail" 
+                                               aria-describedby="friend-email-help friend-email-error"
+                                               aria-invalid="false"
+                                               autocomplete="email">
+                                        <div id="friend-email-help" class="help-text">
+                                            Optional: Provide your friend's email if you'd like us to contact them directly. Otherwise, we'll give you information to share with them yourself.
+                                        </div>
+                                        <div id="friend-email-error" class="invalid-feedback" role="alert" aria-live="polite"></div>
+                                    </div>
                                 </div>
                                 <div class="col-12">
-                                    <label for="message" class="form-label">Message (Optional)</label>
-                                    <textarea class="form-control" id="message" name="message" rows="3" placeholder="Tell us why your friend would love Planet Of Sound..." aria-describedby="message-help"></textarea>
-                                    <div id="message-help" class="visually-hidden">Optional: Share why you think your friend would enjoy our programs</div>
+                                    <div class="form-group">
+                                        <label for="message" class="form-label">
+                                            Message (Optional)
+                                            <span class="help-icon" tabindex="0" role="button" aria-label="Help: Why would your friend love Planet Of Sound?" title="Tell us why your friend would love Planet Of Sound">?</span>
+                                        </label>
+                                        <textarea class="form-control" id="message" name="message" rows="3" 
+                                                  aria-describedby="message-help message-error"
+                                                  aria-invalid="false"
+                                                  autocomplete="off"></textarea>
+                                        <div id="message-help" class="help-text">
+                                            Optional: Tell us why your friend would love Planet Of Sound. Share their musical interests, experience level, or goals. This helps us personalize our approach when we contact them.
+                                        </div>
+                                        <div id="message-error" class="invalid-feedback" role="alert" aria-live="polite"></div>
+                                    </div>
                                 </div>
                                 <div class="col-12 text-center">
                                     <button type="submit" class="btn btn-danger btn-lg">
-                                        <i class="fas fa-paper-plane me-2" aria-hidden="true"></i>Submit Referral
+                                        <span><i class="fas fa-paper-plane me-2" aria-hidden="true"></i>Submit Referral</span>
+                                        <span class="loading-spinner d-none" aria-hidden="true"></span>
                                     </button>
                                 </div>
                             </div>

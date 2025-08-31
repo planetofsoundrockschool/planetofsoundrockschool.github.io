@@ -414,7 +414,7 @@ eleventyNavigation:
             <div class="col-lg-6">
                 <div class="contact-form">
                     <h3 class="mb-4">Quick Inquiry</h3>
-                    <form name="homepage-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" aria-label="Contact form for inquiries">
+                    <form name="homepage-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" aria-label="Contact form for inquiries" novalidate>
                         <input type="hidden" name="form-name" value="homepage-contact" />
                         <p class="visually-hidden">
                             <label>Don't fill this out if you're human: <input name="bot-field" /></label>
@@ -422,37 +422,77 @@ eleventyNavigation:
                         
                         <div class="row g-3">
                             <div class="col-md-6">
-                                <label for="contact-name" class="form-label">Name *</label>
-                                <input type="text" class="form-control" id="contact-name" name="name" required aria-describedby="name-help">
-                                <div id="name-help" class="visually-hidden">Enter your full name</div>
+                                <div class="form-group">
+                                    <label for="contact-name" class="form-label">
+                                        Name
+                                        <span class="help-icon" tabindex="0" role="button" aria-label="Help: Enter your full name" title="Enter your full name so we can address you properly in our response">?</span>
+                                    </label>
+                                    <input type="text" class="form-control" id="contact-name" name="name" required 
+                                           aria-describedby="contact-name-help contact-name-error" 
+                                           aria-invalid="false"
+                                           autocomplete="name">
+                                    <div id="contact-name-help" class="help-text">
+                                        Required field. Please enter your full name so we can address you properly in our response.
+                                    </div>
+                                    <div id="contact-name-error" class="invalid-feedback" role="alert" aria-live="polite"></div>
+                                </div>
                             </div>
                             <div class="col-md-6">
-                                <label for="contact-email" class="form-label">Email *</label>
-                                <input type="email" class="form-control" id="contact-email" name="email" required aria-describedby="email-help">
-                                <div id="email-help" class="visually-hidden">Enter your email address for us to respond</div>
+                                <div class="form-group">
+                                    <label for="contact-email" class="form-label">
+                                        Email
+                                        <span class="help-icon" tabindex="0" role="button" aria-label="Help: Enter your email address" title="We'll use this to respond to your inquiry">?</span>
+                                    </label>
+                                    <input type="email" class="form-control" id="contact-email" name="email" required 
+                                           aria-describedby="contact-email-help contact-email-error"
+                                           aria-invalid="false"
+                                           autocomplete="email">
+                                    <div id="contact-email-help" class="help-text">
+                                        Required field. We'll use your email address to respond to your inquiry. We never share your email with third parties.
+                                    </div>
+                                    <div id="contact-email-error" class="invalid-feedback" role="alert" aria-live="polite"></div>
+                                </div>
                             </div>
                             <div class="col-12">
-                                <label for="contact-program" class="form-label">Interested In</label>
-                                <select class="form-control" id="contact-program" name="program" aria-describedby="program-help">
-                                    <option value="">Select a program...</option>
-                                    <option value="learn-to-play">Learn To Play</option>
-                                    <option value="bandstarter">Bandstarter</option>
-                                    <option value="show-ready">Show Ready</option>
-                                    <option value="tour">Tour Program</option>
-                                    <option value="individual">Individual Lessons</option>
-                                    <option value="recording">Recording Services</option>
-                                    <option value="other">Other/Not Sure</option>
-                                </select>
-                                <div id="program-help" class="visually-hidden">Optional: Select which program you're most interested in</div>
+                                <div class="form-group">
+                                    <label for="contact-program" class="form-label">
+                                        Interested In 
+                                        <span class="help-icon" tabindex="0" role="button" aria-label="Help: Select a program" title="Optional: Choose which program interests you most">?</span>
+                                    </label>
+                                    <select class="form-control" id="contact-program" name="program" aria-describedby="contact-program-help">
+                                        <option value="">Select a program...</option>
+                                        <option value="learn-to-play">Learn To Play</option>
+                                        <option value="bandstarter">Bandstarter</option>
+                                        <option value="show-ready">Show Ready</option>
+                                        <option value="tour">Tour Program</option>
+                                        <option value="individual">Individual Lessons</option>
+                                        <option value="recording">Recording Services</option>
+                                        <option value="other">Other/Not Sure</option>
+                                    </select>
+                                    <div id="contact-program-help" class="help-text">
+                                        Optional: Select which program you're most interested in. If you're not sure, choose "Other/Not Sure" and we'll help you find the right fit.
+                                    </div>
+                                </div>
                             </div>
                             <div class="col-12">
-                                <label for="contact-message" class="form-label">Message</label>
-                                <textarea class="form-control" id="contact-message" name="message" rows="4" placeholder="Tell us about your musical goals and experience level..." aria-describedby="message-help"></textarea>
-                                <div id="message-help" class="visually-hidden">Optional: Tell us about your musical background and what you hope to achieve</div>
+                                <div class="form-group">
+                                    <label for="contact-message" class="form-label">
+                                        Message 
+                                        <span class="help-icon" tabindex="0" role="button" aria-label="Help: Tell us about your music goals" title="Share your music goals and experience level">?</span>
+                                    </label>
+                                    <textarea class="form-control" id="contact-message" name="message" rows="4" 
+                                              aria-describedby="contact-message-help contact-message-error"
+                                              aria-invalid="false"></textarea>
+                                    <div id="contact-message-help" class="help-text">
+                                        Optional: Tell us about your musical background, goals, preferred lesson times, or any questions you have about our programs. This helps us provide better guidance.
+                                    </div>
+                                    <div id="contact-message-error" class="invalid-feedback" role="alert" aria-live="polite"></div>
+                                </div>
                             </div>
                             <div class="col-12">
                                 <button type="submit" class="btn btn-primary w-100">
-                                    <i class="fas fa-paper-plane me-2" aria-hidden="true"></i>Send Message
+                                    <span><i class="fas fa-paper-plane me-2" aria-hidden="true"></i>Send Message</span>
+                                    <span class="loading-spinner d-none" aria-hidden="true"></span>
                                 </button>
                             </div>
                         </div>
@@ -471,23 +511,28 @@ eleventyNavigation:
                 <h2 id="newsletter-heading" class="mb-3">Stay in the Loop</h2>
                 <p class="mb-4 fs-5">Get updates on programs, student showcases, and London's music community events.</p>
                 
-                <form name="homepage-newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="row g-2 justify-content-center" aria-label="Newsletter subscription">
+                <form name="homepage-newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="row g-2 justify-content-center" aria-label="Newsletter subscription" novalidate>
                     <input type="hidden" name="form-name" value="homepage-newsletter" />
                     <p class="visually-hidden">
                         <label>Don't fill this out if you're human: <input name="bot-field" /></label>
                     </p>
                     <div class="col-auto">
-                        <label for="homepage-newsletter-email" class="visually-hidden">Email address for newsletter updates</label>
-                        <input type="email" id="homepage-newsletter-email" name="email" class="form-control form-control-lg" placeholder="Enter your email" required style="min-width: 280px;" aria-describedby="homepage-newsletter-privacy">
+                        <div class="form-group">
+                            <label for="homepage-newsletter-email" class="form-label text-white mb-2">Email address for newsletter updates</label>
+                            <input type="email" id="homepage-newsletter-email" name="email" class="form-control form-control-lg" required style="min-width: 280px;" aria-describedby="homepage-newsletter-privacy homepage-newsletter-help homepage-newsletter-error" aria-invalid="false" autocomplete="email">
+                            <div id="homepage-newsletter-error" class="invalid-feedback" role="alert" aria-live="polite"></div>
+                        </div>
                     </div>
                     <div class="col-auto">
                         <button type="submit" class="btn btn-light btn-lg text-primary fw-bold">
-                            <i class="fas fa-envelope me-2" aria-hidden="true"></i>Subscribe
+                            <span><i class="fas fa-envelope me-2" aria-hidden="true"></i>Subscribe</span>
+                            <span class="loading-spinner d-none" aria-hidden="true"></span>
                         </button>
                     </div>
                 </form>
                 
-                <small id="homepage-newsletter-privacy" class="d-block mt-3 opacity-75">We respect your privacy. Unsubscribe at any time.</small>
+                <div id="homepage-newsletter-help" class="visually-hidden">Enter your email to receive updates on programs, student showcases, and London music events</div>
+                <small id="homepage-newsletter-privacy" class="d-block mt-3 text-white">We respect your privacy. Unsubscribe at any time.</small>
             </div>
         </div>
     </div>
