@@ -27,7 +27,7 @@ eleventyNavigation:
                 <p class="mb-4">Refer Friends and Earn</p>
                 <div class="d-flex flex-wrap justify-content-center gap-3">
                     <a href="#referral-form" class="btn btn-primary btn-lg">Refer Someone Now</a>
-                    <a href="#how-it-works" class="btn btn-outline-light btn-lg">How It Works</a>
+                    <a href="#how-it-works" class="btn btn-outline-primary btn-lg">How It Works</a>
                 </div>
             </div>
         </div>

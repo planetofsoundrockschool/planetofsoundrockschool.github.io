@@ -14,7 +14,7 @@ eleventyNavigation:
             <div class="col-lg-8 mx-auto text-center">
                 <h1>
                     Our Musical Mission<br>
-                    <span class="text-gradient">Inclusive • Inspiring • Authentic</span>
+                    <span class="text-primary fw-bold">Inclusive • Inspiring • Authentic</span>
                 </h1>
                 <p>
                     Creating an inclusive, mentorship-driven space where musicians of all backgrounds can grow, learn, and collaborate in London, Ontario's vibrant music scene.
@@ -23,7 +23,7 @@ eleventyNavigation:
                     <a href="#contact" class="btn btn-primary btn-lg">
                         <i class="fas fa-users me-2"></i>Join Our Community
                     </a>
-                    <a href="/programs/" class="btn btn-outline-light btn-lg">
+                    <a href="/programs/" class="btn btn-outline-primary btn-lg">
                         <i class="fas fa-arrow-right me-2"></i>Explore Programs
                     </a>
                 </div>

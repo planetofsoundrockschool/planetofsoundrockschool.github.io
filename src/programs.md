@@ -14,7 +14,7 @@ eleventyNavigation:
             <div class="col-lg-8 mx-auto text-center">
                 <h1>
                     Master Your Musical Journey<br>
-                    <span class="text-gradient">Learn • Collaborate • Perform</span>
+                    <span class="text-primary fw-bold">Learn • Collaborate • Perform</span>
                 </h1>
                 <p>
                     Four structured tiers designed to take you from beginner to touring professional.<br>
@@ -24,7 +24,7 @@ eleventyNavigation:
                     <a href="#programs-overview" class="btn btn-primary btn-lg">
                         <i class="fas fa-play-circle me-2"></i>Explore Programs
                     </a>
-                    <a href="/contact/" class="btn btn-outline-light btn-lg">
+                    <a href="/contact/" class="btn btn-outline-primary btn-lg">
                         <i class="fas fa-calendar-alt me-2"></i>Book Discovery Call
                     </a>
                 </div>

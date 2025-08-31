@@ -14,7 +14,7 @@ eleventyNavigation:
             <div class="col-lg-8 mx-auto text-center">
                 <h1>
                     Transparent Pricing<br>
-                    <span class="text-gradient">Fair • Flexible • Accessible</span>
+                    <span class="text-primary fw-bold">Fair • Flexible • Accessible</span>
                 </h1>
                 <p>
                     Quality music education at fair prices.<br>
@@ -24,7 +24,7 @@ eleventyNavigation:
                     <a href="/contact/" class="btn btn-primary btn-lg">
                         <i class="fas fa-calendar-alt me-2"></i>Book Discovery Call
                     </a>
-                    <a href="#pricing-content" class="btn btn-outline-light btn-lg">
+                    <a href="#pricing-content" class="btn btn-outline-primary btn-lg">
                         <i class="fas fa-dollar-sign me-2"></i>View All Pricing
                     </a>
                 </div>

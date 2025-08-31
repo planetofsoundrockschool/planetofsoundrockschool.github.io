@@ -14,7 +14,7 @@ eleventyNavigation:
             <div class="col-lg-8 mx-auto text-center">
                 <h1 id="hero-heading">
                     Let's Make Music Together<br>
-                    <span class="text-gradient">Connect • Discover • Begin</span>
+                    <span class="text-primary fw-bold">Connect • Discover • Begin</span>
                 </h1>
                 <p>
                     Ready to start your musical journey? From your first chord to your first tour,<br>
@@ -24,7 +24,7 @@ eleventyNavigation:
                     <a href="mailto:lessons@planetofsoundrockschool.com?subject=Discovery Call Request&body=Hi! I'd like to book a free discovery call to learn more about your programs.%0A%0AMy musical experience:%0AMy goals:%0APreferred contact method:%0ABest time to call:" class="btn btn-primary btn-lg" aria-label="Book a free discovery call via email">
                         <i class="fas fa-calendar-alt me-2" aria-hidden="true"></i>Book Free Discovery Call
                     </a>
-                    <a href="#contact-info" class="btn btn-outline-light btn-lg">
+                    <a href="#contact-info" class="btn btn-outline-primary btn-lg">
                         <i class="fas fa-info-circle me-2" aria-hidden="true"></i>Get In Touch
                     </a>
                 </div>

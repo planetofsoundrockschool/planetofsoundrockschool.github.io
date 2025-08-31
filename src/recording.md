@@ -14,7 +14,7 @@ eleventyNavigation:
             <div class="col-lg-8 mx-auto text-center">
                 <h1>
                     Live Off the Floor Recording<br>
-                    <span class="text-gradient">Capture • Create • Share</span>
+                    <span class="text-primary fw-bold">Capture • Create • Share</span>
                 </h1>
                 <p>
                     Demo-quality recording service designed to help bands<br>
@@ -24,7 +24,7 @@ eleventyNavigation:
                     <a href="/contact/" class="btn btn-primary btn-lg">
                         <i class="fas fa-microphone me-2"></i>Book Recording Session
                     </a>
-                    <a href="#whats-included" class="btn btn-outline-light btn-lg">
+                    <a href="#whats-included" class="btn btn-outline-primary btn-lg">
                         <i class="fas fa-info-circle me-2"></i>What's Included
                     </a>
                 </div>
