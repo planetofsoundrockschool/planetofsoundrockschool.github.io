@@ -64,34 +64,37 @@
 
     <footer class="bg-dark text-white py-5" role="contentinfo">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
+            <!-- Stay Connected - Full Width Row -->
+            <div class="row mb-4">
+                <div class="col-12 text-center">
                     <h5 class="text-danger mb-3">Stay Connected</h5>
                     <p class="mb-3">Get updates on programs, events, and London's music community.</p>
-                    {% include "newsletter-form.njk" %}
-                </div>
-                <div class="col-lg-6">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h6 class="text-danger mb-3">Quick Links</h6>
-                            <ul class="list-unstyled">
-                                {%- for entry in collections.all | eleventyNavigation %}
-                                <li><a href="{{ entry.url }}" class="text-light text-decoration-none">{{ entry.title }}</a></li>
-                                {%- endfor %}
-                                <li><a href="/policies/" class="text-light text-decoration-none">Policies</a></li>
-                                <li><a href="/referrals/" class="text-light text-decoration-none">Referrals</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-6">
-                            <h6 class="text-danger mb-3">Follow Us</h6>
-                            <a href="https://instagram.com/planetofsoundrockschool" target="_blank" rel="noopener noreferrer" class="text-light text-decoration-none d-block mb-2" aria-label="Follow us on Instagram (opens in new tab)">
-                                <span aria-hidden="true">📸</span> Instagram
-                            </a>
-                            <a href="mailto:hello@planetofsoundrockschool.com" class="text-light text-decoration-none d-block" aria-label="Send us an email">
-                                <span aria-hidden="true">✉️</span> Email Us
-                            </a>
-                        </div>
+                    <div class="col-lg-6 mx-auto">
+                        {% include "newsletter-form.njk" %}
                     </div>
+                </div>
+            </div>
+            
+            <!-- Quick Links and Follow Us Row -->
+            <div class="row">
+                <div class="col-md-10">
+                    <h6 class="text-danger mb-3">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        {%- for entry in collections.all | eleventyNavigation %}
+                        <li><a href="{{ entry.url }}" class="text-light text-decoration-none">{{ entry.title }}</a></li>
+                        {%- endfor %}
+                        <li><a href="/policies/" class="text-light text-decoration-none">Policies</a></li>
+                        <li><a href="/referrals/" class="text-light text-decoration-none">Referrals</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6 class="text-danger mb-3">Follow Us</h6>
+                    <a href="https://instagram.com/planetofsoundrockschool" target="_blank" rel="noopener noreferrer" class="text-light text-decoration-none d-block mb-2" aria-label="Follow us on Instagram (opens in new tab)">
+                        <span aria-hidden="true">📸</span> Instagram
+                    </a>
+                    <a href="mailto:hello@planetofsoundrockschool.com" class="text-light text-decoration-none d-block" aria-label="Send us an email">
+                        <span aria-hidden="true">✉️</span> Email Us
+                    </a>
                 </div>
             </div>
             <hr class="my-4">
