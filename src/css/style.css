@@ -750,6 +750,37 @@ footer .newsletter-form small {
     font-weight: 400;
 }
 
+/* Footer Links Grid - Multi-column layout */
+.footer-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.5rem 1rem;
+    margin: 0;
+}
+
+.footer-links-grid li {
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive adjustments for footer links */
+@media (min-width: 768px) {
+    .footer-links-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .footer-links-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .footer-links-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 /* ===== UTILITY CLASSES ===== */
 .text-gradient {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));

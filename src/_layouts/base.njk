@@ -79,7 +79,7 @@
             <div class="row">
                 <div class="col-md-10">
                     <h6 class="text-danger mb-3">Quick Links</h6>
-                    <ul class="list-unstyled">
+                    <ul class="list-unstyled footer-links-grid">
                         {%- for entry in collections.all | eleventyNavigation %}
                         <li><a href="{{ entry.url }}" class="text-light text-decoration-none">{{ entry.title }}</a></li>
                         {%- endfor %}
