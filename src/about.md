@@ -48,12 +48,12 @@ eleventyNavigation:
 </section>
 
 <!-- Main Content Section -->
-<section class="py-5 bg-light">
+<section class="py-5 bg-light" data-aos="fade-up">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto">
                 <div class="row g-4">
-                    <div class="col-md-6">
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
                         <div class="card h-100 border-0 shadow-sm hover-lift">
                             <div class="card-body p-4">
                                 <div class="bg-danger bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
@@ -66,7 +66,7 @@ eleventyNavigation:
                         </div>
                     </div>
                     
-                    <div class="col-md-6">
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
                         <div class="card h-100 border-0 shadow-sm hover-lift">
                             <div class="card-body p-4">
                                 <div class="bg-danger bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
@@ -79,7 +79,7 @@ eleventyNavigation:
                     </div>
                 </div>
                 
-                <div class="col-md-6">
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
                     <div class="card h-100 border-0 bg-light">
                         <div class="card-body p-4">
                             <h2 class="h4 text-danger mb-3">Community Impact</h2>
@@ -88,7 +88,7 @@ eleventyNavigation:
                     </div>
                 </div>
                 
-                <div class="col-md-6">
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
                     <div class="card h-100 border-0 bg-light">
                         <div class="card-body p-4">
                             <h2 class="h4 text-danger mb-3">Why Choose Us</h2>

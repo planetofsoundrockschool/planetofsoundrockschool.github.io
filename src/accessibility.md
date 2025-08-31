@@ -151,6 +151,45 @@ description: Our commitment to digital accessibility and information about the a
                         </ul>
                     </div>
 
+                    <!-- Accessibility Controls -->
+                    <div class="mb-5">
+                        <h2 class="h3 fw-bold text-primary mb-3">Accessibility Controls</h2>
+                        <p>
+                            We provide controls to customize your browsing experience based on your accessibility needs:
+                        </p>
+                        
+                        <div class="card border-info">
+                            <div class="card-body">
+                                <h3 class="h5 fw-bold mb-3">Animation Settings</h3>
+                                <p class="mb-3">
+                                    Our website includes scroll animations to enhance the visual experience. These are automatically 
+                                    disabled if you have "Reduce Motion" enabled in your device settings. You can also manually 
+                                    control animations using the button below:
+                                </p>
+                                
+                                <div class="d-flex align-items-center gap-3 mb-3">
+                                    <button type="button" 
+                                            id="animation-toggle-page" 
+                                            class="btn btn-outline-primary"
+                                            aria-label="Toggle scroll animations">
+                                        <i class="fas fa-eye-slash me-2" aria-hidden="true"></i>
+                                        <span class="toggle-text">Disable Animations</span>
+                                    </button>
+                                    <span class="text-muted">You can also find this control in the main navigation</span>
+                                </div>
+                                
+                                <div class="alert alert-info mb-0">
+                                    <h6 class="alert-heading mb-2">About Motion Sensitivity</h6>
+                                    <p class="mb-0 small">
+                                        Some users may experience discomfort or vestibular disorders from motion and animations. 
+                                        Our website respects your system's "Reduce Motion" preference and provides manual controls 
+                                        for additional customization.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Feedback -->
                     <div class="mb-5">
                         <h2 class="h3 fw-bold text-primary mb-3">Feedback and Contact Information</h2>

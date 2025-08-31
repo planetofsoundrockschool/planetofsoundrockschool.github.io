@@ -49,7 +49,7 @@ eleventyNavigation:
 </section>
 
 <!-- Contact Information Section -->
-<section id="contact-info" class="py-5 bg-light" aria-labelledby="contact-methods-heading">
+<section id="contact-info" class="py-5 bg-light" aria-labelledby="contact-methods-heading" data-aos="fade-up">
     <div class="container">
         <div class="row mb-5">
             <div class="col-lg-8 mx-auto text-center">
@@ -59,7 +59,7 @@ eleventyNavigation:
         </div>
         
         <div class="row g-4">
-            <div class="col-lg-4">
+            <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">
                 <article class="card h-100 border-0 shadow-sm hover-lift" aria-labelledby="email-contact-title">
                     <div class="card-body text-center p-5">
                         <div class="bg-danger bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-4" 
@@ -77,7 +77,7 @@ eleventyNavigation:
                 </article>
             </div>
             
-            <div class="col-lg-4">
+            <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="200">
                 <article class="card h-100 border-0 shadow-sm hover-lift" aria-labelledby="location-title">
                     <div class="card-body text-center p-5">
                         <div class="bg-danger bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-4" 
@@ -94,7 +94,7 @@ eleventyNavigation:
                 </article>
             </div>
             
-            <div class="col-lg-4">
+            <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="300">
                 <article class="card h-100 border-0 shadow-sm hover-lift" aria-labelledby="social-title">
                     <div class="card-body text-center p-5">
                         <div class="bg-danger bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-4" 

@@ -50,7 +50,7 @@ eleventyNavigation:
 </section>
 
 <!-- What's Included Section -->
-<section class="py-5 bg-light">
+<section class="py-5 bg-light" data-aos="fade-up">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto text-center mb-5">
@@ -60,7 +60,7 @@ eleventyNavigation:
         </div>
         
         <div class="row g-4">
-            <div class="col-lg-6">
+            <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="100">
                 <div class="card h-100 border-0 shadow-sm hover-lift">
                     <div class="card-body p-4">
                         <div class="bg-danger bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
@@ -73,7 +73,7 @@ eleventyNavigation:
                 </div>
             </div>
             
-            <div class="col-lg-6">
+            <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="200">
                 <div class="card h-100 border-0 shadow-sm hover-lift">
                     <div class="card-body p-4">
                         <div class="bg-danger bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
@@ -86,7 +86,7 @@ eleventyNavigation:
                 </div>
             </div>
             
-            <div class="col-lg-6">
+            <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="300">
                 <div class="card h-100 border-0 shadow-sm hover-lift">
                     <div class="card-body p-4">
                         <div class="bg-danger bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
@@ -99,7 +99,7 @@ eleventyNavigation:
                 </div>
             </div>
             
-            <div class="col-lg-6">
+            <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="400">
                 <div class="card h-100 border-0 shadow-sm hover-lift">
                     <div class="card-body p-4">
                         <div class="bg-danger bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 

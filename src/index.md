@@ -16,6 +16,7 @@ eleventyNavigation:
 </div>
 {% endif %}
 
+
 <!-- Hero Section -->
 <section id="hero" class="hero d-flex align-items-center" aria-labelledby="hero-heading">
     <div class="container">
@@ -61,7 +62,7 @@ eleventyNavigation:
 </section>
 
 <!-- About Section -->
-<section id="about" class="section section-bg" aria-labelledby="about-heading">
+<section id="about" class="section section-bg" aria-labelledby="about-heading" data-aos="fade-up">
     <div class="container">
         <div class="section-header">
             <h2 id="about-heading">About Planet of Sound Rock School</h2>
@@ -69,7 +70,7 @@ eleventyNavigation:
         </div>
         
         <div class="row align-items-center">
-            <div class="col-lg-6">
+            <div class="col-lg-6" data-aos="fade-right">
                 <h3 class="mb-4">Our Mission</h3>
                 <p class="lead mb-4">We believe music education should be practical, collaborative, and fun. Our four-tier program system grows with you, from absolute beginner to touring professional.</p>
                 
@@ -91,7 +92,7 @@ eleventyNavigation:
                 </div>
             </div>
             
-            <div class="col-lg-6">
+            <div class="col-lg-6" data-aos="fade-left">
                 <div class="stats row text-center" role="region" aria-label="School statistics">
                     <div class="col-4">
                         <div class="stats-item">
@@ -121,7 +122,7 @@ eleventyNavigation:
 </section>
 
 <!-- Programs Section -->
-<section id="programs" class="section section-alt">
+<section id="programs" class="section section-alt" data-aos="fade-up">
     <div class="container">
         <div class="section-header">
             <h2>Our Four-Tier Program System</h2>
@@ -129,7 +130,7 @@ eleventyNavigation:
         </div>
         
         <div class="row g-4">
-            <div class="col-lg-3 col-md-6 d-flex">
+            <div class="col-lg-3 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="100">
                 <article class="card h-100 hover-lift w-100" aria-labelledby="learn-to-play-title">
                     <div class="card-body text-center d-flex flex-column">
                         <div class="mb-3">
@@ -144,7 +145,7 @@ eleventyNavigation:
                     </div>
                 </article>
             </div>
-            <div class="col-lg-3 col-md-6 d-flex">
+            <div class="col-lg-3 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="200">
                 <article class="card h-100 hover-lift w-100" aria-labelledby="bandstarter-title">
                     <div class="card-body text-center d-flex flex-column">
                         <div class="mb-3">
@@ -159,7 +160,7 @@ eleventyNavigation:
                     </div>
                 </article>
             </div>
-            <div class="col-lg-3 col-md-6 d-flex">
+            <div class="col-lg-3 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="300">
                 <article class="card h-100 hover-lift w-100" aria-labelledby="show-ready-title">
                     <div class="card-body text-center d-flex flex-column">
                         <div class="mb-3">
@@ -174,7 +175,7 @@ eleventyNavigation:
                     </div>
                 </article>
             </div>
-            <div class="col-lg-3 col-md-6 d-flex">
+            <div class="col-lg-3 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="400">
                 <article class="card h-100 hover-lift w-100" aria-labelledby="tour-title">
                     <div class="card-body text-center d-flex flex-column">
                         <div class="mb-3">
@@ -203,7 +204,7 @@ eleventyNavigation:
 </section>
 
 <!-- Why Choose Us Section -->
-<section id="why-choose-us" class="section section-bg" aria-labelledby="why-choose-heading">
+<section id="why-choose-us" class="section section-bg" aria-labelledby="why-choose-heading" data-aos="fade-up">
     <div class="container">
         <div class="section-header">
             <h2 id="why-choose-heading">Why Choose Planet of Sound?</h2>
@@ -211,7 +212,7 @@ eleventyNavigation:
         </div>
         
         <div class="row g-4">
-            <div class="col-lg-4">
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="text-center">
                     <div class="mb-4">
                         <i class="fas fa-handshake fa-4x text-primary" aria-hidden="true"></i>
@@ -220,7 +221,7 @@ eleventyNavigation:
                     <p class="text-muted">Personal guidance from experienced musicians who've been where you want to go. We don't just teach – we mentor.</p>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
                 <div class="text-center">
                     <div class="mb-4">
                         <i class="fas fa-route fa-4x text-primary" aria-hidden="true"></i>
@@ -229,7 +230,7 @@ eleventyNavigation:
                     <p class="text-muted">Our four-tier system provides clear milestones and goals, taking you from beginner to professional touring artist.</p>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
                 <div class="text-center">
                     <div class="mb-4">
                         <i class="fas fa-heart fa-4x text-primary" aria-hidden="true"></i>
@@ -240,7 +241,7 @@ eleventyNavigation:
             </div>
         </div>
         <div class="row mt-5">
-            <div class="col-lg-8 mx-auto">
+            <div class="col-lg-8 mx-auto" data-aos="fade-up" data-aos-delay="400">
                 <div class="card border-0 shadow-lg">
                     <div class="card-body p-4 text-center">
                         <h4 class="text-primary mb-3">Individual Lessons & Recording Services</h4>
@@ -271,7 +272,7 @@ eleventyNavigation:
 </section>
 
 <!-- FAQ Section -->
-<section id="faq" class="section" aria-labelledby="faq-heading">
+<section id="faq" class="section" aria-labelledby="faq-heading" data-aos="fade-up">
     <div class="container">
         <div class="section-header">
             <h2 id="faq-heading">Frequently Asked Questions</h2>
@@ -279,7 +280,7 @@ eleventyNavigation:
         </div>
         
         <div class="row">
-            <div class="col-lg-8 mx-auto">
+            <div class="col-lg-8 mx-auto" data-aos="fade-up" data-aos-delay="200">
                 <div class="accordion" id="faqAccordion" role="region" aria-label="Frequently asked questions about Planet of Sound Rock School">
                     <div class="accordion-item">
                         <h2 class="accordion-header">
@@ -371,7 +372,7 @@ eleventyNavigation:
 </section>
 
 <!-- Contact Section -->
-<section id="contact" class="section contact" aria-labelledby="contact-heading">
+<section id="contact" class="section contact" aria-labelledby="contact-heading" data-aos="fade-up">
     <div class="container">
         <div class="section-header">
             <h2 id="contact-heading">Get Started Today</h2>
@@ -379,7 +380,7 @@ eleventyNavigation:
         </div>
         
         <div class="row g-4">
-            <div class="col-lg-6">
+            <div class="col-lg-6" data-aos="fade-right">
                 <div class="contact-info">
                     <h3 class="mb-4">Let's Connect</h3>
                     
@@ -415,7 +416,7 @@ eleventyNavigation:
                 </div>
             </div>
             
-            <div class="col-lg-6">
+            <div class="col-lg-6" data-aos="fade-left">
                 <div class="contact-form">
                     <h3 class="mb-4">Quick Inquiry</h3>
                     <form name="homepage-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" aria-label="Contact form for inquiries" novalidate>

@@ -50,12 +50,12 @@ eleventyNavigation:
 </section>
 
 <!-- Programs Overview Section -->
-<section class="py-5 bg-light">
+<section class="py-5 bg-light" data-aos="fade-up">
     <div class="container">
         <div class="row">
             <div class="col-lg-10 mx-auto">
                 <div class="row g-4">
-                <div class="col-lg-6">
+                <div class="col-lg-6" data-aos="fade-right">
                     <div class="card h-100 border-danger">
                         <div class="card-header bg-danger text-white">
                             <h3 class="card-title mb-0">Learn To Play</h3>
@@ -75,7 +75,7 @@ eleventyNavigation:
                     </div>
                 </div>
                 
-                <div class="col-lg-6">
+                <div class="col-lg-6" data-aos="fade-left">
                     <div class="card h-100 border-warning">
                         <div class="card-header bg-warning text-dark">
                             <h3 class="card-title mb-0">Bandstarter</h3>
@@ -95,7 +95,7 @@ eleventyNavigation:
                     </div>
                 </div>
                 
-                <div class="col-lg-6">
+                <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
                     <div class="card h-100 border-info">
                         <div class="card-header bg-info text-white">
                             <h3 class="card-title mb-0">Show Ready</h3>
@@ -115,7 +115,7 @@ eleventyNavigation:
                     </div>
                 </div>
                 
-                <div class="col-lg-6">
+                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
                     <div class="card h-100 border-success">
                         <div class="card-header bg-success text-white">
                             <h3 class="card-title mb-0">Tour</h3>

@@ -227,6 +227,39 @@ body, .main-content {
     }
 }
 
+/* Animation Toggle Button */
+#animation-toggle {
+    border: 1px solid var(--text-muted);
+    color: var(--text-muted);
+    background: transparent;
+    font-size: 0.85rem;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.5rem;
+    transition: var(--transition-base);
+    /* WCAG 2.2 Target Size: Ensure adequate touch target */
+    min-height: 44px;
+    min-width: 44px;
+}
+
+#animation-toggle:hover {
+    background: var(--text-muted);
+    color: white;
+    border-color: var(--text-muted);
+}
+
+#animation-toggle:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+/* Animation toggle on accessibility page */
+#animation-toggle-page {
+    /* WCAG 2.2 Target Size: Ensure adequate touch target */
+    min-height: 48px;
+    min-width: 48px;
+}
+
 /* Mobile navigation styles */
 @media (max-width: 1199px) {
     .navbar-collapse {
@@ -265,6 +298,13 @@ body, .main-content {
     
     .navbar-nav .nav-item:last-child .nav-link {
         border-bottom: none;
+    }
+    
+    /* Animation toggle button in mobile menu */
+    #animation-toggle {
+        margin: 0.5rem 0;
+        width: 100%;
+        justify-content: center;
     }
 }
 

@@ -50,12 +50,12 @@ eleventyNavigation:
 </section>
 
 <!-- Pricing Content Section -->
-<section class="py-5 bg-light">
+<section class="py-5 bg-light" data-aos="fade-up">
     <div class="container">
         <div class="row">
             <div class="col-lg-10 mx-auto">
                 <div class="row g-4">
-                <div class="col-lg-6">
+                <div class="col-lg-6" data-aos="fade-right">
                     <div class="card border-0 bg-light h-100">
                         <div class="card-body p-4">
                             <h2 class="h4 text-danger mb-4">Individual Lessons</h2>
@@ -85,7 +85,7 @@ eleventyNavigation:
                     </div>
                 </div>
                 
-                <div class="col-lg-6">
+                <div class="col-lg-6" data-aos="fade-left">
                     <div class="card border-0 bg-light h-100">
                         <div class="card-body p-4">
                             <h2 class="h4 text-danger mb-4">Tiered Programs</h2>
