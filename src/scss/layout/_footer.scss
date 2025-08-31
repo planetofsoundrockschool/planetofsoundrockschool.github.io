@@ -1,0 +1,185 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// ===== FOOTER =====
+footer {
+  @include gradient-bg($text-dark, #374151);
+  color: white;
+  padding: 4rem 0 2rem 0;
+
+  h5,
+  h6 {
+    color: white;
+    font-weight: 600;
+  }
+
+  a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: $transition-base;
+
+    &:hover {
+      color: white;
+      transform: translateX(3px);
+    }
+  }
+}
+
+// Footer Links Grid - Multi-column layout
+.footer-links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.5rem 1rem;
+  margin: 0;
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+}
+
+// Responsive adjustments for footer links
+@include tablet-up {
+  .footer-links-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@include desktop-up {
+  .footer-links-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@include mobile-only {
+  .footer-links-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+// Footer Follow Us section with left border separator
+.footer-follow-section {
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  padding-left: 1.5rem;
+}
+
+// Remove border on mobile when sections stack
+@include mobile-only {
+  .footer-follow-section {
+    border-left: none;
+    padding-left: 0.75rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+}
+
+// ===== NEWSLETTER FORM STYLES =====
+
+// Newsletter form in homepage "Stay in the Loop" section
+.bg-gradient-primary .newsletter-form {
+  text-align: center;
+
+  .form-label {
+    color: white !important;
+    text-align: center;
+    display: block;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  .form-control {
+    text-align: center;
+    font-size: 1.1rem;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    border: none;
+    background: white;
+    margin-bottom: 1rem;
+  }
+
+  .btn {
+    background: $accent-color !important;
+    color: white !important;
+    border: none;
+    font-weight: 700;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 15px rgba(180, 83, 9, 0.3);
+
+    &:hover {
+      background: #92400e !important;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(180, 83, 9, 0.4);
+    }
+  }
+
+  small {
+    color: white !important;
+    text-align: center;
+    display: block;
+    font-weight: 500;
+  }
+}
+
+// Newsletter form in footer
+footer .newsletter-form {
+  margin-bottom: 1rem;
+
+  .form-label {
+    color: #e5e7eb !important;
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+  }
+
+  .form-control {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    margin-bottom: 1rem;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    &:focus {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: $primary-color;
+      box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.25);
+      color: white;
+    }
+  }
+
+  .btn {
+    background: $accent-color !important;
+    color: white !important;
+    border: none;
+    font-weight: 600;
+    padding: 0.875rem 2rem;
+
+    &:hover {
+      background: #92400e !important;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(180, 83, 9, 0.4);
+    }
+  }
+
+  small {
+    color: #d1d5db !important;
+    font-weight: 400;
+  }
+}
+
+// AAA: Privacy text contrast enhancement
+#homepage-newsletter-privacy,
+#newsletter-privacy {
+  font-weight: 500; /* Slightly bolder for better readability */
+}
+
+// Ensure privacy text meets AAA contrast in all contexts
+.bg-gradient-primary #homepage-newsletter-privacy {
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); /* Subtle shadow for better definition */
+}
+
+footer #newsletter-privacy {
+  color: #e5e7eb !important; /* Light gray that meets AAA contrast on dark background */
+}

@@ -1,0 +1,65 @@
+/**
+ * Planet of Sound Rock School - Modular SASS Architecture
+ * Main entry file for modular component-based styles
+ */
+
+// ===== IMPORTS (must come first) =====
+// Variables, mixins, functions - no CSS output
+@use 'abstracts/variables';
+@use 'abstracts/mixins';
+
+// Global styles, resets, typography
+@use 'base/reset';
+@use 'base/utilities';
+@use 'base/animations';
+@use 'base/accessibility';
+
+// Major layout components
+@use 'layout/header';
+@use 'layout/footer';
+
+// Reusable UI components
+@use 'components/buttons';
+@use 'components/cards';
+@use 'components/forms';
+@use 'components/hero';
+
+// ===== CSS CUSTOM PROPERTIES =====
+// Keep CSS custom properties for runtime theme switching and compatibility
+:root {
+  /* Primary Brand Colors - Enhanced for AAA contrast */
+  --primary-color: #1d4ed8;      /* Even darker blue for AAA contrast (7:1) */
+  --secondary-color: #b91c1c;    /* Darker red for AAA contrast */
+  --accent-color: #b45309;       /* Darker orange for AAA contrast */
+  
+  /* Neutral Colors - Enhanced for AAA contrast */
+  --text-dark: #000000;          /* Pure black for maximum contrast */
+  --text-light: #374151;         /* Much darker gray for AAA contrast (7:1) */
+  --text-muted: #4b5563;         /* Darker muted text for better readability */
+  --background-light: #ffffff;   /* Pure white for maximum contrast */
+  --background-section: #ffffff; /* Pure white */
+  
+  /* Interactive Colors - AAA Enhanced */
+  --link-color: #1d4ed8;
+  --link-hover: #1e40af;
+  
+  /* AAA Contrast Colors */
+  --aaa-primary: #1e40af;       /* 7:1 contrast ratio */
+  --aaa-secondary: #991b1b;     /* 7:1 contrast ratio */
+  --aaa-text-light: #374151;   /* 7:1 contrast ratio */
+  
+  /* Spacing & Layout */
+  --section-padding: 5rem 0;
+  --header-height: 70px;
+  
+  /* Shadows & Effects */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+  
+  /* Animations */
+  --transition-base: all 0.3s ease;
+  --transition-fast: all 0.15s ease;
+  --animation-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}

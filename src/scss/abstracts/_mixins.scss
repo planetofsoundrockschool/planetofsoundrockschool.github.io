@@ -1,0 +1,158 @@
+@use 'variables' as *;
+
+// ===== RESPONSIVE MIXINS =====
+@mixin mobile-only {
+  @media (max-width: #{$breakpoint-md - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet-up {
+  @media (min-width: #{$breakpoint-md}) {
+    @content;
+  }
+}
+
+@mixin desktop-up {
+  @media (min-width: #{$breakpoint-lg}) {
+    @content;
+  }
+}
+
+@mixin large-desktop-up {
+  @media (min-width: #{$breakpoint-xl}) {
+    @content;
+  }
+}
+
+@mixin high-contrast {
+  @media (prefers-contrast: high) {
+    @content;
+  }
+}
+
+@mixin reduced-motion {
+  @media (prefers-reduced-motion: reduce) {
+    @content;
+  }
+}
+
+// ===== UTILITY MIXINS =====
+@mixin button-base {
+  border-radius: 3rem;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  transition: $transition-base;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  min-height: 44px;
+  min-width: 44px;
+}
+
+@mixin button-shimmer {
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+  }
+
+  &:hover::before {
+    left: 100%;
+  }
+}
+
+@mixin card-base {
+  border: none;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: $transition-base;
+  box-shadow: $shadow-sm;
+  background: $background-section;
+  height: 100%;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $shadow-xl;
+  }
+}
+
+@mixin form-control-base {
+  border: 2px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 0.875rem 1rem;
+  font-size: 1rem;
+  transition: $transition-base;
+  background: #f9fafb;
+
+  &:focus {
+    border-color: $primary-color;
+    box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.15);
+    background: white;
+  }
+}
+
+@mixin focus-ring {
+  outline: 4px solid $primary-color;
+  outline-offset: 3px;
+  box-shadow: 
+    0 0 0 2px white, 
+    0 0 0 6px $primary-color, 
+    0 0 0 8px rgba(29, 78, 216, 0.3),
+    0 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  filter: drop-shadow(0 0 4px rgba(29, 78, 216, 0.4));
+}
+
+@mixin visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+@mixin section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: $text-dark;
+    margin-bottom: 1rem;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -0.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(135deg, $primary-color, $secondary-color);
+      border-radius: 2px;
+    }
+  }
+
+  p {
+    font-size: 1.1rem;
+    color: $text-light;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+@mixin gradient-bg($color1: $primary-color, $color2: $secondary-color) {
+  background: linear-gradient(135deg, $color1, $color2);
+}

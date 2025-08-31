@@ -4,9 +4,12 @@
   "description": "Planet of Sound Rock School website built with Eleventy",
   "main": "index.js",
   "scripts": {
-    "build": "eleventy && node scripts/clean-html.js",
-    "start": "eleventy --serve",
-    "dev": "eleventy --serve --watch",
+    "build": "npm run build:sass && eleventy && node scripts/clean-html.js",
+    "start": "npm run build:sass && eleventy --serve",
+    "dev": "npm-run-all --parallel watch:sass watch:eleventy",
+    "build:sass": "sass src/scss/main.scss:src/css/style.css --style=compressed",
+    "watch:sass": "sass src/scss/main.scss:src/css/style.css --watch",
+    "watch:eleventy": "eleventy --serve --watch",
     "clean-html": "node scripts/clean-html.js"
   },
   "repository": {
@@ -25,6 +28,8 @@
     "@11ty/eleventy": "^3.1.2",
     "@11ty/eleventy-navigation": "^1.0.4",
     "markdown-it": "^14.1.0",
-    "markdown-it-attrs": "^4.3.1"
+    "markdown-it-attrs": "^4.3.1",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.71.1"
   }
 }

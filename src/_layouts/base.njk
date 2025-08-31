@@ -20,10 +20,58 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ '/css/style.css' | cacheBust }}">
+    
+    
+    <!-- Early Dark Mode Initialization to Prevent Flash -->
+    <script>
+        (function() {
+            const userPreference = localStorage.getItem('darkModeEnabled');
+            const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+            
+            let shouldUseDark;
+            if (userPreference !== null) {
+                shouldUseDark = userPreference === 'true';
+            } else {
+                shouldUseDark = prefersDarkScheme.matches;
+            }
+            
+            if (shouldUseDark) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
 </head>
 <body>
     <!-- Skip Link for Keyboard Navigation -->
     <a href="#main-content" class="skip-link visually-hidden-focusable">Skip to main content</a>
+    
+    <!-- Mobile Display Settings Banner -->
+    <div id="mobile-settings-banner" class="d-xl-none bg-light border-bottom py-2 px-3">
+        <div class="d-flex align-items-center justify-content-between mb-1">
+            <small class="text-muted mb-0 fw-medium">
+                <i class="fas fa-sliders-h me-1" aria-hidden="true"></i>
+                Display Settings
+            </small>
+        </div>
+        <div class="d-flex gap-2">
+            <button type="button" 
+                    id="animation-toggle-mobile" 
+                    class="btn btn-sm btn-outline-secondary flex-fill" 
+                    aria-label="Toggle scroll animations"
+                    title="Toggle scroll animations on/off">
+                <i class="fas fa-eye-slash me-1" aria-hidden="true"></i>
+                <small>Disable Animations</small>
+            </button>
+            <button type="button" 
+                    id="dark-mode-toggle-mobile" 
+                    class="btn btn-sm btn-outline-secondary flex-fill" 
+                    aria-label="Toggle dark mode"
+                    title="Toggle dark/light mode">
+                <i class="fas fa-sun me-1" aria-hidden="true"></i>
+                <small>Dark Mode</small>
+            </button>
+        </div>
+    </div>
     
     <!-- Header -->
     <header id="header" class="header fixed-top" role="banner">
@@ -43,31 +91,55 @@
                 
                 <!-- Navigation -->
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto" role="menubar">
-                        {%- for entry in collections.all | eleventyNavigation %}
-                        <li class="nav-item" role="none">
-                            <a class="nav-link{% if entry.url == page.url %} active{% endif %}" 
-                               href="{{ entry.url }}" 
-                               role="menuitem"
-                               {% if entry.url == page.url %}aria-current="page"{% endif %}>
-                                {{ entry.title }}
-                            </a>
-                        </li>
-                        {%- endfor %}
+                    <div class="d-lg-flex w-100 align-items-end justify-content-center">
+                        <!-- Main Navigation Menu -->
+                        <ul class="navbar-nav" role="menubar">
+                            {%- for entry in collections.all | eleventyNavigation %}
+                            <li class="nav-item" role="none">
+                                <a class="nav-link{% if entry.url == page.url %} active{% endif %}" 
+                                   href="{{ entry.url }}" 
+                                   role="menuitem"
+                                   {% if entry.url == page.url %}aria-current="page"{% endif %}>
+                                    {{ entry.title }}
+                                </a>
+                            </li>
+                            {%- if not loop.last %}
+                            <li class="nav-item d-flex align-items-center d-none d-xl-block" role="none">
+                                <span class="text-muted nav-item-separator">|</span>
+                            </li>
+                            {%- endif %}
+                            {%- endfor %}
+                        </ul>
                         
-                        <!-- Animation Toggle -->
-                        <li class="nav-item" role="none">
-                            <button type="button" 
-                                    id="animation-toggle" 
-                                    class="btn btn-sm btn-outline-secondary ms-2" 
-                                    aria-label="Toggle scroll animations"
-                                    title="Toggle scroll animations on/off">
-                                <i class="fas fa-eye-slash me-1" aria-hidden="true"></i>
-                                <span class="toggle-text d-none d-lg-inline">Disable Animations</span>
-                                <span class="d-lg-none">Animations</span>
-                            </button>
-                        </li>
-                    </ul>
+                        
+                        <!-- Vertical Separator -->
+                        <div class="d-none d-xl-block mx-3 navbar-separator-vertical align-self-center"></div>
+                        
+                        <!-- Display Settings - Desktop -->
+                        <div class="d-none d-xl-block align-self-center">
+                            <div class="d-flex flex-column display-settings-container">
+                                <button type="button" 
+                                        id="animation-toggle-desktop" 
+                                        class="btn btn-sm btn-outline-secondary text-start display-toggle-btn" 
+                                        aria-label="Toggle scroll animations"
+                                        title="Toggle scroll animations on/off">
+                                    <i class="fas fa-eye-slash me-1" aria-hidden="true"></i>
+                                    <small class="toggle-text">Disable Animations</small>
+                                </button>
+                                <!-- Horizontal Separator -->
+                                <div class="navbar-separator-horizontal"></div>
+                                <button type="button" 
+                                        id="dark-mode-toggle-desktop" 
+                                        class="btn btn-sm btn-outline-secondary text-start display-toggle-btn" 
+                                        aria-label="Toggle dark mode"
+                                        title="Toggle dark/light mode">
+                                    <i class="fas fa-sun me-1" aria-hidden="true"></i>
+                                    <small class="toggle-text">Dark Mode</small>
+                                </button>
+                            </div>
+                        </div>
+                        
+                    </div>
                 </div>
             </div>
         </nav>
@@ -133,6 +205,9 @@
     <!-- Custom JS -->
     <script src="{{ '/js/main.js' | cacheBust }}"></script>
     
+    <!-- Dark Mode JS -->
+    <script src="{{ '/js/dark-mode.js' | cacheBust }}"></script>
+    
     <!-- AAA Accessibility Enhancement Script -->
     <script src="{{ '/js/accessibility-aaa.js' | cacheBust }}"></script>
     
@@ -158,22 +233,30 @@
         
         // Update UI elements with current status
         function updateUI() {
-            // Update toggle buttons
-            const toggleButtons = ['animation-toggle', 'animation-toggle-page'];
+            // Update both mobile and desktop toggle buttons
+            const toggleButtons = [
+                'animation-toggle-mobile', 
+                'animation-toggle-desktop'
+            ];
+            
             toggleButtons.forEach(buttonId => {
                 const btn = document.getElementById(buttonId);
                 if (btn) {
                     const icon = btn.querySelector('i');
-                    const text = btn.querySelector('.toggle-text');
+                    const text = btn.querySelector('.toggle-text') || btn.querySelector('small') || btn.querySelector('span');
                     
                     if (animationsEnabled) {
-                        icon.className = 'fas fa-eye-slash me-2';
-                        if (text) text.textContent = 'Disable Animations';
+                        icon.className = 'fas fa-eye-slash me-1';
+                        if (text) {
+                            text.textContent = 'Disable Animations';
+                        }
                         btn.setAttribute('aria-label', 'Disable scroll animations');
                         btn.title = 'Disable scroll animations';
                     } else {
-                        icon.className = 'fas fa-eye me-2';
-                        if (text) text.textContent = 'Enable Animations';
+                        icon.className = 'fas fa-eye me-1';
+                        if (text) {
+                            text.textContent = 'Enable Animations';
+                        }
                         btn.setAttribute('aria-label', 'Enable scroll animations');
                         btn.title = 'Enable scroll animations';
                     }
@@ -200,22 +283,7 @@
             if (!popup) {
                 popup = document.createElement('div');
                 popup.id = 'animation-feedback';
-                popup.style.cssText = `
-                    position: fixed;
-                    top: 80px;
-                    right: 20px;
-                    background: var(--primary-color, #1d4ed8);
-                    color: white;
-                    padding: 12px 20px;
-                    border-radius: 8px;
-                    font-size: 14px;
-                    font-weight: 500;
-                    z-index: 10000;
-                    opacity: 0;
-                    transform: translateY(-20px);
-                    transition: all 0.3s ease;
-                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-                `;
+                popup.className = 'animation-feedback';
                 document.body.appendChild(popup);
             }
             
@@ -224,8 +292,7 @@
             popup.setAttribute('aria-live', 'polite');
             
             setTimeout(() => {
-                popup.style.opacity = '1';
-                popup.style.transform = 'translateY(0)';
+                popup.classList.add('show');
             }, 100);
         }
         
@@ -235,7 +302,10 @@
             updateUI();
             
             // Add toggle button listeners
-            const toggleButtons = ['animation-toggle', 'animation-toggle-page'];
+            const toggleButtons = [
+                'animation-toggle-mobile', 
+                'animation-toggle-desktop'
+            ];
             toggleButtons.forEach(id => {
                 const btn = document.getElementById(id);
                 if (btn) {
@@ -245,6 +315,57 @@
                     });
                 }
             });
+            
+            // Mobile menu close functionality
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            const navbarCollapse = document.querySelector('#navbarNav');
+            
+            if (navbarToggler && navbarCollapse) {
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    const isMenuOpen = navbarCollapse.classList.contains('show');
+                    const isClickInsideMenu = navbarCollapse.contains(event.target);
+                    const isClickOnToggler = navbarToggler.contains(event.target);
+                    
+                    // Close menu if it's open and click is outside menu and not on toggler
+                    if (isMenuOpen && !isClickInsideMenu && !isClickOnToggler) {
+                        const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+                            toggle: false
+                        });
+                        bsCollapse.hide();
+                    }
+                });
+                
+                // Close menu when pressing Escape key
+                document.addEventListener('keydown', function(event) {
+                    const isMenuOpen = navbarCollapse.classList.contains('show');
+                    
+                    if (event.key === 'Escape' && isMenuOpen) {
+                        const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+                            toggle: false
+                        });
+                        bsCollapse.hide();
+                        
+                        // Return focus to the toggle button for accessibility
+                        navbarToggler.focus();
+                    }
+                });
+                
+                // Close menu when clicking on a navigation link (except dropdown toggles)
+                const navLinks = navbarCollapse.querySelectorAll('.nav-link:not(.dropdown-toggle)');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        const isMenuOpen = navbarCollapse.classList.contains('show');
+                        
+                        if (isMenuOpen) {
+                            const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+                                toggle: false
+                            });
+                            bsCollapse.hide();
+                        }
+                    });
+                });
+            }
             
         });
     </script>

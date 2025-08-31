@@ -1,0 +1,106 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// ===== CARDS =====
+.card {
+  @include card-base;
+}
+
+.card-body {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: $text-dark;
+  margin-bottom: 1rem;
+}
+
+.card-text {
+  color: $text-light;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+// Programs grid specific styles
+#programs {
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    // Use default Bootstrap gutter system
+    margin-right: var(--bs-gutter-x, -#{$bs-gutter-x});
+    margin-left: var(--bs-gutter-x, -#{$bs-gutter-x});
+  }
+
+  .col-lg-3 {
+    display: flex;
+    margin-bottom: 2rem;
+    border: 1px solid transparent; // Just to ensure proper spacing
+    // Use default Bootstrap gutter system
+    padding-right: var(--bs-gutter-x, #{$bs-gutter-x});
+    padding-left: var(--bs-gutter-x, #{$bs-gutter-x});
+  }
+
+  .card {
+    width: 100%;
+    min-height: 400px;
+  }
+
+  .card-body {
+    text-align: center;
+    justify-content: space-between;
+  }
+
+  .card .fa-3x {
+    color: $primary-color;
+    margin-bottom: 1rem;
+  }
+
+  .card-title {
+    color: $primary-color;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .card-text {
+    margin-bottom: 2rem;
+  }
+}
+
+// Ensure proper grid layout on all screen sizes
+@include desktop-up {
+  #programs .col-lg-3 {
+    flex: 0 0 auto;
+    width: 25%;
+  }
+}
+
+@include large-desktop-up {
+  #programs .col-lg-3 {
+    flex: 0 0 auto;
+    width: 25%;
+  }
+}
+
+@include tablet-up {
+  #programs .col-md-6 {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+}
+
+@include mobile-only {
+  #programs .col-lg-3 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+  }
+  
+  #programs .card {
+    min-height: 350px;
+  }
+}

@@ -70,3 +70,13 @@ jspm_packages/
 
 # Yarn Integrity file
 .yarn-integrity
+
+# SASS/SCSS
+.sass-cache/
+*.scssc
+*.sass.map
+*.scss.map
+
+# Compiled CSS (recommended for clean development workflow)
+src/css/style.css
+src/css/style.css.map

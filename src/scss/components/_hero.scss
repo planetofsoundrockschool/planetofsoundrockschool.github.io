@@ -1,0 +1,131 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// ===== HERO SECTION =====
+.hero {
+  padding: calc(#{$header-height} + 4rem) 0 6rem 0;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  color: $text-dark;
+  position: relative;
+  overflow: hidden;
+  min-height: 80vh;
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  p {
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+  }
+}
+
+// Modern hero with illustration layout
+@include desktop-up {
+  .hero-with-image {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+
+    .hero-content {
+      display: flex;
+      align-items: center;
+      min-height: 60vh;
+    }
+  }
+  
+  .hero-text {
+    padding-right: 2rem;
+  }
+  
+  .hero-illustration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 2rem;
+
+    img,
+    svg {
+      width: 100%;
+      height: auto;
+      max-width: 500px;
+      max-height: 400px;
+      object-fit: contain;
+    }
+  }
+}
+
+// Mobile: Center everything, hide illustration
+@include mobile-only {
+  .hero {
+    min-height: 70vh;
+    text-align: center;
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+    }
+  }
+  
+  .hero-with-image {
+    .hero-illustration {
+      display: none;
+    }
+
+    .hero-text {
+      text-align: center;
+      width: 100%;
+      padding: 0;
+    }
+  }
+}
+
+// ===== STATS SECTION =====
+.stats {
+  @include gradient-bg($primary-color, $secondary-color);
+  color: white;
+  padding: 4rem 0;
+}
+
+.stats-item {
+  text-align: center;
+  padding: 1.5rem;
+
+  i {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+  }
+
+  h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin: 0;
+  }
+}
+
+@include mobile-only {
+  .stats-item h3 {
+    font-size: 2rem;
+  }
+}

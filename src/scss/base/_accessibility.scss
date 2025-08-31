@@ -1,0 +1,180 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// ===== ACCESSIBILITY =====
+
+// Skip Link
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: $primary-color;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  z-index: 10000;
+  transition: $transition-fast;
+
+  &:focus {
+    top: 6px;
+    color: white;
+    text-decoration: none;
+    outline: 4px solid #000;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px white, 0 0 0 6px #000;
+  }
+}
+
+// Enhanced Focus Indicators - WCAG AAA Level Enhancement
+.btn:focus-visible,
+.form-control:focus,
+.nav-link:focus-visible,
+a:focus-visible,
+.navbar-toggler:focus-visible,
+.accordion-button:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  @include focus-ring;
+}
+
+// Special handling for buttons with existing borders - AAA Enhanced
+.btn:focus-visible {
+  border: 3px solid white;
+  box-shadow: 
+    0 0 0 1px $primary-color, 
+    0 0 0 4px white, 
+    0 0 0 7px $primary-color,
+    0 0 0 9px rgba(29, 78, 216, 0.2);
+  filter: drop-shadow(0 0 6px rgba(29, 78, 216, 0.5));
+}
+
+// WCAG 2.2 Focus Not Obscured - Ensure focus isn't hidden by fixed header
+*:focus-visible {
+  scroll-margin-top: calc(#{$header-height} + 1rem);
+}
+
+// Ensure focused elements in main content area aren't obscured
+main *:focus-visible {
+  scroll-margin-top: calc(#{$header-height} + 1rem);
+}
+
+// WCAG 2.2 Target Size - Additional interactive elements
+.accordion-button {
+  min-height: 44px;
+  padding: 1rem 1.25rem;
+}
+
+.contact-info-item {
+  min-height: 44px;
+}
+
+// Ensure form controls meet target size on mobile
+@include mobile-only {
+  .form-control {
+    min-height: 44px;
+    padding: 1rem;
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+  
+  .btn {
+    min-height: 48px;
+    padding: 1rem 2rem;
+  }
+  
+  .nav-link {
+    min-height: 48px;
+    padding: 1rem 1.5rem;
+  }
+}
+
+// Motion preferences
+@include reduced-motion {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+  
+  .hero-float-1,
+  .hero-float-2,
+  .hero-float-3 {
+    animation: none;
+  }
+  
+  // WCAG 2.2: Disable transform animations that could cause motion sensitivity
+  .btn:hover,
+  .card:hover {
+    transform: none !important;
+  }
+}
+
+// High contrast mode support
+@include high-contrast {
+  :root {
+    --primary-color: #{$high-contrast-primary};
+    --secondary-color: #{$high-contrast-secondary};
+    --accent-color: #{$high-contrast-accent};
+    --text-dark: #{$text-dark};
+    --text-light: #{$high-contrast-text-light};
+    --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.5);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.5);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5);
+  }
+  
+  // AAA: Enhanced focus for high contrast
+  .btn:focus-visible,
+  .form-control:focus,
+  .nav-link:focus-visible,
+  a:focus-visible {
+    outline: 5px solid #000 !important;
+    outline-offset: 3px;
+    box-shadow: 0 0 0 3px #fff, 0 0 0 8px #000 !important;
+    filter: none !important;
+  }
+  
+  // AAA: Enhanced privacy text contrast in high contrast mode
+  #homepage-newsletter-privacy,
+  #newsletter-privacy {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+  }
+  
+  .btn-outline-light {
+    border-color: white !important;
+    color: white !important;
+  }
+  
+  .btn-outline-light:hover {
+    background: white !important;
+    color: #000000 !important;
+  }
+  
+  .text-muted {
+    color: #374151 !important;
+  }
+}
+
+// High contrast focus for better visibility - WCAG 2.2 enhanced
+@include high-contrast {
+  .btn:focus-visible,
+  .form-control:focus,
+  .nav-link:focus-visible,
+  a:focus-visible,
+  .navbar-toggler:focus-visible,
+  .accordion-button:focus-visible {
+    outline: 4px solid #000 !important;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px white, 0 0 0 6px #000, 0 0 0 8px rgba(0, 0, 0, 0.2) !important;
+    border-color: #000 !important;
+  }
+}
