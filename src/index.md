@@ -15,11 +15,11 @@ eleventyNavigation:
 {% endif %}
 
 <!-- Hero Section -->
-<section id="hero" class="hero d-flex align-items-center">
+<section id="hero" class="hero d-flex align-items-center" aria-labelledby="hero-heading">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto text-center">
-                <h1>
+                <h1 id="hero-heading">
                     From Your First Chord<br>
                     <span class="text-gradient">To Your First Tour</span>
                 </h1>
@@ -28,38 +28,39 @@ eleventyNavigation:
                     <strong>All Ages • All Stages • Learn. Collaborate. Play Live.</strong>
                 </p>
                 <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mt-4">
-                    <a href="#contact" class="btn btn-primary btn-lg">
-                        <i class="fas fa-calendar-alt me-2"></i>Book Free Discovery Call
+                    <a href="#contact" class="btn btn-primary btn-lg" aria-describedby="discovery-call-desc">
+                        <i class="fas fa-calendar-alt me-2" aria-hidden="true"></i>Book Free Discovery Call
                     </a>
                     <a href="#programs" class="btn btn-outline-light btn-lg">
-                        <i class="fas fa-users me-2"></i>Explore Programs
+                        <i class="fas fa-users me-2" aria-hidden="true"></i>Explore Programs
                     </a>
                 </div>
                 <div class="mt-4">
-                    <span class="badge bg-light text-dark me-2 px-3 py-2">Fall 2025 Enrollment Open</span>
-                    <span class="badge bg-light text-dark px-3 py-2">4-Tier Program System</span>
+                    <span class="badge bg-light text-dark me-2 px-3 py-2" role="status" aria-label="Enrollment status">Fall 2025 Enrollment Open</span>
+                    <span class="badge bg-light text-dark px-3 py-2" role="status" aria-label="Program structure">4-Tier Program System</span>
                 </div>
+                <div id="discovery-call-desc" class="visually-hidden">Schedule a free 15-minute conversation about your musical goals</div>
             </div>
         </div>
     </div>
     
-    <!-- Floating Music Icons -->
-    <div class="position-absolute top-50 start-0 translate-middle-y d-none d-lg-block hero-float-1" style="left: 8% !important;">
+    <!-- Floating Music Icons - Decorative -->
+    <div class="position-absolute top-50 start-0 translate-middle-y d-none d-lg-block hero-float-1" style="left: 8% !important;" aria-hidden="true">
         <i class="fas fa-guitar fa-3x opacity-25"></i>
     </div>
-    <div class="position-absolute top-25 end-0 d-none d-lg-block hero-float-2" style="right: 8% !important;">
+    <div class="position-absolute top-25 end-0 d-none d-lg-block hero-float-2" style="right: 8% !important;" aria-hidden="true">
         <i class="fas fa-microphone fa-2x opacity-25"></i>
     </div>
-    <div class="position-absolute bottom-25 start-0 d-none d-lg-block hero-float-3" style="left: 12% !important;">
+    <div class="position-absolute bottom-25 start-0 d-none d-lg-block hero-float-3" style="left: 12% !important;" aria-hidden="true">
         <i class="fas fa-drum fa-2x opacity-25"></i>
     </div>
 </section>
 
 <!-- About Section -->
-<section id="about" class="section section-bg">
+<section id="about" class="section section-bg" aria-labelledby="about-heading">
     <div class="container">
         <div class="section-header">
-            <h2>About Planet of Sound Rock School</h2>
+            <h2 id="about-heading">About Planet of Sound Rock School</h2>
             <p>Mentorship-based music education in London, Ontario, designed to take you from your first chord to your first tour</p>
         </div>
         
@@ -71,14 +72,14 @@ eleventyNavigation:
                 <div class="row g-4">
                     <div class="col-6">
                         <div class="text-center">
-                            <i class="fas fa-users fa-2x text-primary mb-2"></i>
+                            <i class="fas fa-users fa-2x text-primary mb-2" aria-hidden="true"></i>
                             <h4>All Ages</h4>
                             <p class="text-muted small">From kids to adults</p>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="text-center">
-                            <i class="fas fa-graduation-cap fa-2x text-primary mb-2"></i>
+                            <i class="fas fa-graduation-cap fa-2x text-primary mb-2" aria-hidden="true"></i>
                             <h4>All Levels</h4>
                             <p class="text-muted small">Beginner to advanced</p>
                         </div>
@@ -87,24 +88,24 @@ eleventyNavigation:
             </div>
             
             <div class="col-lg-6">
-                <div class="stats row text-center">
+                <div class="stats row text-center" role="region" aria-label="School statistics">
                     <div class="col-4">
                         <div class="stats-item">
-                            <i class="fas fa-music"></i>
+                            <i class="fas fa-music" aria-hidden="true"></i>
                             <h3>4</h3>
                             <p>Program Tiers</p>
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="stats-item">
-                            <i class="fas fa-clock"></i>
+                            <i class="fas fa-clock" aria-hidden="true"></i>
                             <h3>8+</h3>
                             <p>Years Experience</p>
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="stats-item">
-                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
                             <h3>100+</h3>
                             <p>Students Taught</p>
                         </div>
@@ -125,64 +126,64 @@ eleventyNavigation:
         
         <div class="row g-4">
             <div class="col-lg-3 col-md-6 d-flex">
-                <div class="card h-100 hover-lift w-100">
+                <article class="card h-100 hover-lift w-100" aria-labelledby="learn-to-play-title">
                     <div class="card-body text-center d-flex flex-column">
                         <div class="mb-3">
-                            <i class="fas fa-play-circle fa-3x text-primary"></i>
+                            <i class="fas fa-play-circle fa-3x text-primary" aria-hidden="true"></i>
                         </div>
-                        <h3 class="card-title text-primary">Learn To Play</h3>
+                        <h3 id="learn-to-play-title" class="card-title text-primary">Learn To Play</h3>
                         <p class="card-text flex-grow-1">Foundation skills for beginners. Learn chords, scales, rhythm, and song structure in supportive 1-on-1 or small group settings.</p>
                         <div class="mt-auto">
                             <p class="fw-bold fs-5 text-dark mb-3">$400 <small class="text-muted">(8 weeks)</small></p>
-                            <a href="/programs/#learn-to-play" class="btn btn-outline-primary">Learn More</a>
+                            <a href="/programs/#learn-to-play" class="btn btn-outline-primary" aria-label="Learn more about Learn To Play program">Learn More</a>
                         </div>
                     </div>
-                </div>
+                </article>
             </div>
             <div class="col-lg-3 col-md-6 d-flex">
-                <div class="card h-100 hover-lift w-100">
+                <article class="card h-100 hover-lift w-100" aria-labelledby="bandstarter-title">
                     <div class="card-body text-center d-flex flex-column">
                         <div class="mb-3">
-                            <i class="fas fa-users fa-3x text-primary"></i>
+                            <i class="fas fa-users fa-3x text-primary" aria-hidden="true"></i>
                         </div>
-                        <h3 class="card-title text-primary">Bandstarter</h3>
+                        <h3 id="bandstarter-title" class="card-title text-primary">Bandstarter</h3>
                         <p class="card-text flex-grow-1">Collaborative music-making! Learn songwriting, rehearsal flow, gear literacy, and band dynamics in small groups.</p>
                         <div class="mt-auto">
                             <p class="fw-bold fs-5 text-dark mb-3">$500 <small class="text-muted">per student</small></p>
-                            <a href="/programs/#bandstarter" class="btn btn-outline-primary">Learn More</a>
+                            <a href="/programs/#bandstarter" class="btn btn-outline-primary" aria-label="Learn more about Bandstarter program">Learn More</a>
                         </div>
                     </div>
-                </div>
+                </article>
             </div>
             <div class="col-lg-3 col-md-6 d-flex">
-                <div class="card h-100 hover-lift w-100">
+                <article class="card h-100 hover-lift w-100" aria-labelledby="show-ready-title">
                     <div class="card-body text-center d-flex flex-column">
                         <div class="mb-3">
-                            <i class="fas fa-microphone fa-3x text-primary"></i>
+                            <i class="fas fa-microphone fa-3x text-primary" aria-hidden="true"></i>
                         </div>
-                        <h3 class="card-title text-primary">Show Ready</h3>
+                        <h3 id="show-ready-title" class="card-title text-primary">Show Ready</h3>
                         <p class="card-text flex-grow-1">Performance preparation! Master live setup, stage communication, setlist building, and commanding stage presence.</p>
                         <div class="mt-auto">
                             <p class="fw-bold fs-5 text-dark mb-3">$600 <small class="text-muted">per student</small></p>
-                            <a href="/programs/#show-ready" class="btn btn-outline-primary">Learn More</a>
+                            <a href="/programs/#show-ready" class="btn btn-outline-primary" aria-label="Learn more about Show Ready program">Learn More</a>
                         </div>
                     </div>
-                </div>
+                </article>
             </div>
             <div class="col-lg-3 col-md-6 d-flex">
-                <div class="card h-100 hover-lift w-100">
+                <article class="card h-100 hover-lift w-100" aria-labelledby="tour-title">
                     <div class="card-body text-center d-flex flex-column">
                         <div class="mb-3">
-                            <i class="fas fa-route fa-3x text-primary"></i>
+                            <i class="fas fa-route fa-3x text-primary" aria-hidden="true"></i>
                         </div>
-                        <h3 class="card-title text-primary">Tour</h3>
+                        <h3 id="tour-title" class="card-title text-primary">Tour</h3>
                         <p class="card-text flex-grow-1">Professional touring readiness. Learn tour planning, stage plots, tech riders, and industry navigation.</p>
                         <div class="mt-auto">
                             <p class="fw-bold fs-5 text-dark mb-3">$300+ <small class="text-muted">per event</small></p>
-                            <a href="/programs/#tour" class="btn btn-outline-primary">Learn More</a>
+                            <a href="/programs/#tour" class="btn btn-outline-primary" aria-label="Learn more about Tour program">Learn More</a>
                         </div>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
         
@@ -190,7 +191,7 @@ eleventyNavigation:
             <div class="col-12 text-center">
                 <p class="text-muted mb-4"><em>Sliding scale and payment plans available for all programs</em></p>
                 <a href="/programs/" class="btn btn-primary btn-lg">
-                    <i class="fas fa-arrow-right me-2"></i>View Detailed Programs
+                    <i class="fas fa-arrow-right me-2" aria-hidden="true"></i>View Detailed Programs
                 </a>
             </div>
         </div>
@@ -198,10 +199,10 @@ eleventyNavigation:
 </section>
 
 <!-- Why Choose Us Section -->
-<section id="why-choose-us" class="section section-bg">
+<section id="why-choose-us" class="section section-bg" aria-labelledby="why-choose-heading">
     <div class="container">
         <div class="section-header">
-            <h2>Why Choose Planet of Sound?</h2>
+            <h2 id="why-choose-heading">Why Choose Planet of Sound?</h2>
             <p>More than just lessons – we're building London's next generation of musicians</p>
         </div>
         
@@ -209,7 +210,7 @@ eleventyNavigation:
             <div class="col-lg-4">
                 <div class="text-center">
                     <div class="mb-4">
-                        <i class="fas fa-handshake fa-4x text-primary"></i>
+                        <i class="fas fa-handshake fa-4x text-primary" aria-hidden="true"></i>
                     </div>
                     <h3>Mentorship Approach</h3>
                     <p class="text-muted">Personal guidance from experienced musicians who've been where you want to go. We don't just teach – we mentor.</p>
@@ -218,7 +219,7 @@ eleventyNavigation:
             <div class="col-lg-4">
                 <div class="text-center">
                     <div class="mb-4">
-                        <i class="fas fa-route fa-4x text-primary"></i>
+                        <i class="fas fa-route fa-4x text-primary" aria-hidden="true"></i>
                     </div>
                     <h3>Clear Progression Path</h3>
                     <p class="text-muted">Our four-tier system provides clear milestones and goals, taking you from beginner to professional touring artist.</p>
@@ -227,7 +228,7 @@ eleventyNavigation:
             <div class="col-lg-4">
                 <div class="text-center">
                     <div class="mb-4">
-                        <i class="fas fa-heart fa-4x text-primary"></i>
+                        <i class="fas fa-heart fa-4x text-primary" aria-hidden="true"></i>
                     </div>
                     <h3>Community Focus</h3>
                     <p class="text-muted">Join London's vibrant music community. Connect with other musicians, play shows, and build lasting relationships.</p>
@@ -266,19 +267,19 @@ eleventyNavigation:
 </section>
 
 <!-- FAQ Section -->
-<section id="faq" class="section">
+<section id="faq" class="section" aria-labelledby="faq-heading">
     <div class="container">
         <div class="section-header">
-            <h2>Frequently Asked Questions</h2>
+            <h2 id="faq-heading">Frequently Asked Questions</h2>
             <p>Everything you need to know about getting started with Planet of Sound Rock School</p>
         </div>
         
         <div class="row">
             <div class="col-lg-8 mx-auto">
-                <div class="accordion" id="faqAccordion">
+                <div class="accordion" id="faqAccordion" role="region" aria-label="Frequently asked questions about Planet of Sound Rock School">
                     <div class="accordion-item">
                         <h2 class="accordion-header">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
                                 What makes Planet Of Sound different from other music schools?
                             </button>
                         </h2>
@@ -357,7 +358,7 @@ eleventyNavigation:
                 <div class="text-center mt-5">
                     <p class="mb-3">Have a question not covered here?</p>
                     <a href="#contact" class="btn btn-primary btn-lg">
-                        <i class="fas fa-comments me-2"></i>Ask Us Directly
+                        <i class="fas fa-comments me-2" aria-hidden="true"></i>Ask Us Directly
                     </a>
                 </div>
             </div>
@@ -366,10 +367,10 @@ eleventyNavigation:
 </section>
 
 <!-- Contact Section -->
-<section id="contact" class="section contact">
+<section id="contact" class="section contact" aria-labelledby="contact-heading">
     <div class="container">
         <div class="section-header">
-            <h2>Get Started Today</h2>
+            <h2 id="contact-heading">Get Started Today</h2>
             <p>Ready to begin your musical journey? Let's talk about your goals and find the perfect program for you.</p>
         </div>
         
@@ -379,7 +380,7 @@ eleventyNavigation:
                     <h3 class="mb-4">Let's Connect</h3>
                     
                     <div class="contact-info-item">
-                        <i class="fas fa-map-marker-alt"></i>
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                         <div>
                             <h4>Location</h4>
                             <p>London, Ontario<br>Near Downtown</p>
@@ -387,7 +388,7 @@ eleventyNavigation:
                     </div>
                     
                     <div class="contact-info-item">
-                        <i class="fas fa-envelope"></i>
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
                         <div>
                             <h4>Email</h4>
                             <p>hello@planetofsoundrockschool.com</p>
@@ -395,7 +396,7 @@ eleventyNavigation:
                     </div>
                     
                     <div class="contact-info-item">
-                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-instagram" aria-hidden="true"></i>
                         <div>
                             <h4>Instagram</h4>
                             <p>@planetofsoundrockschool</p>
@@ -404,7 +405,7 @@ eleventyNavigation:
                     
                     <div class="mt-4">
                         <a href="/contact/" class="btn btn-primary">
-                            <i class="fas fa-arrow-right me-2"></i>Full Contact Information
+                            <i class="fas fa-arrow-right me-2" aria-hidden="true"></i>Full Contact Information
                         </a>
                     </div>
                 </div>
@@ -413,41 +414,85 @@ eleventyNavigation:
             <div class="col-lg-6">
                 <div class="contact-form">
                     <h3 class="mb-4">Quick Inquiry</h3>
-                    <form name="homepage-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                    <form name="homepage-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" aria-label="Contact form for inquiries" novalidate>
                         <input type="hidden" name="form-name" value="homepage-contact" />
-                        <p class="hidden">
+                        <p class="visually-hidden">
                             <label>Don't fill this out if you're human: <input name="bot-field" /></label>
                         </p>
                         
                         <div class="row g-3">
                             <div class="col-md-6">
-                                <label for="name" class="form-label">Name *</label>
-                                <input type="text" class="form-control" id="name" name="name" required>
+                                <div class="form-group">
+                                    <label for="contact-name" class="form-label">
+                                        Name
+                                        <span class="help-icon" tabindex="0" role="button" aria-label="Help: Enter your full name" title="Enter your full name so we can address you properly in our response">?</span>
+                                    </label>
+                                    <input type="text" class="form-control" id="contact-name" name="name" required 
+                                           aria-describedby="contact-name-help contact-name-error" 
+                                           aria-invalid="false"
+                                           autocomplete="name">
+                                    <div id="contact-name-help" class="help-text">
+                                        Required field. Please enter your full name so we can address you properly in our response.
+                                    </div>
+                                    <div id="contact-name-error" class="invalid-feedback" role="alert" aria-live="polite"></div>
+                                </div>
                             </div>
                             <div class="col-md-6">
-                                <label for="email" class="form-label">Email *</label>
-                                <input type="email" class="form-control" id="email" name="email" required>
+                                <div class="form-group">
+                                    <label for="contact-email" class="form-label">
+                                        Email
+                                        <span class="help-icon" tabindex="0" role="button" aria-label="Help: Enter your email address" title="We'll use this to respond to your inquiry">?</span>
+                                    </label>
+                                    <input type="email" class="form-control" id="contact-email" name="email" required 
+                                           aria-describedby="contact-email-help contact-email-error"
+                                           aria-invalid="false"
+                                           autocomplete="email">
+                                    <div id="contact-email-help" class="help-text">
+                                        Required field. We'll use your email address to respond to your inquiry. We never share your email with third parties.
+                                    </div>
+                                    <div id="contact-email-error" class="invalid-feedback" role="alert" aria-live="polite"></div>
+                                </div>
                             </div>
                             <div class="col-12">
-                                <label for="program" class="form-label">Interested In</label>
-                                <select class="form-control" id="program" name="program">
-                                    <option value="">Select a program...</option>
-                                    <option value="learn-to-play">Learn To Play</option>
-                                    <option value="bandstarter">Bandstarter</option>
-                                    <option value="show-ready">Show Ready</option>
-                                    <option value="tour">Tour Program</option>
-                                    <option value="individual">Individual Lessons</option>
-                                    <option value="recording">Recording Services</option>
-                                    <option value="other">Other/Not Sure</option>
-                                </select>
+                                <div class="form-group">
+                                    <label for="contact-program" class="form-label">
+                                        Interested In 
+                                        <span class="help-icon" tabindex="0" role="button" aria-label="Help: Select a program" title="Optional: Choose which program interests you most">?</span>
+                                    </label>
+                                    <select class="form-control" id="contact-program" name="program" aria-describedby="contact-program-help">
+                                        <option value="">Select a program...</option>
+                                        <option value="learn-to-play">Learn To Play</option>
+                                        <option value="bandstarter">Bandstarter</option>
+                                        <option value="show-ready">Show Ready</option>
+                                        <option value="tour">Tour Program</option>
+                                        <option value="individual">Individual Lessons</option>
+                                        <option value="recording">Recording Services</option>
+                                        <option value="other">Other/Not Sure</option>
+                                    </select>
+                                    <div id="contact-program-help" class="help-text">
+                                        Optional: Select which program you're most interested in. If you're not sure, choose "Other/Not Sure" and we'll help you find the right fit.
+                                    </div>
+                                </div>
                             </div>
                             <div class="col-12">
-                                <label for="message" class="form-label">Message</label>
-                                <textarea class="form-control" id="message" name="message" rows="4" placeholder="Tell us about your musical goals and experience level..."></textarea>
+                                <div class="form-group">
+                                    <label for="contact-message" class="form-label">
+                                        Message 
+                                        <span class="help-icon" tabindex="0" role="button" aria-label="Help: Tell us about your music goals" title="Share your music goals and experience level">?</span>
+                                    </label>
+                                    <textarea class="form-control" id="contact-message" name="message" rows="4" 
+                                              aria-describedby="contact-message-help contact-message-error"
+                                              aria-invalid="false"></textarea>
+                                    <div id="contact-message-help" class="help-text">
+                                        Optional: Tell us about your musical background, goals, preferred lesson times, or any questions you have about our programs. This helps us provide better guidance.
+                                    </div>
+                                    <div id="contact-message-error" class="invalid-feedback" role="alert" aria-live="polite"></div>
+                                </div>
                             </div>
                             <div class="col-12">
                                 <button type="submit" class="btn btn-primary w-100">
-                                    <i class="fas fa-paper-plane me-2"></i>Send Message
+                                    <span><i class="fas fa-paper-plane me-2" aria-hidden="true"></i>Send Message</span>
+                                    <span class="loading-spinner d-none" aria-hidden="true"></span>
                                 </button>
                             </div>
                         </div>
@@ -459,35 +504,42 @@ eleventyNavigation:
 </section>
 
 <!-- Newsletter Section -->
-<section class="section bg-gradient-primary text-white">
+<section class="section bg-gradient-primary text-white" aria-labelledby="newsletter-heading">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8 text-center">
-                <h2 class="mb-3">Stay in the Loop</h2>
+                <h2 id="newsletter-heading" class="mb-3">Stay in the Loop</h2>
                 <p class="mb-4 fs-5">Get updates on programs, student showcases, and London's music community events.</p>
                 
-                <form name="homepage-newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="row g-2 justify-content-center">
+                <form name="homepage-newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="row g-2 justify-content-center" aria-label="Newsletter subscription" novalidate>
                     <input type="hidden" name="form-name" value="homepage-newsletter" />
-                    <p class="hidden">
+                    <p class="visually-hidden">
                         <label>Don't fill this out if you're human: <input name="bot-field" /></label>
                     </p>
                     <div class="col-auto">
-                        <input type="email" name="email" class="form-control form-control-lg" placeholder="Enter your email" required style="min-width: 280px;">
+                        <div class="form-group">
+                            <label for="homepage-newsletter-email" class="form-label text-white mb-2">Email address for newsletter updates</label>
+                            <input type="email" id="homepage-newsletter-email" name="email" class="form-control form-control-lg" required style="min-width: 280px;" aria-describedby="homepage-newsletter-privacy homepage-newsletter-help homepage-newsletter-error" aria-invalid="false" autocomplete="email">
+                            <div id="homepage-newsletter-error" class="invalid-feedback" role="alert" aria-live="polite"></div>
+                        </div>
                     </div>
                     <div class="col-auto">
                         <button type="submit" class="btn btn-light btn-lg text-primary fw-bold">
-                            <i class="fas fa-envelope me-2"></i>Subscribe
+                            <span><i class="fas fa-envelope me-2" aria-hidden="true"></i>Subscribe</span>
+                            <span class="loading-spinner d-none" aria-hidden="true"></span>
                         </button>
                     </div>
                 </form>
                 
-                <small class="d-block mt-3 opacity-75">We respect your privacy. Unsubscribe at any time.</small>
+                <div id="homepage-newsletter-help" class="visually-hidden">Enter your email to receive updates on programs, student showcases, and London music events</div>
+                <small id="homepage-newsletter-privacy" class="d-block mt-3 text-white">We respect your privacy. Unsubscribe at any time.</small>
             </div>
         </div>
     </div>
 </section>
 
 <!-- Back to Top Button -->
-<button type="button" class="btn back-to-top" id="back-to-top">
-    <i class="fas fa-chevron-up"></i>
+<button type="button" class="btn back-to-top" id="back-to-top" aria-label="Return to top of page">
+    <i class="fas fa-chevron-up" aria-hidden="true"></i>
+    <span class="visually-hidden">Back to top</span>
 </button>

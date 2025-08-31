@@ -105,6 +105,15 @@
                 backtotop.classList.remove('active');
             }
         };
+        
+        // Back to top click handler
+        backtotop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
         window.addEventListener('load', toggleBacktotop);
         onscroll(document, toggleBacktotop);
     }

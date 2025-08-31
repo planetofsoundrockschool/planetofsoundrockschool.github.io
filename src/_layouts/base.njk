@@ -20,13 +20,16 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+    <!-- Skip Link for Keyboard Navigation -->
+    <a href="#main-content" class="skip-link visually-hidden-focusable">Skip to main content</a>
+    
     <!-- Header -->
-    <header id="header" class="header fixed-top">
+    <header id="header" class="header fixed-top" role="banner">
         <nav class="navbar navbar-expand-xl navbar-light">
             <div class="container-fluid container-xl">
                 <!-- Logo -->
-                <a href="/" class="navbar-brand logo d-flex align-items-center">
-                    <i class="fas fa-guitar me-2 text-primary"></i>
+                <a href="/" class="navbar-brand logo d-flex align-items-center" aria-label="Planet of Sound Rock School - Home">
+                    <i class="fas fa-guitar me-2 text-primary" aria-hidden="true"></i>
                     <h1 class="mb-0">Planet of Sound</h1>
                     <span class="badge bg-primary ms-2">Rock School</span>
                 </a>
@@ -38,10 +41,15 @@
                 
                 <!-- Navigation -->
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
+                    <ul class="navbar-nav ms-auto" role="menubar">
                         {%- for entry in collections.all | eleventyNavigation %}
-                        <li class="nav-item">
-                            <a class="nav-link{% if entry.url == page.url %} active{% endif %}" href="{{ entry.url }}">{{ entry.title }}</a>
+                        <li class="nav-item" role="none">
+                            <a class="nav-link{% if entry.url == page.url %} active{% endif %}" 
+                               href="{{ entry.url }}" 
+                               role="menuitem"
+                               {% if entry.url == page.url %}aria-current="page"{% endif %}>
+                                {{ entry.title }}
+                            </a>
                         </li>
                         {%- endfor %}
                     </ul>
@@ -50,25 +58,35 @@
         </nav>
     </header>
 
-    <main class="container-fluid px-0">
+    <main id="main-content" class="container-fluid px-0" role="main">
         {{ content | safe }}
     </main>
 
-    <footer class="bg-dark text-white py-5">
+    <footer class="bg-dark text-white py-5" role="contentinfo">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
                     <h5 class="text-danger mb-3">Stay Connected</h5>
                     <p class="mb-3">Get updates on programs, events, and London's music community.</p>
-<form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="d-flex mb-3">
+                    <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="mb-3" aria-label="Newsletter signup" novalidate>
                         <input type="hidden" name="form-name" value="newsletter" />
-                        <p class="hidden">
+                        <p class="visually-hidden">
                             <label>Don't fill this out if you're human: <input name="bot-field" /></label>
                         </p>
-                        <input type="email" name="email" class="form-control me-2" placeholder="Enter your email" required>
-                        <button class="btn btn-warning" type="submit">Subscribe</button>
+                        <div class="form-group">
+                            <label for="newsletter-email" class="form-label text-light mb-2 d-block">Email address for newsletter</label>
+                            <div class="d-flex">
+                                <input type="email" id="newsletter-email" name="email" class="form-control me-2" required aria-describedby="newsletter-privacy newsletter-help newsletter-error" aria-invalid="false" autocomplete="email">
+                                <button class="btn btn-warning" type="submit">
+                                    <span>Subscribe</span>
+                                    <span class="loading-spinner d-none" aria-hidden="true"></span>
+                                </button>
+                            </div>
+                            <div id="newsletter-error" class="invalid-feedback" role="alert" aria-live="polite"></div>
+                        </div>
                     </form>
-                    <small class="text-muted">We respect your privacy. Unsubscribe at any time.</small>
+                    <div id="newsletter-help" class="visually-hidden">Enter your email to receive updates on programs, events, and London's music community</div>
+                    <small id="newsletter-privacy" class="text-light">We respect your privacy. Unsubscribe at any time.</small>
                 </div>
                 <div class="col-lg-6">
                     <div class="row">
@@ -84,11 +102,11 @@
                         </div>
                         <div class="col-md-6">
                             <h6 class="text-danger mb-3">Follow Us</h6>
-                            <a href="https://instagram.com/planetofsoundrockschool" target="_blank" class="text-light text-decoration-none d-block mb-2">
-                                📸 Instagram
+                            <a href="https://instagram.com/planetofsoundrockschool" target="_blank" rel="noopener noreferrer" class="text-light text-decoration-none d-block mb-2" aria-label="Follow us on Instagram (opens in new tab)">
+                                <span aria-hidden="true">📸</span> Instagram
                             </a>
-                            <a href="mailto:hello@planetofsoundrockschool.com" class="text-light text-decoration-none d-block">
-                                ✉️ Email Us
+                            <a href="mailto:hello@planetofsoundrockschool.com" class="text-light text-decoration-none d-block" aria-label="Send us an email">
+                                <span aria-hidden="true">✉️</span> Email Us
                             </a>
                         </div>
                     </div>
@@ -110,5 +128,8 @@
     
     <!-- Custom JS -->
     <script src="/js/main.js"></script>
+    
+    <!-- AAA Accessibility Enhancement Script -->
+    <script src="/js/accessibility-aaa.js"></script>
 </body>
 </html>

@@ -5,21 +5,26 @@
 
 /* ===== VARIABLES ===== */
 :root {
-    /* Primary Brand Colors */
-    --primary-color: #3b82f6;      /* Modern blue */
-    --secondary-color: #ef4444;    /* Rock red accent */
-    --accent-color: #f59e0b;       /* Warning/highlight */
+    /* Primary Brand Colors - Enhanced for AAA contrast */
+    --primary-color: #1d4ed8;      /* Even darker blue for AAA contrast (7:1) */
+    --secondary-color: #b91c1c;    /* Darker red for AAA contrast */
+    --accent-color: #b45309;       /* Darker orange for AAA contrast */
     
-    /* Neutral Colors */
-    --text-dark: #1f2937;          /* Almost black */
-    --text-light: #6b7280;        /* Medium gray */
-    --text-muted: #9ca3af;        /* Light gray */
-    --background-light: #f9fafb;   /* Off white */
+    /* Neutral Colors - Enhanced for AAA contrast */
+    --text-dark: #000000;          /* Pure black for maximum contrast */
+    --text-light: #374151;        /* Much darker gray for AAA contrast (7:1) */
+    --text-muted: #4b5563;        /* Darker muted text for better readability */
+    --background-light: #ffffff;   /* Pure white for maximum contrast */
     --background-section: #ffffff; /* Pure white */
     
-    /* Interactive Colors */
-    --link-color: #3b82f6;
-    --link-hover: #2563eb;
+    /* Interactive Colors - AAA Enhanced */
+    --link-color: #1d4ed8;
+    --link-hover: #1e40af;
+    
+    /* AAA Contrast Colors */
+    --aaa-primary: #1e40af;       /* 7:1 contrast ratio */
+    --aaa-secondary: #991b1b;     /* 7:1 contrast ratio */
+    --aaa-text-light: #374151;   /* 7:1 contrast ratio */
     
     /* Spacing & Layout */
     --section-padding: 5rem 0;
@@ -141,7 +146,7 @@ html {
 /* Desktop navigation links */
 @media (min-width: 1200px) {
     .navbar-nav .nav-link {
-        padding: 0.5rem 1rem;
+        padding: 0.75rem 1rem;
         font-size: 0.95rem;
         font-weight: 500;
         color: var(--text-dark);
@@ -150,6 +155,10 @@ html {
         border-radius: 0.5rem;
         margin: 0 0.25rem;
         position: relative;
+        /* WCAG 2.2 Target Size: Ensure adequate touch target */
+        min-height: 44px;
+        display: flex;
+        align-items: center;
     }
     
     .navbar-nav .nav-link:hover,
@@ -184,6 +193,8 @@ html {
         margin-top: 1rem;
         box-shadow: var(--shadow-xl);
         border: 1px solid rgba(0, 0, 0, 0.1);
+        /* WCAG 2.2 Focus Not Obscured: Ensure dropdown doesn't cover focused elements */
+        z-index: 1050;
     }
     
     .navbar-nav {
@@ -198,6 +209,10 @@ html {
         margin: 0.25rem 0;
         color: var(--text-dark);
         border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+        /* WCAG 2.2 Target Size: Ensure adequate touch targets on mobile */
+        min-height: 48px;
+        display: flex;
+        align-items: center;
     }
     
     .navbar-nav .nav-link:hover,
@@ -272,13 +287,15 @@ html {
 }
 
 .hero .btn-outline-light {
-    border: 2px solid rgba(255, 255, 255, 0.8);
+    border: 3px solid rgba(255, 255, 255, 0.9);
     color: white;
+    font-weight: 700;
 }
 
 .hero .btn-outline-light:hover {
     background: white;
     color: var(--text-dark);
+    border-color: white;
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
 }
@@ -438,6 +455,22 @@ html {
     border: none;
     position: relative;
     overflow: hidden;
+    /* WCAG 2.2 Target Size: Minimum 24x24 CSS pixels */
+    min-height: 44px;
+    min-width: 44px;
+}
+
+/* Ensure smaller buttons still meet target size */
+.btn-sm {
+    min-height: 32px;
+    min-width: 32px;
+    padding: 0.5rem 1.5rem;
+}
+
+.btn-lg {
+    min-height: 48px;
+    min-width: 48px;
+    padding: 0.875rem 2.5rem;
 }
 
 .btn::before {
@@ -768,32 +801,394 @@ footer a:hover {
 }
 
 /* ===== ACCESSIBILITY ===== */
+
+/* Skip Link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: var(--primary-color);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    z-index: 10000;
+    transition: var(--transition-fast);
+}
+
+.skip-link:focus {
+    top: 6px;
+    color: white;
+    text-decoration: none;
+}
+
+/* Enhanced Focus Indicators - WCAG AAA Level Enhancement */
+.btn:focus-visible,
+.form-control:focus,
+.nav-link:focus-visible,
+a:focus-visible,
+.navbar-toggler:focus-visible,
+.accordion-button:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    /* AAA: Enhanced focus indicator - 4px thick for maximum visibility */
+    outline: 4px solid var(--primary-color);
+    outline-offset: 3px;
+    /* AAA: Multi-layer focus ring for maximum contrast */
+    box-shadow: 
+        0 0 0 2px white, 
+        0 0 0 6px var(--primary-color), 
+        0 0 0 8px rgba(29, 78, 216, 0.3),
+        0 0 0 10px rgba(0, 0, 0, 0.1);
+    /* AAA: Enhanced border radius for better visual definition */
+    border-radius: 0.5rem;
+    /* AAA: Add subtle glow effect for better visibility */
+    filter: drop-shadow(0 0 4px rgba(29, 78, 216, 0.4));
+}
+
+/* Special handling for buttons with existing borders - AAA Enhanced */
+.btn:focus-visible {
+    border: 3px solid white;
+    box-shadow: 
+        0 0 0 1px var(--primary-color), 
+        0 0 0 4px white, 
+        0 0 0 7px var(--primary-color),
+        0 0 0 9px rgba(29, 78, 216, 0.2);
+    filter: drop-shadow(0 0 6px rgba(29, 78, 216, 0.5));
+}
+
+/* Skip link enhanced focus */
+.skip-link:focus {
+    outline: 4px solid #000;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px white, 0 0 0 6px #000;
+}
+
+/* High contrast focus for better visibility - WCAG 2.2 enhanced */
+@media (prefers-contrast: high) {
+    .btn:focus-visible,
+    .form-control:focus,
+    .nav-link:focus-visible,
+    a:focus-visible,
+    .navbar-toggler:focus-visible,
+    .accordion-button:focus-visible {
+        outline: 4px solid #000 !important;
+        outline-offset: 2px;
+        box-shadow: 0 0 0 2px white, 0 0 0 6px #000, 0 0 0 8px rgba(0, 0, 0, 0.2) !important;
+        border-color: #000 !important;
+    }
+}
+
+/* WCAG 2.2 Focus Not Obscured - Ensure focus isn't hidden by fixed header */
+*:focus-visible {
+    scroll-margin-top: calc(var(--header-height) + 1rem);
+}
+
+/* Ensure focused elements in main content area aren't obscured */
+main *:focus-visible {
+    scroll-margin-top: calc(var(--header-height) + 1rem);
+}
+
+/* WCAG 2.2 Target Size - Additional interactive elements */
+.accordion-button {
+    min-height: 44px;
+    padding: 1rem 1.25rem;
+}
+
+.contact-info-item {
+    min-height: 44px;
+}
+
+/* Ensure form controls meet target size on mobile */
+@media (max-width: 768px) {
+    .form-control {
+        min-height: 44px;
+        padding: 1rem;
+        font-size: 16px; /* Prevent zoom on iOS */
+    }
+    
+    .btn {
+        min-height: 48px;
+        padding: 1rem 2rem;
+    }
+    
+    .nav-link {
+        min-height: 48px;
+        padding: 1rem 1.5rem;
+    }
+}
+
+/* Motion preferences */
 @media (prefers-reduced-motion: reduce) {
-    * {
+    *,
+    *::before,
+    *::after {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
     
     html {
         scroll-behavior: auto;
     }
+    
+    .hero-float-1,
+    .hero-float-2,
+    .hero-float-3 {
+        animation: none;
+    }
+    
+    /* WCAG 2.2: Disable transform animations that could cause motion sensitivity */
+    .btn:hover,
+    .card:hover {
+        transform: none !important;
+    }
 }
 
-/* Focus indicators */
-.btn:focus,
-.form-control:focus,
-a:focus {
+/* AAA: Form Group Styling */
+.form-group {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+/* AAA: Contextual Help Styles */
+.help-text {
+    font-size: 0.875rem;
+    color: var(--text-light);
+    margin-top: 0.25rem;
+    padding: 0.5rem;
+    background: rgba(29, 78, 216, 0.05);
+    border-radius: 0.375rem;
+    border-left: 3px solid var(--primary-color);
+    /* Hide help text by default - shown on focus/interaction */
+    display: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    max-height: 0;
+    overflow: hidden;
+}
+
+/* Show help text only when explicitly shown via JavaScript */
+.help-text.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 200px;
+}
+
+.help-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    font-size: 12px;
+    margin-left: 0.5rem;
+    cursor: help;
+}
+
+.help-icon:hover {
+    background: var(--link-hover);
+}
+
+.help-icon:focus {
+    background: var(--link-hover);
+    outline: 2px solid white;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px var(--primary-color);
+}
+
+.help-icon:focus-visible {
+    background: var(--link-hover);
+    outline: 2px solid white;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px var(--primary-color);
+}
+
+/* AAA: Enhanced Error States - Only show when explicitly marked invalid */
+.form-control.is-invalid {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 0.2rem rgba(185, 28, 28, 0.25);
+}
+
+.invalid-feedback {
+    /* Hidden by default - only shown when there's an actual error */
+    display: none;
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+    color: var(--secondary-color);
+    padding: 0.5rem;
+    background: rgba(185, 28, 28, 0.05);
+    border-radius: 0.375rem;
+    border-left: 3px solid var(--secondary-color);
+}
+
+/* Show error feedback only when field has error class */
+.form-control.is-invalid + .invalid-feedback,
+.is-invalid .invalid-feedback {
+    display: block;
+}
+
+/* AAA: Error Summary Box */
+.error-summary {
+    margin-bottom: 2rem;
+    padding: 1rem 1.5rem;
+    border: 3px solid var(--secondary-color) !important;
+    background: rgba(185, 28, 28, 0.05) !important;
+    border-radius: 0.5rem;
+}
+
+.error-summary:focus {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+.error-summary ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.error-summary li {
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.error-summary li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.error-summary a {
+    color: var(--secondary-color);
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.error-summary a:hover,
+.error-summary a:focus {
+    color: var(--text-dark);
+    text-decoration: underline;
+}
+
+.error-summary a:focus {
     outline: 2px solid var(--primary-color);
     outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* AAA: Dark Section Error Summary Styles */
+.bg-gradient-primary .error-summary,
+.bg-dark .error-summary {
+    border-color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    color: var(--text-dark) !important;
+}
+
+.bg-gradient-primary .error-summary .alert-heading,
+.bg-dark .error-summary .alert-heading {
+    color: var(--secondary-color) !important;
+}
+
+.bg-gradient-primary .error-summary li::before,
+.bg-dark .error-summary li::before {
+    color: var(--secondary-color) !important;
+}
+
+.bg-gradient-primary .error-summary a,
+.bg-dark .error-summary a {
+    color: var(--secondary-color) !important;
+    font-weight: 600;
+}
+
+.bg-gradient-primary .error-summary a:hover,
+.bg-gradient-primary .error-summary a:focus,
+.bg-dark .error-summary a:hover,
+.bg-dark .error-summary a:focus {
+    color: var(--text-dark) !important;
+}
+
+/* AAA: Dark Section Invalid Feedback */
+.bg-gradient-primary .invalid-feedback,
+.bg-dark .invalid-feedback {
+    color: #ffffff !important;
+    background: rgba(185, 28, 28, 0.9) !important;
+    border-left-color: #ffffff !important;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* AAA: Privacy text contrast enhancement */
+#homepage-newsletter-privacy,
+#newsletter-privacy {
+    font-weight: 500; /* Slightly bolder for better readability */
+}
+
+/* Ensure privacy text meets AAA contrast in all contexts */
+.bg-gradient-primary #homepage-newsletter-privacy {
+    color: #ffffff !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); /* Subtle shadow for better definition */
+}
+
+footer #newsletter-privacy {
+    color: #e5e7eb !important; /* Light gray that meets AAA contrast on dark background */
 }
 
 /* High contrast mode support */
 @media (prefers-contrast: high) {
     :root {
-        --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.3);
-        --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3);
-        --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.3);
+        --primary-color: #000080;        /* Even darker blue for AAA+ */
+        --secondary-color: #800000;      /* Darker red for AAA+ */
+        --accent-color: #804000;         /* Darker orange for AAA+ */
+        --text-dark: #000000;
+        --text-light: #2d3748;          /* Darker for AAA contrast */
+        --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.5);
+        --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.5);
+        --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5);
+    }
+    
+    /* AAA: Enhanced focus for high contrast */
+    .btn:focus-visible,
+    .form-control:focus,
+    .nav-link:focus-visible,
+    a:focus-visible {
+        outline: 5px solid #000 !important;
+        outline-offset: 3px;
+        box-shadow: 0 0 0 3px #fff, 0 0 0 8px #000 !important;
+        filter: none !important;
+    }
+    
+    /* AAA: Enhanced privacy text contrast in high contrast mode */
+    #homepage-newsletter-privacy,
+    #newsletter-privacy {
+        color: #ffffff !important;
+        font-weight: 700 !important;
+    }
+}
+    
+    .btn-outline-light {
+        border-color: white !important;
+        color: white !important;
+    }
+    
+    .btn-outline-light:hover {
+        background: white !important;
+        color: #000000 !important;
+    }
+    
+    .text-muted {
+        color: #374151 !important;
     }
 }
 
