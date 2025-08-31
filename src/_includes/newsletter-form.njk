@@ -1,0 +1,64 @@
+{#
+  Newsletter Form Include
+  
+  Parameters:
+  - form_name: The unique name for the form (required)
+  - id_prefix: The prefix for element IDs (required)
+  - label_text: The text for the label (required)
+  - label_class: CSS classes for the label (optional, defaults to "form-label mb-2")
+  - input_class: CSS classes for the input (optional, defaults to "form-control")
+  - button_class: CSS classes for the button (optional, defaults to "btn btn-primary")
+  - button_text: The text for the button (optional, defaults to "Subscribe")
+  - privacy_text: The privacy text (optional, defaults to "We respect your privacy. Unsubscribe at any time.")
+  - privacy_class: CSS classes for the privacy text (optional, defaults to "")
+  - help_text: The help text for screen readers (optional)
+  - container_class: CSS classes for the form container (optional, defaults to "")
+#}
+
+{%- set form_name = form_name | default("newsletter") -%}
+{%- set id_prefix = id_prefix | default("newsletter") -%}
+{%- set label_text = label_text | default("Email address for newsletter") -%}
+{%- set label_class = label_class | default("form-label mb-2") -%}
+{%- set input_class = input_class | default("form-control") -%}
+{%- set button_class = button_class | default("btn btn-primary") -%}
+{%- set button_text = button_text | default("Subscribe") -%}
+{%- set privacy_text = privacy_text | default("We respect your privacy. Unsubscribe at any time.") -%}
+{%- set privacy_class = privacy_class | default("") -%}
+{%- set help_text = help_text | default("Enter your email to receive updates on programs, events, and London's music community") -%}
+{%- set container_class = container_class | default("") -%}
+
+<form name="{{ form_name }}" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="newsletter-form {{ container_class }}" aria-label="Newsletter subscription" novalidate>
+    <input type="hidden" name="form-name" value="{{ form_name }}" />
+    <p class="visually-hidden">
+        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+    </p>
+    
+    <div class="form-group">
+        <label for="{{ id_prefix }}-email" class="{{ label_class }}">{{ label_text }}</label>
+        <input type="email" 
+               id="{{ id_prefix }}-email" 
+               name="email" 
+               class="{{ input_class }}" 
+               required 
+               aria-describedby="{{ id_prefix }}-privacy {{ id_prefix }}-help {{ id_prefix }}-error" 
+               aria-invalid="false" 
+               autocomplete="email">
+        
+        <div class="mt-3">
+            <button type="submit" class="{{ button_class }} w-100">
+                <span><i class="fas fa-envelope me-2" aria-hidden="true"></i>{{ button_text }}</span>
+                <span class="loading-spinner d-none" aria-hidden="true"></span>
+            </button>
+        </div>
+        
+        <div id="{{ id_prefix }}-error" class="invalid-feedback" role="alert" aria-live="polite"></div>
+    </div>
+    
+    {% if help_text %}
+    <div id="{{ id_prefix }}-help" class="visually-hidden">{{ help_text }}</div>
+    {% endif %}
+    
+    {% if privacy_text %}
+    <small id="{{ id_prefix }}-privacy" class="d-block mt-3 {{ privacy_class }}">{{ privacy_text }}</small>
+    {% endif %}
+</form>

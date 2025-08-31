@@ -655,6 +655,101 @@ footer a:hover {
     transform: translateX(3px);
 }
 
+/* ===== NEWSLETTER FORM STYLES ===== */
+
+/* Newsletter form in homepage "Stay in the Loop" section */
+.bg-gradient-primary .newsletter-form {
+    text-align: center;
+}
+
+.bg-gradient-primary .newsletter-form .form-label {
+    color: white !important;
+    text-align: center;
+    display: block;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.bg-gradient-primary .newsletter-form .form-control {
+    text-align: center;
+    font-size: 1.1rem;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    border: none;
+    background: white;
+    margin-bottom: 1rem;
+}
+
+.bg-gradient-primary .newsletter-form .btn {
+    background: var(--accent-color) !important;
+    color: white !important;
+    border: none;
+    font-weight: 700;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 15px rgba(180, 83, 9, 0.3);
+}
+
+.bg-gradient-primary .newsletter-form .btn:hover {
+    background: #92400e !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(180, 83, 9, 0.4);
+}
+
+.bg-gradient-primary .newsletter-form small {
+    color: white !important;
+    text-align: center;
+    display: block;
+    font-weight: 500;
+}
+
+/* Newsletter form in footer */
+footer .newsletter-form {
+    margin-bottom: 1rem;
+}
+
+footer .newsletter-form .form-label {
+    color: #e5e7eb !important;
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+}
+
+footer .newsletter-form .form-control {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    margin-bottom: 1rem;
+}
+
+footer .newsletter-form .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+footer .newsletter-form .form-control:focus {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.25);
+    color: white;
+}
+
+footer .newsletter-form .btn {
+    background: var(--accent-color) !important;
+    color: white !important;
+    border: none;
+    font-weight: 600;
+    padding: 0.875rem 2rem;
+}
+
+footer .newsletter-form .btn:hover {
+    background: #92400e !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(180, 83, 9, 0.4);
+}
+
+footer .newsletter-form small {
+    color: #d1d5db !important;
+    font-weight: 400;
+}
+
 /* ===== UTILITY CLASSES ===== */
 .text-gradient {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));

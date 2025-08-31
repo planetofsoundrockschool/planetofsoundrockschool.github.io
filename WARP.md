@@ -111,3 +111,122 @@ Pages are ordered by `eleventyNavigation.order`:
 - CSS and JS files are watched for changes
 - Static assets are copied from `src/assets/`, `src/css/`, `src/js/`
 - Test builds locally with `npm run build` before deploying
+
+## Development Roadmap & Task List
+
+The following tasks represent planned improvements and enhancements for the Planet of Sound Rock School website:
+
+### Priority 1: Accessibility & Inclusion
+
+#### 1. Add Accessibility Statement Page
+- Create dedicated accessibility statement page (`src/accessibility.md`)
+- Document WCAG compliance level and goals
+- Include contact information for accessibility feedback
+- List known accessibility issues and improvement timeline
+- Add to main navigation with appropriate `eleventyNavigation` settings
+
+#### 2. Add Reduce Motion Accessibility Option
+- Implement `prefers-reduced-motion` media query support
+- Create manual toggle for motion preferences in site settings
+- Disable CSS animations and transitions when reduce motion is enabled
+- Store user preference in localStorage
+- Update existing floating icons and card animations to respect setting
+
+#### 3. Add Dark Mode Support
+- Implement dark mode toggle with CSS custom properties
+- Extend existing color variable system with dark mode variants:
+  - `--rock-red-dark`, `--rock-dark-light`, `--rock-orange-dark`
+- Ensure WCAG AA contrast ratios in both light and dark modes
+- Store user preference in localStorage
+- Add toggle button to site header/navigation
+
+### Priority 2: Quality Assurance & Testing
+
+#### 4. Implement Automated Accessibility Testing
+- Integrate axe-core or pa11y into build process
+- Test for:
+  - Color contrast ratios (WCAG AA/AAA compliance)
+  - Keyboard navigation functionality
+  - Screen reader compatibility and ARIA attributes
+  - Focus management and visual indicators
+- Add accessibility tests to GitHub Actions workflow
+- Set up automated reporting and failure notifications
+
+#### 5. Add Automated Security Testing
+- Implement `npm audit` in CI/CD pipeline
+- Add Snyk or similar dependency vulnerability scanning
+- Configure Content Security Policy (CSP) headers
+- Regular security dependency updates
+- Monitor for common web vulnerabilities (XSS, CSRF)
+
+#### 6. Implement Automated Performance Testing
+- Integrate Lighthouse CI for Core Web Vitals monitoring
+- Set performance budgets for:
+  - First Contentful Paint (FCP)
+  - Largest Contentful Paint (LCP)
+  - Cumulative Layout Shift (CLS)
+  - First Input Delay (FID)
+- Monitor bundle size and loading performance
+- Test across different connection speeds
+
+#### 7. Add Automated HTML/CSS Validation Testing
+- Integrate W3C HTML validator into build process
+- Add CSS validation for standards compliance
+- Ensure semantic HTML structure
+- Validate ARIA attributes and accessibility markup
+
+#### 8. Implement Automated Link Checking
+- Add broken link detection for internal navigation
+- Test external links (email, social media)
+- Validate contact form functionality
+- Check for proper redirects and error handling
+
+#### 9. Add Automated Cross-Browser Testing
+- Test across major browsers (Chrome, Firefox, Safari, Edge)
+- Validate responsive design on different screen sizes
+- Consider Playwright or Puppeteer for automated testing
+- Test keyboard navigation across browsers
+
+### Implementation Guidelines
+
+#### Testing Integration
+- All tests should be integrated into GitHub Actions workflow
+- Tests should run on pull requests and main branch pushes
+- Failed tests should prevent deployment
+- Regular scheduled testing for external dependencies
+
+#### Accessibility Implementation
+- Follow WCAG 2.1 AA guidelines as minimum standard
+- Test with actual screen readers (VoiceOver, NVDA, JAWS)
+- Ensure keyboard-only navigation works throughout site
+- Provide alternative text for all images and media
+
+#### Performance Standards
+- Target Lighthouse scores: 90+ for all categories
+- Keep bundle sizes under reasonable limits
+- Optimize images and assets for web delivery
+- Implement lazy loading where appropriate
+
+#### Security Best Practices
+- Regular dependency updates and vulnerability patching
+- Implement proper Content Security Policy headers
+- Validate and sanitize any user inputs (contact forms)
+- Use HTTPS everywhere and implement security headers
+
+### Development Workflow Updates
+
+Once these improvements are implemented:
+
+1. **Pre-commit hooks**: Run accessibility and validation tests
+2. **Pull request checks**: All automated tests must pass
+3. **Deployment**: Include performance and security validation
+4. **Monitoring**: Regular accessibility and performance audits
+5. **User feedback**: Clear channels for accessibility and usability feedback
+
+### Future Enhancements
+
+- Progressive Web App (PWA) features
+- Advanced analytics and user behavior tracking
+- Multi-language support for accessibility
+- Voice navigation integration
+- Enhanced mobile experience optimizations
