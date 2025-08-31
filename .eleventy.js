@@ -1,6 +1,37 @@
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+const { execSync } = require('child_process');
+const fs = require('fs');
 
 module.exports = function(eleventyConfig) {
+  // Add cache-busting filter using Git commit hash or file modification time
+  eleventyConfig.addFilter("cacheBust", function(url) {
+    try {
+      // Try to get Git commit hash for the file
+      const filePath = `src${url}`;
+      if (fs.existsSync(filePath)) {
+        try {
+          // Get the last commit hash that modified this file
+          const gitHash = execSync(`git log -1 --format="%h" -- "${filePath}"`, { encoding: 'utf8' }).trim();
+          if (gitHash) {
+            return `${url}?v=${gitHash}`;
+          }
+        } catch (gitError) {
+          // Fall back to file modification time if git fails
+          console.warn('Git not available for cache busting, using file mtime');
+        }
+        
+        // Fallback: use file modification time
+        const stats = fs.statSync(filePath);
+        const mtime = Math.floor(stats.mtime.getTime() / 1000);
+        return `${url}?v=${mtime}`;
+      }
+    } catch (error) {
+      console.warn(`Cache busting failed for ${url}:`, error.message);
+    }
+    
+    // Ultimate fallback: use current timestamp (for build time)
+    return `${url}?v=${Date.now()}`;
+  });
   // Add HTML transform to clean up empty p tags during development
   eleventyConfig.addTransform("cleanEmptyParagraphs", function(content, outputPath) {
     if (outputPath && outputPath.endsWith(".html")) {
