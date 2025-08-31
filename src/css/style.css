@@ -275,6 +275,7 @@ body, .main-content {
     color: white;
     position: relative;
     overflow: hidden;
+    min-height: 600px;
 }
 
 .hero::before {
@@ -291,6 +292,52 @@ body, .main-content {
 .hero .container {
     position: relative;
     z-index: 2;
+}
+
+/* Hero with image layout - Desktop only */
+@media (min-width: 992px) {
+    .hero-with-image {
+        min-height: 700px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .hero-with-image .hero-content {
+        display: flex;
+        align-items: center;
+        min-height: 500px;
+    }
+    
+    .hero-image {
+        position: relative;
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: var(--shadow-xl);
+        height: 500px;
+    }
+    
+    .hero-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+    
+    .hero-text {
+        padding-left: 3rem;
+    }
+}
+
+/* Mobile: Stack image below text or hide image entirely */
+@media (max-width: 991px) {
+    .hero-with-image .hero-image {
+        display: none; /* Hide image on mobile for cleaner look */
+    }
+    
+    .hero-with-image .hero-text {
+        text-align: center;
+        width: 100%;
+    }
 }
 
 .hero h1 {

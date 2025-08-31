@@ -17,19 +17,27 @@ eleventyNavigation:
 {% endif %}
 
 <!-- Hero Section -->
-<section id="hero" class="hero d-flex align-items-center" aria-labelledby="hero-heading">
+<section id="hero" class="hero hero-with-image d-flex align-items-center" aria-labelledby="hero-heading">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-8 mx-auto text-center">
+        <div class="row hero-content">
+            <!-- Hero Image - Desktop Only -->
+            <div class="col-lg-5 hero-image d-none d-lg-block">
+                <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                     alt="Musician playing guitar in a recording studio" 
+                     loading="eager">
+            </div>
+            
+            <!-- Hero Text -->
+            <div class="col-lg-7 hero-text">
                 <h1 id="hero-heading">
                     From Your First Chord<br>
-                    <span class="text-gradient">To Your First Tour</span>
+                    <span class="text-warning fw-bold">To Your First Tour</span>
                 </h1>
                 <p>
                     Mentorship-based music education in London, Ontario.<br>
                     <strong>All Ages • All Stages • Learn. Collaborate. Play Live.</strong>
                 </p>
-                <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mt-4">
+                <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start gap-3 mt-4">
                     <a href="#contact" class="btn btn-primary btn-lg" aria-describedby="discovery-call-desc">
                         <i class="fas fa-calendar-alt me-2" aria-hidden="true"></i>Book Free Discovery Call
                     </a>
@@ -37,24 +45,13 @@ eleventyNavigation:
                         <i class="fas fa-users me-2" aria-hidden="true"></i>Explore Programs
                     </a>
                 </div>
-                <div class="mt-4">
+                <div class="mt-4 text-center text-lg-start">
                     <span class="badge bg-light text-dark me-2 px-3 py-2" role="status" aria-label="Enrollment status">Fall 2025 Enrollment Open</span>
                     <span class="badge bg-light text-dark px-3 py-2" role="status" aria-label="Program structure">4-Tier Program System</span>
                 </div>
                 <div id="discovery-call-desc" class="visually-hidden">Schedule a free 15-minute conversation about your musical goals</div>
             </div>
         </div>
-    </div>
-    
-    <!-- Floating Music Icons - Decorative -->
-    <div class="position-absolute top-50 start-0 translate-middle-y d-none d-lg-block hero-float-1" style="left: 8% !important;" aria-hidden="true">
-        <i class="fas fa-guitar fa-3x opacity-25"></i>
-    </div>
-    <div class="position-absolute top-25 end-0 d-none d-lg-block hero-float-2" style="right: 8% !important;" aria-hidden="true">
-        <i class="fas fa-microphone fa-2x opacity-25"></i>
-    </div>
-    <div class="position-absolute bottom-25 start-0 d-none d-lg-block hero-float-3" style="left: 12% !important;" aria-hidden="true">
-        <i class="fas fa-drum fa-2x opacity-25"></i>
     </div>
 </section>
 
