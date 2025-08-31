@@ -781,6 +781,23 @@ footer .newsletter-form small {
     }
 }
 
+/* Footer Follow Us section with left border separator */
+.footer-follow-section {
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    padding-left: 1.5rem;
+}
+
+/* Remove border on mobile when sections stack */
+@media (max-width: 767px) {
+    .footer-follow-section {
+        border-left: none;
+        padding-left: 0.75rem;
+        margin-top: 2rem;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+}
+
 /* ===== UTILITY CLASSES ===== */
 .text-gradient {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
