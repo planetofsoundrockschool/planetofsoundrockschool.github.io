@@ -7,6 +7,8 @@ eleventyNavigation:
   order: 1
 ---
 
+<!-- Updated: Newsletter form now uses reusable component --!
+
 <!-- Preview Test Banner - Only shows on Netlify preview deployments -->
 {% if env.isPreview %}
 <div class="alert alert-info text-center mb-0 rounded-0" style="background: linear-gradient(45deg, #17a2b8, #007bff); color: white; font-weight: bold;">
