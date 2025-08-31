@@ -68,25 +68,7 @@
                 <div class="col-lg-6">
                     <h5 class="text-danger mb-3">Stay Connected</h5>
                     <p class="mb-3">Get updates on programs, events, and London's music community.</p>
-                    <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="mb-3" aria-label="Newsletter signup" novalidate>
-                        <input type="hidden" name="form-name" value="newsletter" />
-                        <p class="visually-hidden">
-                            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-                        </p>
-                        <div class="form-group">
-                            <label for="newsletter-email" class="form-label text-light mb-2 d-block">Email address for newsletter</label>
-                            <div class="d-flex">
-                                <input type="email" id="newsletter-email" name="email" class="form-control me-2" required aria-describedby="newsletter-privacy newsletter-help newsletter-error" aria-invalid="false" autocomplete="email">
-                                <button class="btn btn-warning" type="submit">
-                                    <span>Subscribe</span>
-                                    <span class="loading-spinner d-none" aria-hidden="true"></span>
-                                </button>
-                            </div>
-                            <div id="newsletter-error" class="invalid-feedback" role="alert" aria-live="polite"></div>
-                        </div>
-                    </form>
-                    <div id="newsletter-help" class="visually-hidden">Enter your email to receive updates on programs, events, and London's music community</div>
-                    <small id="newsletter-privacy" class="text-light">We respect your privacy. Unsubscribe at any time.</small>
+                    {% include "newsletter-form.njk" %}
                 </div>
                 <div class="col-lg-6">
                     <div class="row">

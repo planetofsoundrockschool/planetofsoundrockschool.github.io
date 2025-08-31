@@ -511,28 +511,9 @@ eleventyNavigation:
                 <h2 id="newsletter-heading" class="mb-3">Stay in the Loop</h2>
                 <p class="mb-4 fs-5">Get updates on programs, student showcases, and London's music community events.</p>
                 
-                <form name="homepage-newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="row g-2 justify-content-center" aria-label="Newsletter subscription" novalidate>
-                    <input type="hidden" name="form-name" value="homepage-newsletter" />
-                    <p class="visually-hidden">
-                        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-                    </p>
-                    <div class="col-auto">
-                        <div class="form-group">
-                            <label for="homepage-newsletter-email" class="form-label text-white mb-2">Email address for newsletter updates</label>
-                            <input type="email" id="homepage-newsletter-email" name="email" class="form-control form-control-lg" required style="min-width: 280px;" aria-describedby="homepage-newsletter-privacy homepage-newsletter-help homepage-newsletter-error" aria-invalid="false" autocomplete="email">
-                            <div id="homepage-newsletter-error" class="invalid-feedback" role="alert" aria-live="polite"></div>
-                        </div>
-                    </div>
-                    <div class="col-auto">
-                        <button type="submit" class="btn btn-light btn-lg text-primary fw-bold">
-                            <span><i class="fas fa-envelope me-2" aria-hidden="true"></i>Subscribe</span>
-                            <span class="loading-spinner d-none" aria-hidden="true"></span>
-                        </button>
-                    </div>
-                </form>
-                
-                <div id="homepage-newsletter-help" class="visually-hidden">Enter your email to receive updates on programs, student showcases, and London music events</div>
-                <small id="homepage-newsletter-privacy" class="d-block mt-3 text-white">We respect your privacy. Unsubscribe at any time.</small>
+                <div class="col-lg-6 mx-auto">
+                    {% include "newsletter-form.njk" %}
+                </div>
             </div>
         </div>
     </div>
