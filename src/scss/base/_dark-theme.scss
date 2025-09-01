@@ -1,0 +1,225 @@
+@use '../abstracts/variables' as *;
+
+// ===== DARK MODE THEME =====
+
+// Dark mode color variables
+$dark-bg-primary: #1a1a1a;
+$dark-bg-secondary: #2d2d2d;
+$dark-bg-tertiary: #3a3a3a;
+$dark-text-primary: #ffffff;
+$dark-text-secondary: #e5e5e5;
+$dark-text-muted: #b3b3b3;
+$dark-border: rgba(255, 255, 255, 0.1);
+$dark-border-muted: rgba(255, 255, 255, 0.05);
+
+// Dark mode styles
+[data-theme="dark"] {
+  // Update CSS custom properties for dark mode
+  --text-dark: #{$dark-text-primary};
+  --text-light: #{$dark-text-secondary};
+  --text-muted: #{$dark-text-secondary}; // Use secondary for better contrast instead of muted
+  --background-light: #{$dark-bg-primary};
+  --background-section: #{$dark-bg-secondary};
+  
+  // Body background
+  body {
+    background-color: $dark-bg-primary;
+    color: $dark-text-primary;
+  }
+  
+  // Header styles
+  .header {
+    background: rgba(26, 26, 26, 0.95);
+    border-bottom: 1px solid $dark-border;
+    
+    &.header-scrolled {
+      background: rgba(26, 26, 26, 0.98);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+    }
+  }
+  
+  // Logo and navigation
+  .logo h1,
+  .navbar-brand.logo h1 {
+    color: $dark-text-primary;
+  }
+  
+  .navbar-nav .nav-link {
+    color: $dark-text-secondary;
+    
+    &:hover,
+    &.active {
+      color: $primary-color;
+      background: rgba(59, 130, 246, 0.15);
+    }
+  }
+  
+  // Navigation borders
+  .navbar-nav .nav-item:not(:first-child) {
+    border-left-color: $dark-border;
+  }
+  
+  // Mobile navigation
+  @media (max-width: 1199px) {
+    .navbar-collapse {
+      background: $dark-bg-secondary;
+      border: 1px solid $dark-border;
+    }
+    
+    .navbar-nav .nav-link {
+      border-bottom-color: $dark-border-muted;
+      
+      &:hover,
+      &.active {
+        background: $primary-color;
+        color: white;
+      }
+    }
+  }
+  
+  // Cards
+  .card {
+    background: $dark-bg-secondary;
+    border: 1px solid $dark-border;
+  }
+  
+  .card-title {
+    color: $dark-text-primary;
+  }
+  
+  .card-text {
+    color: $dark-text-secondary;
+  }
+  
+  // Sections
+  .section-bg,
+  .section-alt {
+    background-color: $dark-bg-secondary;
+  }
+  
+  .section-header h2 {
+    color: $dark-text-primary;
+  }
+  
+  .section-header p {
+    color: $dark-text-secondary;
+  }
+  
+  // Hero section
+  .hero {
+    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+    color: $dark-text-primary;
+  }
+  
+  // Forms
+  .form-control {
+    background: $dark-bg-tertiary;
+    border: 2px solid $dark-border;
+    color: $dark-text-primary;
+    
+    &::placeholder {
+      color: $dark-text-muted;
+    }
+    
+    &:focus {
+      background: $dark-bg-secondary;
+      border-color: $primary-color;
+      color: $dark-text-primary;
+    }
+  }
+  
+  .form-label {
+    color: $dark-text-primary;
+  }
+  
+  // Contact section
+  .contact {
+    background: $dark-bg-primary;
+  }
+  
+  .contact-form {
+    background: $dark-bg-secondary;
+    border: 1px solid $dark-border;
+  }
+  
+  .contact-info-item h4 {
+    color: $dark-text-primary;
+  }
+  
+  .contact-info-item p {
+    color: $dark-text-secondary;
+  }
+  
+  // Footer (make it even darker)
+  footer {
+    background: linear-gradient(135deg, #111111, #1a1a1a) !important;
+  }
+  
+  // Display settings buttons
+  .btn-outline-secondary {
+    border-color: $dark-border;
+    color: $dark-text-secondary;
+    
+    &:hover {
+      background: $dark-bg-tertiary;
+      border-color: $dark-text-muted;
+      color: $dark-text-primary;
+    }
+  }
+  
+  // Mobile settings banner
+  #mobile-settings-banner {
+    background: $dark-bg-secondary !important;
+    border-bottom: 1px solid $dark-border !important;
+    
+    .text-muted {
+      color: $dark-text-muted !important;
+    }
+  }
+  
+  // Newsletter forms
+  .bg-gradient-primary .newsletter-form .form-control {
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    
+    &::placeholder {
+      color: #666;
+    }
+  }
+  
+  footer .newsletter-form .form-control {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: $dark-border;
+    color: $dark-text-primary;
+    
+    &::placeholder {
+      color: $dark-text-muted;
+    }
+    
+    &:focus {
+      background: rgba(255, 255, 255, 0.1);
+    }
+  }
+  
+  // Utility classes
+  .text-dark {
+    color: $dark-text-primary !important;
+  }
+  
+  .text-muted {
+    color: $dark-text-secondary !important; // Use secondary instead of muted for better contrast
+  }
+  
+  .bg-light {
+    background-color: $dark-bg-secondary !important;
+  }
+  
+  // Back to top button
+  .back-to-top {
+    background: $primary-color;
+    
+    &:hover {
+      background: $link-hover;
+    }
+  }
+}
