@@ -8,7 +8,7 @@
   -webkit-backdrop-filter: blur(10px);
   box-shadow: $shadow-sm;
   transition: $transition-base;
-  height: $header-height;
+  min-height: $header-height;
   z-index: 100;
 
   &.header-scrolled {
@@ -73,6 +73,7 @@
     min-height: 44px;
     display: flex;
     align-items: center;
+	overflow: hidden;
 
     &:hover,
     &.active {
@@ -96,6 +97,13 @@
     &.active:before {
       width: 80%;
     }
+  }
+  
+  // Add left border to all nav items except the first
+  .navbar-nav .nav-item:not(:first-child) {
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 1rem;
+    margin-left: 0.5rem;
   }
 }
 

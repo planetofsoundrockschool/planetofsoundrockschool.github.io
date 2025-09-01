@@ -91,9 +91,9 @@
                 
                 <!-- Navigation -->
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <div class="d-lg-flex w-100 align-items-end justify-content-center">
+                    <div class="d-lg-flex w-100 align-items-end">
                         <!-- Main Navigation Menu -->
-                        <ul class="navbar-nav" role="menubar">
+                        <ul class="navbar-nav ms-auto" role="menubar">
                             {%- for entry in collections.all | eleventyNavigation %}
                             <li class="nav-item" role="none">
                                 <a class="nav-link{% if entry.url == page.url %} active{% endif %}" 
@@ -103,11 +103,6 @@
                                     {{ entry.title }}
                                 </a>
                             </li>
-                            {%- if not loop.last %}
-                            <li class="nav-item d-flex align-items-center d-none d-xl-block" role="none">
-                                <span class="text-muted nav-item-separator">|</span>
-                            </li>
-                            {%- endif %}
                             {%- endfor %}
                         </ul>
                         
