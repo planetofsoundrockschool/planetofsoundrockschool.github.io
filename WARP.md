@@ -26,16 +26,40 @@ This is the Planet of Sound Rock School website - a static site built with Eleve
 - **Static Site Generator**: Eleventy (11ty) using CommonJS configuration
 - **Template Engine**: Nunjucks (.njk files) for layouts and templating
 - **Content**: Markdown files with YAML front matter
-- **Styling**: Bootstrap 5.3.3 via CDN + custom CSS in `src/css/style.css`
+- **Styling**: Bootstrap 5.3.3 via CDN + SCSS compiled to custom CSS
 - **Navigation**: Uses `@11ty/eleventy-navigation` plugin for automated navigation
+- **CSS Architecture**: SCSS with organized structure (abstracts, base, components, layout)
 
 ### Directory Structure
 ```
 src/
 ├── _layouts/
-│   └── base.njk          # Main layout template
+│   └── base.njk          # Main layout template with enhanced mobile navigation
+├── scss/
+│   ├── abstracts/
+│   │   ├── _variables.scss   # SCSS variables and brand colors
+│   │   └── _mixins.scss      # Responsive mixins and utilities
+│   ├── base/
+│   │   ├── _dark-theme.scss  # Dark mode styles and theming
+│   │   ├── _accessibility.scss
+│   │   ├── _animations.scss
+│   │   ├── _reset.scss
+│   │   └── _utilities.scss
+│   ├── components/
+│   │   ├── _buttons.scss
+│   │   ├── _cards.scss
+│   │   ├── _forms.scss
+│   │   └── _hero.scss
+│   ├── layout/
+│   │   ├── _header.scss      # Navigation and mobile menu styling
+│   │   └── _footer.scss
+│   └── main.scss         # Main SCSS entry point
 ├── css/
-│   └── style.css         # Custom CSS styles
+│   └── style.css         # Compiled CSS output
+├── js/
+│   ├── main.js
+│   ├── dark-mode.js      # Dark mode toggle functionality
+│   └── accessibility-aaa.js
 ├── *.md                  # Content pages (index, about, programs, etc.)
 └── assets/               # Static assets (copied during build)
 ```
@@ -78,6 +102,15 @@ Pages are ordered by `eleventyNavigation.order`:
 - Consistent header/footer across all pages
 - Bootstrap integration with custom CSS overrides
 
+### Navigation & User Experience Features
+- **Enhanced Mobile Navigation**: Custom "MENU" button replaces hamburger icon for better clarity
+- **Full-Width Mobile Menu**: Menu items span complete container width across all mobile breakpoints (including 1010-1210px)
+- **Desktop Navigation Styling**: Left borders between navigation items instead of pipe separators
+- **Dark Mode Support**: Comprehensive dark theme implementation with proper contrast ratios
+- **Accessibility Features**: WCAG 2.2 compliant touch targets, keyboard navigation, and screen reader support
+- **Animation Controls**: User toggle for motion preferences with localStorage persistence
+- **Responsive Design**: Seamless experience across all device sizes with proper breakpoint handling
+
 ## Deployment
 
 - **Platform**: GitHub Pages
@@ -95,10 +128,17 @@ Pages are ordered by `eleventyNavigation.order`:
 4. Write content in Markdown or HTML
 
 ### Modifying Styles
-- Edit `src/css/style.css` for custom styling
-- Follow existing CSS variable naming convention
-- Use Bootstrap utility classes where possible
-- Test responsive design across breakpoints
+- **SCSS Architecture**: Edit SCSS files in `src/scss/` directory structure
+  - `abstracts/_variables.scss`: Brand colors, breakpoints, and design tokens
+  - `base/_dark-theme.scss`: Dark mode theming and color overrides
+  - `layout/_header.scss`: Navigation, mobile menu, and header styling
+  - `components/`: Reusable component styles
+- **CSS Output**: SCSS compiles to `src/css/style.css`
+- **Variables**: Use existing SCSS variables and mixins from abstracts layer
+- **Responsive Design**: Use provided mixins (`@include mobile-only`, `@include large-desktop-up`)
+- **Dark Mode**: Add corresponding dark theme styles in `_dark-theme.scss`
+- **Bootstrap Integration**: Extend Bootstrap classes with custom SCSS
+- **Testing**: Test across all breakpoints and both light/dark modes
 
 ### Content Updates
 - Program information is in `src/programs.md` and `src/index.md`
@@ -115,6 +155,26 @@ Pages are ordered by `eleventyNavigation.order`:
 ## Development Roadmap & Task List
 
 The following tasks represent planned improvements and enhancements for the Planet of Sound Rock School website:
+
+### ✅ Recently Completed Features
+
+#### Enhanced Mobile Navigation (January 2025)
+- ✅ **Mobile Menu UX**: Replaced hamburger icon with clear "MENU" text button
+- ✅ **Full-Width Mobile Menu**: Fixed menu width issues across all mobile breakpoints (1010-1210px)
+- ✅ **Desktop Navigation Styling**: Implemented left borders between nav items instead of pipe separators
+- ✅ **WCAG 2.2 Compliance**: Added proper touch targets, focus states, and accessibility features
+- ✅ **Mobile Menu Functionality**: Enhanced keyboard navigation and screen reader support
+
+#### Dark Mode Implementation (Previously Completed)
+- ✅ **Dark Mode Toggle**: Fully functional dark/light mode switching with localStorage persistence
+- ✅ **Comprehensive Theme Coverage**: Dark mode styles for all components and layouts
+- ✅ **Proper Contrast**: WCAG AA compliant color contrast ratios in both modes
+- ✅ **User Preference**: Respects system preference and remembers user choice
+
+#### Animation Controls (Previously Completed)
+- ✅ **Motion Preferences**: User toggle for animations with localStorage persistence
+- ✅ **Accessibility Integration**: Respects `prefers-reduced-motion` system preference
+- ✅ **Feedback System**: Visual feedback when toggling animation preferences
 
 ### Priority 1: Accessibility & Inclusion
 
@@ -231,10 +291,126 @@ Once these improvements are implemented:
 4. **Monitoring**: Regular accessibility and performance audits
 5. **User feedback**: Clear channels for accessibility and usability feedback
 
-### Future Enhancements
+### Future Enhancements & Strategic Roadmap
 
-- Progressive Web App (PWA) features
-- Advanced analytics and user behavior tracking
-- Multi-language support for accessibility
-- Voice navigation integration
-- Enhanced mobile experience optimizations
+#### Phase 1: Dynamic Content Management
+- **DecapCMS Integration**: Implement headless CMS for non-technical content updates
+  - Easy program and pricing updates without code changes
+  - Blog/news section for announcements and events
+  - Image and media management
+  - Multiple user roles and permissions
+- **Form Enhancement**: Replace static contact forms with dynamic submission handling
+  - Student inquiry forms with automated email responses
+  - Program registration and waitlist management
+  - Contact form submissions to database/CRM integration
+
+#### Phase 2: Student Management System
+- **User Authentication**: Student and instructor login system
+  - Secure user accounts with password reset functionality
+  - Role-based access (students, instructors, admin)
+  - OAuth integration (Google, Facebook login options)
+- **Student Portal**: Personalized dashboard for enrolled students
+  - Schedule viewing and lesson booking
+  - Progress tracking and practice logs
+  - Resource library (tabs, chord charts, backing tracks)
+  - Communication tools with instructors
+- **Instructor Dashboard**: Tools for music educators
+  - Student roster and progress tracking
+  - Lesson planning and resource sharing
+  - Schedule management and availability setting
+
+#### Phase 3: E-commerce & Payment Integration
+- **Payment Processing**: Secure online payments for lessons and programs
+  - Stripe integration for credit card processing
+  - Recurring payment options for ongoing lessons
+  - Package deals and promotional pricing
+  - Invoice generation and payment tracking
+- **Online Store**: Merchandise and digital products
+  - Rock school branded merchandise
+  - Digital lesson packages and courses
+  - Sheet music and tablature downloads
+  - Gift certificates and vouchers
+
+#### Phase 4: Advanced Learning Features
+- **Learning Management System (LMS)**: Structured course delivery
+  - Progressive skill-based curriculum
+  - Video lessons with progress tracking
+  - Interactive exercises and quizzes
+  - Achievement badges and certificates
+- **Community Features**: Social learning platform
+  - Student forums and discussion boards
+  - Practice group formation and collaboration
+  - Performance video sharing and feedback
+  - Event coordination and band matching
+
+#### Phase 5: Business Intelligence & Analytics
+- **Advanced Analytics**: Data-driven business insights
+  - Student retention and engagement metrics
+  - Revenue tracking and financial reporting
+  - Marketing campaign effectiveness
+  - Instructor performance analytics
+- **Customer Relationship Management**: Comprehensive CRM integration
+  - Lead tracking and conversion optimization
+  - Automated follow-up sequences
+  - Student lifecycle management
+  - Referral program tracking
+
+#### Phase 6: Mobile & Progressive Web App
+- **Native Mobile Experience**: Enhanced mobile capabilities
+  - Push notifications for lessons and events
+  - Offline content access for students
+  - Mobile-optimized practice tools
+  - Camera integration for progress videos
+- **Progressive Web App Features**:
+  - Installable web app experience
+  - Background sync for offline functionality
+  - Push notifications and engagement
+  - Enhanced performance and caching
+
+#### Technical Implementation Considerations
+
+**Backend Infrastructure**:
+- **Database**: PostgreSQL or MongoDB for user and content data
+- **API Layer**: Node.js/Express or Python/Django REST framework
+- **Authentication**: JWT tokens with refresh token rotation
+- **File Storage**: AWS S3 or Cloudinary for media assets
+- **Email Service**: SendGrid or Mailgun for transactional emails
+
+**Security & Compliance**:
+- **PCI DSS Compliance**: For payment card data security
+- **GDPR/CCPA Compliance**: User data privacy and consent management
+- **Security Headers**: CSP, HSTS, and other protective measures
+- **Data Encryption**: At-rest and in-transit encryption
+- **Regular Security Audits**: Vulnerability assessments and penetration testing
+
+**Performance & Scalability**:
+- **CDN Implementation**: Global content delivery for media files
+- **Database Optimization**: Query optimization and indexing strategies
+- **Caching Layers**: Redis for session management and frequently accessed data
+- **Load Balancing**: Horizontal scaling for increased traffic
+- **Monitoring**: Application performance monitoring (APM) tools
+
+#### Migration Strategy
+
+**Phase Transition Plan**:
+1. **Static to Dynamic**: Gradual conversion maintaining existing functionality
+2. **Content Migration**: Automated tools for moving existing content to CMS
+3. **User Data Import**: Secure migration of any existing customer data
+4. **Testing Environment**: Comprehensive staging environment for each phase
+5. **Rollback Plans**: Safe deployment with quick rollback capabilities
+
+**Technology Stack Evolution**:
+- **Current**: Eleventy (11ty) + GitHub Pages + Static HTML/CSS
+- **Phase 1**: Eleventy + DecapCMS + Netlify/Vercel + Form handling
+- **Phase 2**: Node.js/Express + Database + Authentication system
+- **Phase 3**: Full-stack application with payment integration
+- **Future**: Microservices architecture with API-first approach
+
+**Development Priorities**:
+1. Maintain current site functionality throughout all phases
+2. Ensure zero downtime during migrations
+3. Preserve SEO rankings and site performance
+4. Maintain accessibility standards across all new features
+5. Keep development and operational costs reasonable for small business
+
+This roadmap transforms Planet of Sound from a static informational site into a comprehensive music education platform while maintaining its current strengths in accessibility, performance, and user experience.
