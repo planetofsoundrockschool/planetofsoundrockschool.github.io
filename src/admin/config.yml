@@ -34,7 +34,7 @@ collections:
     files:
       - label: "Home Page"
         name: "home"
-        file: "src/index.md"
+        file: "src/index.njk"
         fields:
           - { label: "Layout", name: "layout", widget: "hidden", default: "base.njk" }
           - { label: "Title", name: "title", widget: "string" }
@@ -45,11 +45,11 @@ collections:
             fields:
               - { label: "Key", name: "key", widget: "string" }
               - { label: "Order", name: "order", widget: "number" }
-          - { label: "Content", name: "body", widget: "markdown" }
+          - { label: "Content", name: "body", widget: "code", default_language: "html", allow_language_selection: false }
 
       - label: "About Page"
         name: "about"
-        file: "src/about.md"
+        file: "src/about.njk"
         fields:
           - { label: "Layout", name: "layout", widget: "hidden", default: "base.njk" }
           - { label: "Title", name: "title", widget: "string" }
@@ -60,11 +60,11 @@ collections:
             fields:
               - { label: "Key", name: "key", widget: "string" }
               - { label: "Order", name: "order", widget: "number" }
-          - { label: "Content", name: "body", widget: "markdown" }
+          - { label: "Content", name: "body", widget: "code", default_language: "html", allow_language_selection: false }
 
       - label: "Programs Page"
         name: "programs"
-        file: "src/programs.md"
+        file: "src/programs.njk"
         fields:
           - { label: "Layout", name: "layout", widget: "hidden", default: "base.njk" }
           - { label: "Title", name: "title", widget: "string" }
@@ -75,11 +75,11 @@ collections:
             fields:
               - { label: "Key", name: "key", widget: "string" }
               - { label: "Order", name: "order", widget: "number" }
-          - { label: "Content", name: "body", widget: "markdown" }
+          - { label: "Content", name: "body", widget: "code", default_language: "html", allow_language_selection: false }
 
       - label: "Pricing Page"
         name: "pricing"
-        file: "src/pricing.md"
+        file: "src/pricing.njk"
         fields:
           - { label: "Layout", name: "layout", widget: "hidden", default: "base.njk" }
           - { label: "Title", name: "title", widget: "string" }
@@ -90,11 +90,11 @@ collections:
             fields:
               - { label: "Key", name: "key", widget: "string" }
               - { label: "Order", name: "order", widget: "number" }
-          - { label: "Content", name: "body", widget: "markdown" }
+          - { label: "Content", name: "body", widget: "code", default_language: "html", allow_language_selection: false }
 
       - label: "Recording Services"
         name: "recording"
-        file: "src/recording.md"
+        file: "src/recording.njk"
         fields:
           - { label: "Layout", name: "layout", widget: "hidden", default: "base.njk" }
           - { label: "Title", name: "title", widget: "string" }
@@ -105,11 +105,11 @@ collections:
             fields:
               - { label: "Key", name: "key", widget: "string" }
               - { label: "Order", name: "order", widget: "number" }
-          - { label: "Content", name: "body", widget: "markdown" }
+          - { label: "Content", name: "body", widget: "code", default_language: "html", allow_language_selection: false }
 
       - label: "Contact Page"
         name: "contact"
-        file: "src/contact.md"
+        file: "src/contact.njk"
         fields:
           - { label: "Layout", name: "layout", widget: "hidden", default: "base.njk" }
           - { label: "Title", name: "title", widget: "string" }
@@ -120,11 +120,11 @@ collections:
             fields:
               - { label: "Key", name: "key", widget: "string" }
               - { label: "Order", name: "order", widget: "number" }
-          - { label: "Content", name: "body", widget: "markdown" }
+          - { label: "Content", name: "body", widget: "code", default_language: "html", allow_language_selection: false }
 
       - label: "Referrals Page"
         name: "referrals"
-        file: "src/referrals.md"
+        file: "src/referrals.njk"
         fields:
           - { label: "Layout", name: "layout", widget: "hidden", default: "base.njk" }
           - { label: "Title", name: "title", widget: "string" }
@@ -135,25 +135,25 @@ collections:
             fields:
               - { label: "Key", name: "key", widget: "string" }
               - { label: "Order", name: "order", widget: "number" }
-          - { label: "Content", name: "body", widget: "markdown" }
+          - { label: "Content", name: "body", widget: "code", default_language: "html", allow_language_selection: false }
 
       - label: "FAQ Page"
         name: "faq"
-        file: "src/faq.md"
+        file: "src/faq.njk"
         fields:
           - { label: "Layout", name: "layout", widget: "hidden", default: "base.njk" }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Description", name: "description", widget: "text" }
-          - { label: "Content", name: "body", widget: "markdown" }
+          - { label: "Content", name: "body", widget: "code", default_language: "html", allow_language_selection: false }
 
       - label: "Policies Page"
         name: "policies"
-        file: "src/policies.md"
+        file: "src/policies.njk"
         fields:
           - { label: "Layout", name: "layout", widget: "hidden", default: "base.njk" }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Description", name: "description", widget: "text" }
-          - { label: "Content", name: "body", widget: "markdown" }
+          - { label: "Content", name: "body", widget: "code", default_language: "html", allow_language_selection: false }
 
   # Program Data (for structured content)
   - name: "programs_data"
@@ -242,6 +242,21 @@ collections:
             fields:
               - { label: "Service", name: "service", widget: "string" }
               - { label: "Price", name: "price", widget: "string" }
+
+  # Policy Components (Individual Markdown files)
+  - name: "policies"
+    label: "Policy Documents"
+    folder: "src/policies"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Summary", name: "summary", widget: "text", hint: "Brief description shown on policy cards" }
+      - { label: "Icon", name: "icon", widget: "string", hint: "Font Awesome class (e.g., fas fa-handshake)", default: "fas fa-file-text" }
+      - { label: "Card Style", name: "cardStyle", widget: "select", options: ["primary", "secondary", "light", "warning"], default: "light" }
+      - { label: "Display Order", name: "order", widget: "number", hint: "Lower numbers appear first" }
+      - { label: "Is Optional Policy", name: "isOptional", widget: "boolean", default: false, hint: "Check if this policy is optional (like media consent)" }
+      - { label: "Content", name: "body", widget: "markdown", hint: "Full policy content in Markdown format" }
 
   # Blog Posts (if needed in future)
   - name: "blog"

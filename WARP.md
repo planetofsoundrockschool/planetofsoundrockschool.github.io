@@ -1,6 +1,33 @@
-# WARP.md
+# Planet of Sound Rock School - Warp Continuation Guide
 
-This file provides guidance to WARP (warp.dev) when working with code in this repository.
+## Project Overview
+
+**Project:** Planet of Sound Rock School Website  
+**Technology Stack:** Eleventy (11ty), Nunjucks templates, Bootstrap 5, Decap CMS  
+**Repository:** https://github.com/planetofsoundrockschool/planetofsoundrockschool.github.io  
+**Live Site:** https://planetofsoundrockschool.netlify.app  
+**Current Branch:** `policies-markdown-migration` (created in this session)
+
+## 🚨 URGENT - CURRENT SESSION STATUS 🚨
+
+### Policy Management System Migration IN PROGRESS
+**Status:** ~85% Complete - Ready for final cleanup and testing
+
+**Problem:** Policies were managed as complex JSON data files with nested structures, making content editing difficult in Decap CMS.
+
+**Solution:** Migrated to individual Markdown files for each policy document.
+
+#### ✅ COMPLETED IN THIS SESSION:
+- Created individual policy Markdown files in `src/policies/`
+- Updated Decap CMS configuration for folder collection
+- Updated policies.njk template to read from Markdown collection
+
+#### 🔴 REMAINING TASKS TO COMPLETE:
+- [ ] Remove old JSON policy files from `src/_data/policies/`
+- [ ] Test policies page in development (`npm run dev`)
+- [ ] Verify CMS functionality at `/admin/`
+- [ ] Commit changes and push to GitHub
+- [ ] Merge to main branch after testing
 
 ## Overview
 
@@ -24,8 +51,9 @@ This is the Planet of Sound Rock School website - a static site built with Eleve
 
 ### Site Structure
 - **Static Site Generator**: Eleventy (11ty) using CommonJS configuration
-- **Template Engine**: Nunjucks (.njk files) for layouts and templating
-- **Content**: Markdown files with YAML front matter
+- **Template Engine**: Nunjucks (.njk files) for all pages and layouts
+- **Content**: Pure HTML/Nunjucks templates with YAML front matter
+- **Markdown Usage**: Only for specific content sections managed through DecapCMS components
 - **Styling**: Bootstrap 5.3.3 via CDN + SCSS compiled to custom CSS
 - **Navigation**: Uses `@11ty/eleventy-navigation` plugin for automated navigation
 - **CSS Architecture**: SCSS with organized structure (abstracts, base, components, layout)
@@ -60,15 +88,16 @@ src/
 │   ├── main.js
 │   ├── dark-mode.js      # Dark mode toggle functionality
 │   └── accessibility-aaa.js
-├── *.md                  # Content pages (index, about, programs, etc.)
+├── *.njk                # Content pages (index, about, programs, etc.)
 └── assets/               # Static assets (copied during build)
 ```
 
 ### Content Management
-- Each page is a Markdown file with YAML frontmatter
+- Each page is a Nunjucks (.njk) file with YAML frontmatter
 - Navigation is configured via `eleventyNavigation` in frontmatter
 - All pages extend `base.njk` layout
 - Site uses semantic HTML with Bootstrap classes
+- Markdown is only used for specific content sections in DecapCMS components
 
 ### Styling System
 - **CSS Variables**: Custom properties defined in `:root` for brand colors
@@ -122,10 +151,11 @@ Pages are ordered by `eleventyNavigation.order`:
 ## Development Guidelines
 
 ### Adding New Pages
-1. Create new `.md` file in `src/`
+1. Create new `.njk` file in `src/`
 2. Add YAML frontmatter with `layout: base.njk`, `title`, `description`
 3. Include `eleventyNavigation` if it should appear in main navigation
-4. Write content in Markdown or HTML
+4. Write content in HTML/Nunjucks templating
+5. Use component data from DecapCMS when appropriate
 
 ### Modifying Styles
 - **SCSS Architecture**: Edit SCSS files in `src/scss/` directory structure
@@ -145,6 +175,50 @@ Pages are ordered by `eleventyNavigation.order`:
 - Pricing details in `src/pricing.md`
 - Contact information in `src/contact.md`
 - All content uses consistent Bootstrap component structure
+
+### Working with DecapCMS Components
+The site uses a **component-based approach** where Decap CMS manages individual content pieces that are assembled by templates:
+
+#### Accessing the CMS
+- Navigate to `/admin/` on the live site to access DecapCMS interface
+- Requires GitHub authentication and repository write access
+- Changes are committed directly to the repository main branch
+
+#### Available Content Types
+1. **Site Settings** (`src/_data/site.json`): Global site configuration
+2. **Main Pages**: Full page content for major site sections
+3. **Program Data** (`src/_data/programs/`): Individual program information cards
+4. **Pricing Data** (`src/_data/pricing/`): Service pricing and lesson types
+5. **Policy Components** (`src/_data/policies/`): Individual policy cards and sections
+
+#### Component-Based Policy System
+The policies page demonstrates the component approach:
+- **Individual Policy Files**: Each policy is a separate JSON file (e.g., `code_of_conduct.json`)
+- **Template Assembly**: The `policies.md` template loops through and renders all policies
+- **Flexible Structure**: Each policy can have different fields (points, sections, areas)
+- **Visual Styling**: Policies can use different card styles (light, warning, primary, secondary)
+- **Ordering**: Policies are sorted by `order` field for consistent display
+
+#### Adding New Component Types
+1. **Update DecapCMS Config**: Add new collection in `src/admin/config.yml`
+2. **Create Data Structure**: Define JSON schema for the component
+3. **Update Templates**: Modify page templates to loop through and display components
+4. **Test Workflow**: Ensure CMS interface works and data displays correctly
+
+#### Template Data Access
+In Nunjucks templates, access CMS data via:
+```nunjucks
+{%- for policy in policies -%}  {# Loops through all policy files #}
+{{ policies.code_of_conduct.title }}  {# Accesses specific policy file #}
+{{ programs.learn_to_play.price }}   {# Accesses program data #}
+```
+
+#### Benefits of Component Approach
+- **Non-technical Updates**: Staff can update content without touching code
+- **Consistent Styling**: Templates ensure uniform presentation
+- **Flexible Content**: Easy to add/remove/reorder components
+- **Version Control**: All changes tracked in Git with full revision history
+- **Preview Mode**: DecapCMS preview shows changes before publishing
 
 ### Local Development
 - Use `npm run dev` for development with live reload
@@ -175,6 +249,13 @@ The following tasks represent planned improvements and enhancements for the Plan
 - ✅ **Motion Preferences**: User toggle for animations with localStorage persistence
 - ✅ **Accessibility Integration**: Respects `prefers-reduced-motion` system preference
 - ✅ **Feedback System**: Visual feedback when toggling animation preferences
+
+#### Template Architecture Overhaul (January 2025)
+- ✅ **Nunjucks Migration**: Converted all pages from Markdown (.md) to Nunjucks (.njk) templates
+- ✅ **Empty Tag Elimination**: Completely eliminated empty `<p></p>` tags by preventing unwanted Markdown processing
+- ✅ **Clean HTML Output**: Achieved semantic, properly formatted HTML without markup artifacts
+- ✅ **Selective Markdown Usage**: Markdown now only used for specific content sections in DecapCMS components
+- ✅ **Template Consistency**: All pages now use pure HTML/Nunjucks for maximum control
 
 ### Priority 1: Accessibility & Inclusion
 
@@ -294,11 +375,14 @@ Once these improvements are implemented:
 ### Future Enhancements & Strategic Roadmap
 
 #### Phase 1: Dynamic Content Management
-- **DecapCMS Integration**: Implement headless CMS for non-technical content updates
-  - Easy program and pricing updates without code changes
-  - Blog/news section for announcements and events
-  - Image and media management
-  - Multiple user roles and permissions
+- **✅ DecapCMS Integration**: Component-based headless CMS implementation
+  - ✅ Individual policy components (Code of Conduct, Cancellation, etc.)
+  - ✅ Program data structure (Learn To Play, Bandstarter, Show Ready, Tour)
+  - ✅ Pricing information management (Individual lessons, Recording services)
+  - ✅ Site configuration and contact information
+  - 🔄 Template integration for dynamic page components
+  - 📋 Blog/news section structure (configured but unused)
+  - 📋 Image and media management capabilities
 - **Form Enhancement**: Replace static contact forms with dynamic submission handling
   - Student inquiry forms with automated email responses
   - Program registration and waitlist management

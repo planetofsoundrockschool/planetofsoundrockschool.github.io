@@ -1,8 +1,28 @@
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const { execSync } = require('child_process');
 const fs = require('fs');
+const markdownIt = require('markdown-it');
+const markdownItAttrs = require('markdown-it-attrs');
 
 module.exports = function(eleventyConfig) {
+  // Configure Markdown-it with options
+  let markdownItOptions = {
+    html: true, // Enable HTML tags in Markdown
+  };
+
+  const md = markdownIt(markdownItOptions)
+    .use(markdownItAttrs);
+
+  eleventyConfig.setLibrary("md", md);
+
+  // Add custom Markdown filter for Nunjucks - this prevents empty p tags
+  eleventyConfig.addNunjucksFilter("markdown", function (value) {
+    if (!value || typeof value !== 'string' || value.trim() === '') {
+      return ''; // Return empty string instead of empty p tags
+    }
+    return md.render(value);
+  });
+
   // Add cache-busting filter using Git commit hash or file modification time
   eleventyConfig.addFilter("cacheBust", function(url) {
     try {
@@ -47,13 +67,16 @@ module.exports = function(eleventyConfig) {
           .replace(/<p>\s*<\/p>/g, '')
           .replace(/<p[^>]*>\s*<\/p>/g, '')
           .replace(/<p><\/p>/g, '')
+          // Empty p tags with whitespace variations
+          .replace(/<p>\s+<\/p>/g, '')
+          .replace(/<p[^>]*>\s+<\/p>/g, '')
           // Empty p tags with non-breaking spaces
           .replace(/<p>\s*&nbsp;\s*<\/p>/g, '')
           .replace(/<p[^>]*>\s*&nbsp;\s*<\/p>/g, '')
           // P tags incorrectly wrapping div elements (CRITICAL FIX)
           .replace(/<p>\s*(<div[^>]*>)/g, '$1')
           .replace(/(<\/div>)\s*<\/p>/g, '$1')
-          // P tags between elements (common Markdown issue)
+          // P tags between elements (common Markdown/Nunjucks issue)
           .replace(/><p><\/p></g, '>')
           .replace(/><p>\s*<\/p></g, '>')
           .replace(/><p><\/p>\n/g, '>\n')
@@ -63,12 +86,22 @@ module.exports = function(eleventyConfig) {
           .replace(/\n<p>\s*<\/p>/g, '')
           .replace(/<p><\/p>\n/g, '')
           .replace(/<p>\s*<\/p>\n/g, '')
+          // P tags with only whitespace characters
+          .replace(/<p>[\s\r\n\t]*<\/p>/g, '')
+          .replace(/<p[^>]*>[\s\r\n\t]*<\/p>/g, '')
           // Multiple consecutive p tags
           .replace(/(<p><\/p>)+/g, '')
           .replace(/(<p>\s*<\/p>)+/g, '')
-          // Clean up extra whitespace
-          .replace(/\n\s*\n\s*\n/g, '\n\n');
-      } while (cleaned !== previousContent);
+          // P tags between card elements (specific to Bootstrap cards)
+          .replace(/(<\/div>)\s*<p><\/p>\s*(<div)/g, '$1\n$2')
+          .replace(/(<\/card-body>)\s*<p><\/p>\s*(<div)/g, '$1\n$2')
+          // Clean up extra whitespace and empty lines
+          .replace(/\n\s*\n\s*\n/g, '\n\n')
+          // Remove p tags that contain only HTML comments
+          .replace(/<p>\s*<!--[^>]*-->\s*<\/p>/g, '')
+          // Final cleanup of any remaining edge cases
+          .replace(/\s*<p>\s*<\/p>\s*/g, ' ');
+      } while (cleaned !== previousContent && cleaned.includes('<p></p>'));
       
       return cleaned;
     }
