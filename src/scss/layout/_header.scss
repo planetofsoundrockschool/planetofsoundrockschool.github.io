@@ -107,7 +107,55 @@
   }
 }
 
-// Mobile navigation styles
+// Custom navbar toggler (MENU button)
+.custom-menu-toggle {
+  border: 2px solid $primary-color;
+  background: transparent;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: $transition-base;
+  // WCAG 2.2 Target Size: Ensure adequate touch target
+  min-height: 44px;
+  min-width: 44px;
+  
+  .menu-text {
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: $primary-color;
+    transition: $transition-base;
+    letter-spacing: 0.05em;
+  }
+  
+  &:hover {
+    background: $primary-color;
+    border-color: $primary-color;
+    transform: translateY(-1px);
+    
+    .menu-text {
+      color: white;
+    }
+  }
+  
+  &:focus {
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+    outline: none;
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+  
+  // Remove default Bootstrap styles
+  &.navbar-toggler {
+    border: 2px solid $primary-color;
+    
+    &:focus {
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+    }
+  }
+}
+
+// Mobile navigation styles - Apply to all collapsed states
 @media (max-width: 1199px) {
   .navbar-collapse {
     background: white;
@@ -117,28 +165,36 @@
     border: 1px solid rgba(0, 0, 0, 0.1);
     // WCAG 2.2 Focus Not Obscured: Ensure dropdown doesn't cover focused elements
     z-index: 1050;
+    width: 100%; // Ensure full width
   }
 
   .navbar-nav {
     padding: 1rem;
+    width: 100%; // Ensure nav takes full width
 
-    .nav-link {
-      padding: 1rem 1.5rem;
-      font-size: 1.1rem;
-      font-weight: 600;
-      border-radius: 0.75rem;
-      margin: 0.25rem 0;
-      color: $text-dark;
-      border-bottom: 1px solid rgba(59, 130, 246, 0.1);
-      // WCAG 2.2 Target Size: Ensure adequate touch targets on mobile
-      min-height: 48px;
-      display: flex;
-      align-items: center;
+    .nav-item {
+      width: 100%; // Make nav items full width
+      
+      .nav-link {
+        padding: 1rem 1.5rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        border-radius: 0.75rem;
+        margin: 0.25rem 0;
+        color: $text-dark;
+        border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+        // WCAG 2.2 Target Size: Ensure adequate touch targets on mobile
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        width: 100%; // Nav links take full width
+        text-align: left; // Align text to left for better UX
 
-      &:hover,
-      &.active {
-        background: $primary-color;
-        color: white;
+        &:hover,
+        &.active {
+          background: $primary-color;
+          color: white;
+        }
       }
     }
 

@@ -59,6 +59,28 @@ $dark-border-muted: rgba(255, 255, 255, 0.05);
     border-left-color: $dark-border;
   }
   
+  // Custom navbar toggler (MENU button) dark mode
+  .custom-menu-toggle {
+    border-color: $dark-text-primary;
+    
+    .menu-text {
+      color: $dark-text-primary;
+    }
+    
+    &:hover {
+      background: $primary-color;
+      border-color: $primary-color;
+      
+      .menu-text {
+        color: white;
+      }
+    }
+    
+    &:focus {
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.4); // Slightly more visible in dark mode
+    }
+  }
+  
   // Mobile navigation
   @media (max-width: 1199px) {
     .navbar-collapse {
@@ -66,13 +88,18 @@ $dark-border-muted: rgba(255, 255, 255, 0.05);
       border: 1px solid $dark-border;
     }
     
-    .navbar-nav .nav-link {
-      border-bottom-color: $dark-border-muted;
-      
-      &:hover,
-      &.active {
-        background: $primary-color;
-        color: white;
+    .navbar-nav {
+      .nav-item {
+        .nav-link {
+          border-bottom-color: $dark-border-muted;
+		  color: $dark-text-primary;
+          
+          &:hover,
+          &.active {
+            background: $primary-color;
+            color: white;
+          }
+        }
       }
     }
   }
@@ -81,7 +108,15 @@ $dark-border-muted: rgba(255, 255, 255, 0.05);
   .card {
     background: $dark-bg-secondary;
     border: 1px solid $dark-border;
+
+    h5 {
+      color: $dark-text-primary;
+    }
   }
+
+  .card-body {
+    color: $dark-text-primary;
+}
   
   .card-title {
     color: $dark-text-primary;
@@ -89,6 +124,11 @@ $dark-border-muted: rgba(255, 255, 255, 0.05);
   
   .card-text {
     color: $dark-text-secondary;
+  }
+
+  // List group
+  .list-group-item {
+    color: $dark-text-primary;
   }
   
   // Sections
@@ -212,6 +252,12 @@ $dark-border-muted: rgba(255, 255, 255, 0.05);
   
   .bg-light {
     background-color: $dark-bg-secondary !important;
+  }
+  
+  // Bootstrap color utilities - toned down for dark mode
+  .bg-warning {
+    background-color: #d97706 !important; // Muted amber instead of bright yellow
+    color: white !important; // Ensure good text contrast
   }
   
   // Back to top button
