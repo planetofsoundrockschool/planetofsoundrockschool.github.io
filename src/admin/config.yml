@@ -1,9 +1,6 @@
 backend:
-  name: github
-  repo: planetofsoundrockschool/planetofsoundrockschool.github.io
+  name: git-gateway
   branch: main
-  auth_endpoint: https://api.netlify.com/api/v1/oauth/github
-  site_domain: planetofsoundrockschool.netlify.app
 
 # Uncomment below to enable drafts
 # publish_mode: editorial_workflow
