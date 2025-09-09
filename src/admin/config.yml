@@ -2,272 +2,137 @@ backend:
   name: git-gateway
   branch: main
 
+# Local development configuration
+local_backend: true
+
 # Uncomment below to enable drafts
 # publish_mode: editorial_workflow
 
-media_folder: "src/assets/images" # Media files will be stored in the repo under src/assets/images
-public_folder: "/assets/images" # The src attribute for uploaded media will begin with /assets/images
+media_folder: "src/assets/images"
+public_folder: "/assets/images"
 
 collections:
-  # Site Settings
+  # Site Contact Information
   - name: "settings"
-    label: "Site Settings"
+    label: "🏢 Contact Information"
     files:
-      - label: "Site Configuration"
+      - label: "Contact Details"
         name: "site"
         file: "src/_data/site.json"
         fields:
-          - { label: "Site Title", name: "title", widget: "string", default: "Planet of Sound Rock School" }
-          - { label: "Description", name: "description", widget: "text" }
-          - { label: "URL", name: "url", widget: "string" }
-          - { label: "Email", name: "email", widget: "string" }
-          - { label: "Phone", name: "phone", widget: "string", required: false }
-          - { label: "Instagram Handle", name: "instagram", widget: "string" }
-          - { label: "Location", name: "location", widget: "string" }
+          - { label: "School Email", name: "email", widget: "string" }
+          - { label: "Phone Number", name: "phone", widget: "string", required: false }
+          - { label: "Instagram Handle", name: "instagram", widget: "string", hint: "Don't include @" }
+          - { label: "Location/Address", name: "location", widget: "string" }
 
-  # Main Pages
-  - name: "pages"
-    label: "Main Pages"
-    files:
-      - label: "Home Page"
-        name: "home"
-        file: "src/index.njk"
-        fields:
-          - { label: "Layout", name: "layout", widget: "hidden", default: "base.njk" }
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Description", name: "description", widget: "text" }
-          - label: "Navigation"
-            name: "eleventyNavigation"
-            widget: "object"
-            fields:
-              - { label: "Key", name: "key", widget: "string" }
-              - { label: "Order", name: "order", widget: "number" }
-          - { label: "Content", name: "body", widget: "code", default_language: "html", allow_language_selection: false }
-
-      - label: "About Page"
-        name: "about"
-        file: "src/about.njk"
-        fields:
-          - { label: "Layout", name: "layout", widget: "hidden", default: "base.njk" }
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Description", name: "description", widget: "text" }
-          - label: "Navigation"
-            name: "eleventyNavigation"
-            widget: "object"
-            fields:
-              - { label: "Key", name: "key", widget: "string" }
-              - { label: "Order", name: "order", widget: "number" }
-          - { label: "Content", name: "body", widget: "code", default_language: "html", allow_language_selection: false }
-
-      - label: "Programs Page"
-        name: "programs"
-        file: "src/programs.njk"
-        fields:
-          - { label: "Layout", name: "layout", widget: "hidden", default: "base.njk" }
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Description", name: "description", widget: "text" }
-          - label: "Navigation"
-            name: "eleventyNavigation"
-            widget: "object"
-            fields:
-              - { label: "Key", name: "key", widget: "string" }
-              - { label: "Order", name: "order", widget: "number" }
-          - { label: "Content", name: "body", widget: "code", default_language: "html", allow_language_selection: false }
-
-      - label: "Pricing Page"
-        name: "pricing"
-        file: "src/pricing.njk"
-        fields:
-          - { label: "Layout", name: "layout", widget: "hidden", default: "base.njk" }
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Description", name: "description", widget: "text" }
-          - label: "Navigation"
-            name: "eleventyNavigation"
-            widget: "object"
-            fields:
-              - { label: "Key", name: "key", widget: "string" }
-              - { label: "Order", name: "order", widget: "number" }
-          - { label: "Content", name: "body", widget: "code", default_language: "html", allow_language_selection: false }
-
-      - label: "Recording Services"
-        name: "recording"
-        file: "src/recording.njk"
-        fields:
-          - { label: "Layout", name: "layout", widget: "hidden", default: "base.njk" }
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Description", name: "description", widget: "text" }
-          - label: "Navigation"
-            name: "eleventyNavigation"
-            widget: "object"
-            fields:
-              - { label: "Key", name: "key", widget: "string" }
-              - { label: "Order", name: "order", widget: "number" }
-          - { label: "Content", name: "body", widget: "code", default_language: "html", allow_language_selection: false }
-
-      - label: "Contact Page"
-        name: "contact"
-        file: "src/contact.njk"
-        fields:
-          - { label: "Layout", name: "layout", widget: "hidden", default: "base.njk" }
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Description", name: "description", widget: "text" }
-          - label: "Navigation"
-            name: "eleventyNavigation"
-            widget: "object"
-            fields:
-              - { label: "Key", name: "key", widget: "string" }
-              - { label: "Order", name: "order", widget: "number" }
-          - { label: "Content", name: "body", widget: "code", default_language: "html", allow_language_selection: false }
-
-      - label: "Referrals Page"
-        name: "referrals"
-        file: "src/referrals.njk"
-        fields:
-          - { label: "Layout", name: "layout", widget: "hidden", default: "base.njk" }
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Description", name: "description", widget: "text" }
-          - label: "Navigation"
-            name: "eleventyNavigation"
-            widget: "object"
-            fields:
-              - { label: "Key", name: "key", widget: "string" }
-              - { label: "Order", name: "order", widget: "number" }
-          - { label: "Content", name: "body", widget: "code", default_language: "html", allow_language_selection: false }
-
-      - label: "FAQ Page"
-        name: "faq"
-        file: "src/faq.njk"
-        fields:
-          - { label: "Layout", name: "layout", widget: "hidden", default: "base.njk" }
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Description", name: "description", widget: "text" }
-          - { label: "Content", name: "body", widget: "code", default_language: "html", allow_language_selection: false }
-
-      - label: "Policies Page"
-        name: "policies"
-        file: "src/policies.njk"
-        fields:
-          - { label: "Layout", name: "layout", widget: "hidden", default: "base.njk" }
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Description", name: "description", widget: "text" }
-          - { label: "Content", name: "body", widget: "code", default_language: "html", allow_language_selection: false }
-
-  # Program Data (for structured content)
+  # Program Information - Easy to Update
   - name: "programs_data"
-    label: "Program Information"
+    label: "🎸 Programs & Pricing"
     files:
       - label: "Learn To Play Program"
         name: "learn_to_play"
         file: "src/_data/programs/learn_to_play.json"
         fields:
-          - { label: "Program Name", name: "name", widget: "string" }
-          - { label: "Price", name: "price", widget: "string" }
-          - { label: "Duration", name: "duration", widget: "string" }
-          - { label: "Description", name: "description", widget: "text" }
-          - label: "What You'll Learn"
+          - { label: "Program Name", name: "name", widget: "string", hint: "Currently: Learn To Play" }
+          - { label: "Price", name: "price", widget: "string", hint: "e.g., $150/month" }
+          - { label: "Duration", name: "duration", widget: "string", hint: "e.g., 8 weeks" }
+          - { label: "Description", name: "description", widget: "text", hint: "Brief program overview" }
+          - label: "What Students Learn"
             name: "curriculum"
             widget: "list"
-            field: { label: "Item", name: "item", widget: "string" }
+            hint: "Add/remove curriculum items"
+            field: { label: "Learning Goal", name: "item", widget: "string" }
 
       - label: "Bandstarter Program"
         name: "bandstarter"
         file: "src/_data/programs/bandstarter.json"
         fields:
-          - { label: "Program Name", name: "name", widget: "string" }
-          - { label: "Price", name: "price", widget: "string" }
-          - { label: "Duration", name: "duration", widget: "string" }
-          - { label: "Description", name: "description", widget: "text" }
-          - label: "What You'll Learn"
+          - { label: "Program Name", name: "name", widget: "string", hint: "Currently: Bandstarter" }
+          - { label: "Price", name: "price", widget: "string", hint: "e.g., $200/month" }
+          - { label: "Duration", name: "duration", widget: "string", hint: "e.g., 12 weeks" }
+          - { label: "Description", name: "description", widget: "text", hint: "Brief program overview" }
+          - label: "What Students Learn"
             name: "curriculum"
             widget: "list"
-            field: { label: "Item", name: "item", widget: "string" }
+            hint: "Add/remove curriculum items"
+            field: { label: "Learning Goal", name: "item", widget: "string" }
 
       - label: "Show Ready Program"
         name: "show_ready"
         file: "src/_data/programs/show_ready.json"
         fields:
-          - { label: "Program Name", name: "name", widget: "string" }
-          - { label: "Price", name: "price", widget: "string" }
-          - { label: "Duration", name: "duration", widget: "string" }
-          - { label: "Description", name: "description", widget: "text" }
-          - label: "What You'll Learn"
+          - { label: "Program Name", name: "name", widget: "string", hint: "Currently: Show Ready" }
+          - { label: "Price", name: "price", widget: "string", hint: "e.g., $250/month" }
+          - { label: "Duration", name: "duration", widget: "string", hint: "e.g., 16 weeks" }
+          - { label: "Description", name: "description", widget: "text", hint: "Brief program overview" }
+          - label: "What Students Learn"
             name: "curriculum"
             widget: "list"
-            field: { label: "Item", name: "item", widget: "string" }
+            hint: "Add/remove curriculum items"
+            field: { label: "Learning Goal", name: "item", widget: "string" }
 
       - label: "Tour Program"
         name: "tour"
         file: "src/_data/programs/tour.json"
         fields:
-          - { label: "Program Name", name: "name", widget: "string" }
-          - { label: "Price", name: "price", widget: "string" }
-          - { label: "Duration", name: "duration", widget: "string" }
-          - { label: "Description", name: "description", widget: "text" }
-          - label: "What You'll Learn"
+          - { label: "Program Name", name: "name", widget: "string", hint: "Currently: Tour" }
+          - { label: "Price", name: "price", widget: "string", hint: "e.g., $300/month" }
+          - { label: "Duration", name: "duration", widget: "string", hint: "e.g., Ongoing" }
+          - { label: "Description", name: "description", widget: "text", hint: "Brief program overview" }
+          - label: "What Students Learn"
             name: "curriculum"
             widget: "list"
-            field: { label: "Item", name: "item", widget: "string" }
+            hint: "Add/remove curriculum items"
+            field: { label: "Learning Goal", name: "item", widget: "string" }
 
-  # Pricing Data
+  # Lesson Pricing
   - name: "pricing_data"
-    label: "Pricing Information"
+    label: "💰 Individual Lessons"
     files:
-      - label: "Individual Lessons"
+      - label: "Individual Lesson Pricing"
         name: "individual_lessons"
         file: "src/_data/pricing/individual_lessons.json"
         fields:
-          - label: "Lesson Types"
+          - label: "Lesson Options"
             name: "lessons"
             widget: "list"
+            hint: "Add/edit/remove different lesson types"
             fields:
-              - { label: "Service Name", name: "name", widget: "string" }
-              - { label: "Description", name: "description", widget: "string" }
-              - { label: "Price", name: "price", widget: "string" }
-              - { label: "Duration", name: "duration", widget: "string", required: false }
+              - { label: "Lesson Type", name: "name", widget: "string", hint: "e.g., Private Guitar Lesson" }
+              - { label: "Description", name: "description", widget: "string", hint: "Brief description" }
+              - { label: "Price", name: "price", widget: "string", hint: "e.g., $45/hour" }
+              - { label: "Duration", name: "duration", widget: "string", required: false, hint: "e.g., 1 hour" }
 
-      - label: "Recording Services Pricing"
+      - label: "Recording Services"
         name: "recording_pricing"
         file: "src/_data/pricing/recording.json"
         fields:
-          - { label: "Hourly Rate", name: "hourly_rate", widget: "string" }
-          - { label: "Minimum Hours", name: "minimum_hours", widget: "number" }
-          - { label: "Block Package Price", name: "block_price", widget: "string" }
-          - { label: "Block Package Hours", name: "block_hours", widget: "number" }
-          - label: "Add-Ons"
+          - { label: "Hourly Rate", name: "hourly_rate", widget: "string", hint: "e.g., $50/hour" }
+          - { label: "Minimum Hours Required", name: "minimum_hours", widget: "number", hint: "Minimum booking" }
+          - { label: "Block Package Price", name: "block_price", widget: "string", hint: "e.g., $400 for 10 hours" }
+          - { label: "Block Package Hours", name: "block_hours", widget: "number", hint: "Hours in package deal" }
+          - label: "Additional Services"
             name: "addons"
             widget: "list"
+            hint: "Extra services available"
             fields:
-              - { label: "Service", name: "service", widget: "string" }
-              - { label: "Price", name: "price", widget: "string" }
+              - { label: "Service", name: "service", widget: "string", hint: "e.g., Mixing & Mastering" }
+              - { label: "Price", name: "price", widget: "string", hint: "e.g., $100 per song" }
 
-  # Policy Components (Individual Markdown files)
+  # Policy Documents - Individual Markdown files
   - name: "policies"
-    label: "Policy Documents"
+    label: "📋 School Policies"
     folder: "src/policies"
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Summary", name: "summary", widget: "text", hint: "Brief description shown on policy cards" }
-      - { label: "Icon", name: "icon", widget: "string", hint: "Font Awesome class (e.g., fas fa-handshake)", default: "fas fa-file-text" }
-      - { label: "Card Style", name: "cardStyle", widget: "select", options: ["primary", "secondary", "light", "warning"], default: "light" }
-      - { label: "Display Order", name: "order", widget: "number", hint: "Lower numbers appear first" }
-      - { label: "Is Optional Policy", name: "isOptional", widget: "boolean", default: false, hint: "Check if this policy is optional (like media consent)" }
-      - { label: "Content", name: "body", widget: "markdown", hint: "Full policy content in Markdown format" }
-
-  # Blog Posts (if needed in future)
-  - name: "blog"
-    label: "Blog Posts"
-    folder: "src/blog"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - { label: "Layout", name: "layout", widget: "hidden", default: "base.njk" }
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "text" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Tags", name: "tags", widget: "list", default: ["blog"] }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Policy Title", name: "title", widget: "string" }
+      - { label: "Short Summary", name: "summary", widget: "text", hint: "Brief description for policy cards" }
+      - { label: "Icon", name: "icon", widget: "select", options: ["fas fa-handshake", "fas fa-calendar-times", "fas fa-shield-alt", "fas fa-camera", "fas fa-music", "fas fa-file-text"], default: "fas fa-file-text", hint: "Choose an appropriate icon" }
+      - { label: "Card Style", name: "cardStyle", widget: "select", options: ["light", "primary", "secondary", "warning"], default: "light", hint: "Visual style of the policy card" }
+      - { label: "Display Order", name: "order", widget: "number", hint: "Lower numbers appear first (1, 2, 3...)" }
+      - { label: "Optional Policy", name: "isOptional", widget: "boolean", default: false, hint: "Check if this policy is optional (like media consent)" }
+      - { label: "Policy Content", name: "body", widget: "markdown", hint: "Full policy text - you can use simple formatting" }
 
 # Editor settings
 editor:
