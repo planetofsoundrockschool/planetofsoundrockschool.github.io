@@ -123,6 +123,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
+  eleventyConfig.addPassthroughCopy("src/_images");
   
   // Copy admin files for Decap CMS
   eleventyConfig.addPassthroughCopy("src/admin");
