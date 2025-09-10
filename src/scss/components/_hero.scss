@@ -9,6 +9,21 @@
   position: relative;
   overflow: hidden;
   min-height: 80vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  // Dark overlay for better text readability over images
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); // Dark overlay
+    z-index: 1;
+  }
 
   .container {
     position: relative;
@@ -20,7 +35,8 @@
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 1.5rem;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    color: white; // Ensure white text over images
   }
 
   p {
@@ -28,6 +44,33 @@
     font-weight: 400;
     margin-bottom: 2rem;
     opacity: 0.95;
+    color: white; // Ensure white text over images
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  // Page-specific hero backgrounds
+  &.hero-home {
+    background-image: url('/_images/Social Networks/FacebookCover/1.JPG');
+  }
+  
+  &.hero-programs {
+    background-image: url('/_images/Social Networks/FacebookCover/2.JPG');
+  }
+  
+  &.hero-pricing {
+    background-image: url('/_images/Social Networks/FacebookCover/3.JPG');
+  }
+  
+  &.hero-about {
+    background-image: url('/_images/Social Networks/FacebookCover/1.JPG');
+  }
+  
+  &.hero-contact {
+    background-image: url('/_images/Social Networks/FacebookCover/2.JPG');
+  }
+  
+  &.hero-recording {
+    background-image: url('/_images/Social Networks/FacebookCover/3.JPG');
   }
 }
 
