@@ -1,0 +1,13 @@
+{
+  "name": "Tour",
+  "price": "Starts at $300/event",
+  "duration": "Professional touring readiness",
+  "description": "Tour planning, stage plots, tech riders, and professional touring readiness.",
+  "curriculum": [
+    "Professional tour planning",
+    "Stage plot creation",
+    "Technical rider preparation",
+    "Venue communication",
+    "Tour logistics and management"
+  ]
+}

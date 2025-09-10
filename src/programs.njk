@@ -58,18 +58,16 @@ eleventyNavigation:
                 <div class="col-lg-6" data-aos="fade-right">
                     <div class="card h-100 border-danger">
                         <div class="card-header bg-danger text-white">
-                            <h3 class="card-title mb-0">Learn To Play</h3>
-                            <p class="mb-0"><strong>$400 (8 weeks)</strong></p>
+                            <h3 class="card-title mb-0">{{ programs.learn_to_play.name }}</h3>
+                            <p class="mb-0"><strong>{{ programs.learn_to_play.price }}</strong></p>
                         </div>
                         <div class="card-body">
-                            <p class="card-text">Beginners learn chords, scales, rhythm, and song structure in a supportive, 1-on-1 or small group setting.</p>
+                            <p class="card-text">{{ programs.learn_to_play.description }}</p>
                             <h5 class="text-danger">What You'll Learn:</h5>
                             <ul>
-                                <li>Basic chord progressions</li>
-                                <li>Fundamental scales and techniques</li>
-                                <li>Rhythm and timing</li>
-                                <li>Song structure understanding</li>
-                                <li>Proper instrument handling</li>
+                                {%- for item in programs.learn_to_play.curriculum -%}
+                                <li>{{ item }}</li>
+                                {%- endfor -%}
                             </ul>
                         </div>
                     </div>
@@ -78,18 +76,16 @@ eleventyNavigation:
                 <div class="col-lg-6" data-aos="fade-left">
                     <div class="card h-100 border-warning">
                         <div class="card-header bg-warning text-dark">
-                            <h3 class="card-title mb-0">Bandstarter</h3>
-                            <p class="mb-0"><strong>$500 per student</strong></p>
+                            <h3 class="card-title mb-0">{{ programs.bandstarter.name }}</h3>
+                            <p class="mb-0"><strong>{{ programs.bandstarter.price }}</strong></p>
                         </div>
                         <div class="card-body">
-                            <p class="card-text">Songwriting, rehearsal flow, gear literacy, and band dynamics in small group lessons.</p>
+                            <p class="card-text">{{ programs.bandstarter.description }}</p>
                             <h5 class="text-danger">What You'll Learn:</h5>
                             <ul>
-                                <li>Collaborative songwriting techniques</li>
-                                <li>Effective rehearsal strategies</li>
-                                <li>Music gear knowledge and setup</li>
-                                <li>Band communication and dynamics</li>
-                                <li>Recording basics</li>
+                                {%- for item in programs.bandstarter.curriculum -%}
+                                <li>{{ item }}</li>
+                                {%- endfor -%}
                             </ul>
                         </div>
                     </div>
@@ -98,18 +94,16 @@ eleventyNavigation:
                 <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
                     <div class="card h-100 border-info">
                         <div class="card-header bg-info text-white">
-                            <h3 class="card-title mb-0">Show Ready</h3>
-                            <p class="mb-0"><strong>$600 per student</strong></p>
+                            <h3 class="card-title mb-0">{{ programs.show_ready.name }}</h3>
+                            <p class="mb-0"><strong>{{ programs.show_ready.price }}</strong></p>
                         </div>
                         <div class="card-body">
-                            <p class="card-text">Live performance setup, stage communication, setlist building, and stage presence.</p>
+                            <p class="card-text">{{ programs.show_ready.description }}</p>
                             <h5 class="text-danger">What You'll Learn:</h5>
                             <ul>
-                                <li>Live performance techniques</li>
-                                <li>Stage setup and logistics</li>
-                                <li>Audience engagement and presence</li>
-                                <li>Setlist planning and flow</li>
-                                <li>Sound check procedures</li>
+                                {%- for item in programs.show_ready.curriculum -%}
+                                <li>{{ item }}</li>
+                                {%- endfor -%}
                             </ul>
                         </div>
                     </div>
@@ -118,18 +112,16 @@ eleventyNavigation:
                 <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
                     <div class="card h-100 border-success">
                         <div class="card-header bg-success text-white">
-                            <h3 class="card-title mb-0">Tour</h3>
-                            <p class="mb-0"><strong>Starts at $300/event</strong></p>
+                            <h3 class="card-title mb-0">{{ programs.tour.name }}</h3>
+                            <p class="mb-0"><strong>{{ programs.tour.price }}</strong></p>
                         </div>
                         <div class="card-body">
-                            <p class="card-text">Tour planning, stage plots, tech riders, and professional touring readiness.</p>
+                            <p class="card-text">{{ programs.tour.description }}</p>
                             <h5 class="text-danger">What You'll Learn:</h5>
                             <ul>
-                                <li>Professional tour planning</li>
-                                <li>Stage plot creation</li>
-                                <li>Technical rider preparation</li>
-                                <li>Venue communication</li>
-                                <li>Tour logistics and management</li>
+                                {%- for item in programs.tour.curriculum -%}
+                                <li>{{ item }}</li>
+                                {%- endfor -%}
                             </ul>
                         </div>
                     </div>

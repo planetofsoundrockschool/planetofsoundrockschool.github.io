@@ -1,0 +1,16 @@
+{
+  "hourly_rate": "$60/hr",
+  "minimum_hours": 3,
+  "block_price": "$500 for 10 hours",
+  "block_hours": 10,
+  "addons": [
+    {
+      "service": "Mixing & Mastering",
+      "price": "$100 per song"
+    },
+    {
+      "service": "Additional Tracking",
+      "price": "$50/hr"
+    }
+  ]
+}

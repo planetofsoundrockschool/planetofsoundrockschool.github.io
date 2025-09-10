@@ -1,0 +1,13 @@
+{
+  "name": "Bandstarter",
+  "price": "$500 per student",
+  "duration": "Small group lessons focusing on collaboration",
+  "description": "Songwriting, rehearsal flow, gear literacy, and band dynamics in small group lessons.",
+  "curriculum": [
+    "Collaborative songwriting techniques",
+    "Effective rehearsal strategies",
+    "Music gear knowledge and setup",
+    "Band communication and dynamics",
+    "Recording basics"
+  ]
+}

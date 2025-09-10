@@ -1,0 +1,13 @@
+{
+  "name": "Show Ready",
+  "price": "$600 per student",
+  "duration": "Performance preparation program",
+  "description": "Live performance setup, stage communication, setlist building, and stage presence.",
+  "curriculum": [
+    "Live performance techniques",
+    "Stage setup and logistics",
+    "Audience engagement and presence",
+    "Setlist planning and flow",
+    "Sound check procedures"
+  ]
+}
