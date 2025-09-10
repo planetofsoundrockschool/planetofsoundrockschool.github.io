@@ -145,10 +145,18 @@ $dark-border-muted: rgba(255, 255, 255, 0.05);
     color: $dark-text-secondary;
   }
   
-  // Hero section
+  // Hero section - Keep background images but ensure proper coverage
   .hero {
-    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
     color: $dark-text-primary;
+    // Ensure background images cover properly and don't tile
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    
+    // Add darker overlay for better text contrast in dark mode
+    &::before {
+      background: rgba(0, 0, 0, 0.6) !important; // Darker overlay in dark mode
+    }
   }
   
   // Forms
