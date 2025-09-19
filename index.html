@@ -17,15 +17,7 @@
 	<body class="d-flex flex-column justify-content-center align-items-center vh-100 text-center">
 
 		<div class="container">
-			<button id="theme-toggle"
-					class="btn position-absolute top-0 end-0 m-3"
-					aria-pressed="false"
-					aria-label="Toggle dark mode">
-				🌙 Dark mode
-			</button>
-
-			<img id="logo" src="logo.png" alt="Planet of Sound Rock School logo" class="img-fluid mb-4"
-				 style="max-width:300px;">
+			<img src="logo.png" alt="Planet of Sound Rock School logo" class="img-fluid mb-4" style="max-width:300px;">
 
 			<h1 class="mb-3">Coming Soon</h1>
 			<p class="lead mb-4">We’re tuning up and getting ready to rock. Stay tuned!</p>
@@ -33,25 +25,28 @@
 			<div id="newsletter-card" class="card mx-auto" style="max-width: 400px;">
 				<div class="card-body">
 					<h2 class="h5 mb-3">Join our Newsletter</h2>
-					<form action="https://buttondown.email/api/emails/embed-subscribe/planetofsoundrockschool"
-						method="post"
-						target="popupwindow"
-						onsubmit="window.open('https://buttondown.email/planetofsoundrockschool', 'popupwindow')"
-						class="embeddable-buttondown-form">
-						<div class="mb-3 text-start">
-							<label for="bd-email" class="form-label">Email address</label>
-							<input type="email" class="form-control" name="email" id="bd-email" aria-describedby="email-help" required>
+					<form id="newsletter-form">
+						<div class="mb-3">
+							<label for="email" class="form-label">Email address</label>
+							<input
+								   type="email"
+								   class="form-control"
+								   id="email"
+								   aria-describedby="email-help"
+								   required>
 							<div id="email-help" class="form-text">We'll never share your email with anyone else.</div>
 						</div>
 						<button type="submit" class="btn btn-danger w-100">Subscribe</button>
 					</form>
+					<div id="form-message" class="mt-3"></div>
 				</div>
 			</div>
+		</div>
 
 		<!-- Bootstrap JS -->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-		<!-- Theme toggle script -->
-		<script src="theme.js"></script>
+		<!-- Newsletter JS -->
+		<script src="newsletter.js"></script>
 	</body>
 
 </html>
