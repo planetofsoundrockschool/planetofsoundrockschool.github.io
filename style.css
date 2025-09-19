@@ -1,0 +1,25 @@
+/* Light mode defaults */
+body {
+	background-color: #f8f9fa;
+	color: #212529;
+}
+
+.card {
+	background-color: #6c757d;
+	/* Bootstrap secondary */
+}
+
+/* Dark mode overrides */
+body.dark-mode {
+	background-color: #111;
+	color: #fff;
+}
+
+body.dark-mode .card {
+	background-color: #333;
+	color: #fff;
+}
+
+body.dark-mode .form-text {
+	color: #ccc !important;
+}
