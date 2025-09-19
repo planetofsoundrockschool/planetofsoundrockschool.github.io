@@ -31,19 +31,38 @@
 						<div class="mb-3">
 							<label for="email" class="form-label">Email address</label>
 							<input
-								   type="email"
-								   class="form-control"
-								   id="email"
-								   aria-describedby="email-help"
-								   required>
-							<div id="email-help" class="form-text">We'll never share your email with anyone else.</div>
+								type="email"
+								class="form-control"
+								id="email"
+								name="email"
+								aria-describedby="email-help"
+								required>
+							<div id="email-help" class="form-text">
+								We'll never share your email with anyone else.
+							</div>
 						</div>
+
+						<!-- Honeypot field (hidden from users, seen by bots) -->
+						<div class="honeypot" aria-hidden="true">
+							<label for="website">Leave this field empty</label>
+							<input
+								type="text"
+								id="website"
+								name="website"
+								tabindex="-1"
+								autocomplete="off">
+						</div>
+
+						<!-- Hidden field for form load timestamp -->
+						<input type="hidden" id="formLoadTime" name="formLoadTime" value="">
+
 						<button type="submit" class="btn btn-danger w-100">Subscribe</button>
 					</form>
-					<div id="form-message" class="mt-3"></div>
+
+					<!-- Accessible status message -->
+					<div id="form-message" class="mt-3" role="alert" aria-live="polite"></div>
 				</div>
 			</div>
-
 			<!-- Social Links -->
 			<div class="socialMedia">
 				<div class="mt-4">

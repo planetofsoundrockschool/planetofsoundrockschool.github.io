@@ -1,35 +1,47 @@
-exports.handler = async function (event) {
-	if (event.httpMethod !== 'POST') {
-		return { statusCode: 405, body: 'Method Not Allowed' };
-	}
-
+exports.handler = async (event) => {
 	try {
-		const { email_address } = JSON.parse(event.body);
+		const data = JSON.parse(event.body);
+		const { email, website } = data;
 
-		const res = await fetch(`https://emailoctopus.com/api/1.6/lists/${process.env.EMAILOCTOPUS_LIST_ID}/contacts`, {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({
-				api_key: process.env.EMAILOCTOPUS_API_KEY,
-				email_address,
-				status: 'SUBSCRIBED'
-			})
-		});
-
-		const data = await res.json();
-
-		if (res.status === 409 && data.error.code === 'MEMBER_EXISTS_WITH_EMAIL_ADDRESS') {
-			return { statusCode: 200, body: JSON.stringify({ success: true, message: 'Already subscribed!' }) };
+		// Honeypot check
+		if (website && website.trim() !== "") {
+			return {
+				statusCode: 400,
+				body: JSON.stringify({ error: "Bot submission detected" }),
+			};
 		}
 
-		if (!res.ok) {
-			console.error('EmailOctopus error:', data);
-			return { statusCode: res.status, body: JSON.stringify({ error: data }) };
+		// Proceed with EmailOctopus call...
+		const response = await fetch(
+			`https://emailoctopus.com/api/1.6/lists/${process.env.EMAILOCTOPUS_LIST_ID}/contacts`,
+			{
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify({
+					api_key: process.env.EMAILOCTOPUS_API_KEY,
+					email_address: email,
+					status: "SUBSCRIBED",
+				}),
+			}
+		);
+
+		const result = await response.json();
+
+		if (!response.ok) {
+			return {
+				statusCode: response.status,
+				body: JSON.stringify({ error: result.error }),
+			};
 		}
 
-		return { statusCode: 200, body: JSON.stringify({ success: true }) };
+		return {
+			statusCode: 200,
+			body: JSON.stringify({ success: true }),
+		};
 	} catch (err) {
-		console.error('Server crash:', err);
-		return { statusCode: 500, body: JSON.stringify({ error: 'Server error' }) };
+		return {
+			statusCode: 500,
+			body: JSON.stringify({ error: "Internal Server Error" }),
+		};
 	}
 };
