@@ -1,19 +1,40 @@
-body {
-	background-color: #F6D31A;
-	color: #000;
+/* Brand color palette */
+:root {
+	--brand-yellow: #F2D411;
+	--brand-red: #F34323;
+	--brand-gray: #E6E6E6;
+	--brand-purple: #9494D1;
+	--brand-dark: #2A2723;
+	--white: #ffffff;
 }
 
+/* Body */
+body {
+	background-color: var(--brand-yellow);
+	color: var(--brand-dark);
+}
+
+/* Newsletter card */
 #newsletter-card {
-	background-color: #fff;
-	color: #000;
-	border: 1px solid #ccc;
+	background-color: var(--white);
+	color: var(--brand-dark);
+	border: 1px solid var(--brand-gray);
+}
+
+#newsletter-card .btn-danger {
+	background-color: var(--brand-red);
+}
+
+#newsletter-card .btn-danger:hover {
+	background-color: var(--brand-purple);
+	color: var(--brand-dark);
 }
 
 /* Social Media Buttons - Circular */
 .socialMedia .btn {
-	background-color: #212529;
-	/* dark gray */
-	color: #fff;
+	background-color: var(--brand-dark);
+	/* dark base */
+	color: var(--brand-purple);
 	/* white icons */
 	border: none;
 	border-radius: 50%;
@@ -28,9 +49,9 @@ body {
 
 .socialMedia .btn:hover,
 .socialMedia .btn:focus {
-	background-color: #dc3545;
+	background-color: var(--white);
 	/* brand red on hover/focus */
-	color: #fff;
+	color: var(--brand-red);
 }
 
 .socialMedia .btn i {
