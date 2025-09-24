@@ -134,3 +134,15 @@ h1{
 	height: 1px;
 	overflow: hidden;
 }
+
+/* Footer contact link styles */
+footer a.text-muted:hover,
+footer a.text-muted:focus {
+	color: var(--brand-red) !important;
+	text-decoration: underline !important;
+}
+
+footer a.text-muted:focus {
+	outline: 2px solid var(--brand-red);
+	outline-offset: 2px;
+}
