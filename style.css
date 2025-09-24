@@ -9,6 +9,21 @@
 	--white: #ffffff;
 }
 
+/* Typography - Outfit font (Cal Sans alternative) */
+body {
+	font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+	font-weight: 700;
+}
+
+.lead {
+	font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+	font-weight: 400;
+}
+
 /* High Contrast mode styles */
 
 #contrast-toggle {
