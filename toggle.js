@@ -2,8 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const toggleBtn = document.getElementById('contrast-toggle');
 	const body = document.body;
 	const logo = document.getElementById('logo'); // may be null if no id on <img>
-	const RED_LOGO = 'logo-red.png';    // change if your default file name differs
-	const BLACK_LOGO = 'logo-black.png';// change if needed
+	const BLACK_LOGO = 'logo-black.png';    // Use black logo for both modes
 
 	// If logo exists, remember whatever src it started with (fallback)
 	const DEFAULT_LOGO = logo ? logo.getAttribute('src') : null;
@@ -15,12 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	function setLogo(high) {
 		if (!logo) return; // no-op if logo element isn't present
-		if (high) {
-			logo.src = BLACK_LOGO;
-		} else {
-			// Prefer explicit red logo; otherwise restore original
-			logo.src = RED_LOGO || DEFAULT_LOGO || logo.src;
-		}
+		// Use black logo for both normal and high contrast modes
+		logo.src = BLACK_LOGO || DEFAULT_LOGO || logo.src;
 	}
 
 	function enableHighContrast() {
