@@ -5,8 +5,55 @@
 	--brand-gray: #E6E6E6;
 	--brand-purple: #9494D1;
 	--brand-dark: #2A2723;
+	--brand-light: #F1F2EC;
 	--white: #ffffff;
 }
+
+/* High Contrast mode styles */
+
+#contrast-toggle {
+	background: #000;
+	color: #fff;
+	border: 1px solid #000;
+	z-index: 1000;
+}
+
+#contrast-toggle:focus,
+#contrast-toggle:hover {
+	background: #fff;
+	color: #000;
+	outline: 3px solid #000;
+	outline-offset: 2px;
+}
+
+body.high-contrast {
+	background: var(--brand-light) !important;
+	color: var(--brand-dark) !important;
+}
+
+.high-contrast a {
+	color: #0000EE !important;
+	text-decoration: underline;
+}
+
+.high-contrast #newsletter-card {
+	background: var(--brand-light) !important;
+	border: 2px solid #000;
+}
+
+.high-contrast .btn {
+	background: var(--brand-dark) !important;
+	color: var(--brand-light) !important;
+	border: solid 1px var(--brand-dark) !important;
+}
+
+.high-contrast .btn:hover,
+.high-contrast .btn:focus {
+	background: var(--brand-light) !important;
+	color: var(--brand-dark) !important;
+	border: solid 1px var(--brand-dark) !important;
+}
+/* End high contrast mode styles */
 
 /* Body */
 body {
@@ -18,14 +65,15 @@ body {
 #newsletter-card {
 	background-color: var(--white);
 	color: var(--brand-dark);
-	border: 1px solid var(--brand-gray);
+	border: 1px solid var(--brand-dark);
 }
 
 #newsletter-card .btn-danger {
 	background-color: var(--brand-red);
 }
 
-#newsletter-card .btn-danger:hover {
+#newsletter-card .btn-danger:hover,
+#newsletter-card .btn-danger:focus {
 	background-color: var(--brand-purple);
 	color: var(--brand-dark);
 }
