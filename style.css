@@ -76,6 +76,10 @@ body {
 	color: var(--brand-dark);
 }
 
+h1{
+	margin-top: 25px;
+}
+
 /* Newsletter card */
 #newsletter-card {
 	background-color: var(--white);
