@@ -167,13 +167,6 @@ footer a.text-muted:focus {
 	}
 }
 
-/* Button row centering - alternative to justify-content-center for iOS compatibility */
-.row.g-2 {
-	margin-left: auto;
-	margin-right: auto;
-	max-width: fit-content;
-}
-
 /* Body layout - use margin instead of vertical centering */
 .container {
 	margin-top: 80px; /* Position content from top instead of center */
