@@ -146,3 +146,35 @@ footer a.text-muted:focus {
 	outline: 2px solid var(--brand-red);
 	outline-offset: 2px;
 }
+
+/* Logo responsive styles - Mobile styles to prevent overlap with toggle button */
+@media (max-width: 768px) {
+	#logo {
+		margin-top: 60px; /* Space for toggle button */
+		max-width: 90%; /* Prevent logo from being too wide on small screens */
+	}
+	
+	/* Adjust container padding on mobile */
+	.container {
+		padding-top: 20px;
+	}
+}
+
+/* Tablet and larger screens */
+@media (min-width: 769px) {
+	#logo {
+		max-width: 500px; /* Restore max-width on larger screens */
+	}
+}
+
+/* Button row centering - alternative to justify-content-center for iOS compatibility */
+.row.g-2 {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: fit-content;
+}
+
+/* Body layout - use margin instead of vertical centering */
+.container {
+	margin-top: 80px; /* Position content from top instead of center */
+}
