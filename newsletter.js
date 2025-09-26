@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		  You're already subscribed — thanks for joining our list!
 		</div>`;
 				} else {
-					window.location.href = 'http://localhost:8888/thanks.html';
+					window.location.href = '/thanks.html';
 				}
 			} else {
 				const err = await res.json();
