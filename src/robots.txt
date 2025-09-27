@@ -1,0 +1,11 @@
+# Robots.txt for Planet of Sound Rock School
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://planetofsoundrockschool.com/sitemap.xml
+
+# Crawl delay (optional - be respectful to servers)
+Crawl-delay: 1
