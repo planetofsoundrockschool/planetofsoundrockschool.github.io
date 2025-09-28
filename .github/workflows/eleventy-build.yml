@@ -37,6 +37,9 @@ jobs:
     - name: Build SCSS
       run: npm run build:sass
       
+    - name: Clean build directory
+      run: rm -rf _site
+      
     - name: Build Eleventy site
       run: npm run build
       env:
