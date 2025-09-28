@@ -4,9 +4,10 @@
 
 A modern, professional website for Planet of Sound Rock School - a mentorship-based music education program in London, Ontario. Built with Eleventy (11ty) and deployed on Netlify with a headless CMS for easy content management.
 
-## 🌐 Live Website
+## 🌐 Live Websites
 
-**Production**: [planetofsoundrockschool.netlify.app](https://planetofsoundrockschool.netlify.app)
+**Production**: [planetofsoundrockschool.netlify.app](https://planetofsoundrockschool.netlify.app)  
+**Development**: [planetofsoundrockschool.github.io](https://planetofsoundrockschool.github.io) (GitHub Pages)
 
 ## 🎵 About Planet of Sound Rock School
 
@@ -43,11 +44,27 @@ Planet of Sound Rock School offers a unique four-tier program system:
 - Form handling via Netlify
 
 ### 🌐 **Development & Deployment**
-- PR-based development workflow
-- Automatic preview deployments
-- Environment-aware configurations
-- Continuous deployment from GitHub
-- Build status monitoring
+- **Dual deployment strategy**: 
+  - **Netlify** (`coming-soon` branch): Live production site with coming-soon page
+  - **GitHub Pages** (`main` branch): Development site for full Eleventy build
+- **GitHub Actions**: Automated Eleventy builds on push to main
+- **PR-based development workflow** with automatic previews
+- **Environment-aware configurations** for different deployment targets
+- **Continuous deployment** with build status monitoring
+
+#### Deployment Strategy
+
+**Production Site (Netlify)**
+- Branch: `coming-soon` 
+- URL: [planetofsoundrockschool.netlify.app](https://planetofsoundrockschool.netlify.app)
+- Purpose: Live coming-soon page with newsletter signup
+- Deployment: Automatic on push to `coming-soon` branch
+
+**Development Site (GitHub Pages)**  
+- Branch: `main`
+- URL: [planetofsoundrockschool.github.io](https://planetofsoundrockschool.github.io)
+- Purpose: Full Eleventy site development and testing
+- Deployment: GitHub Actions on push to `main` branch
 
 ## 📁 Project Structure
 
